@@ -42,4 +42,8 @@ https://github.com/user-attachments/assets/d4283c99-f4b8-4b0e-b12e-de0a676b7322
 - **Error Recovery**: Restart the simulated PLC to recover from errors
 - **Runtime Changes**: Most settings under `Cmd.Settings` can be modified during operation
 - **Agility Changes**: When changing `AgilityReductionFactor`, ensure robot programs are stopped (`Cmd.MoveProgramRobotX = FALSE`)
+- **3D Visualization**: Object states in the visualization update during motion planning and object selection, not during actual physical operations. For example, objects disappear from pick positions when the robot selects them for a task, rather than when the robot physically picks them up. Container color coding indicates fill state:
+  - Red: Empty container
+  - Yellow: Partially filled container  
+  - Green: Full container
 
