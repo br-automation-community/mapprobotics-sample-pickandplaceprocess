@@ -1,0 +1,16 @@
+VAR CONSTANT
+	CONV_SLOTS_MAX_IND : USINT := CONV_SLOTS-1;
+	GRID : USINT := 50; (*distance between object in the register among the y direction*)
+	CONV_SLOTS : USINT := 32; (*how many object can the register contain*)
+	ROWS : USINT := 4; (*rows of the register*)
+END_VAR
+VAR
+	j : USINT := 0;
+	MC_BR_TrackingFrameCreate_0 : MC_BR_TrackingFramesCreate;
+	TrkFrmsToCreateOnBufferRegister : ARRAY[0..CONV_SLOTS_MAX_IND] OF McTrkFrmCreateParType;
+END_VAR
+(*Insert your comment here.*)
+VAR
+	UserDataSingleItemObjectRed : TrackingFrameUserDataType := (PositionType:=SingleItemPosition,SingleItemPositionData:=(PositionFilled:=TRUE,ObjectType:=Red,SyncPosUp:=(Pos:=(Z:=10+OBJECT_HEIGHT_mm))));
+	UserDataSingleItemObjectBlack : TrackingFrameUserDataType := (PositionType:=SingleItemPosition,SingleItemPositionData:=(PositionFilled:=TRUE,ObjectType:=Black,SyncPosUp:=(Pos:=(Z:=10+OBJECT_HEIGHT_mm))));
+END_VAR

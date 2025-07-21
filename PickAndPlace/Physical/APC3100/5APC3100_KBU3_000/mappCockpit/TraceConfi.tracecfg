@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="NewTraceConfig" Type="tracecfg">
+    <Property ID="mappCockpitTypeID" Value="TraceCfg" />
+    <Group ID="TrcTimingSettings">
+      <Property ID="TrcTotalRecordingTime" Value="30.0" />
+      <Property ID="TrcTriggerOffsetTime" Value="2" />
+      <Selector ID="TrcPVTaskClass" Value="TrcCyclic_1">
+        <Property ID="TrcPLCSampleTime" Value="0.0" />
+      </Selector>
+      <Property ID="TrcACOPOSSampleTime" Value="0.0004" />
+    </Group>
+    <Group ID="TrcTriggerSettings">
+      <Group ID="TrcTriggerCondition[1]">
+        <Property ID="TrcTriggerDataPoint" Value="::MainContro:IPMonitoring[0].PathSpeed" />
+        <Selector ID="TrcTriggerConditionSelection" Value="coTRACE_ABOVE_THRESHOLD_EVENT">
+          <Property ID="TrcThreshold" Value="1" />
+          <Property ID="TrcWindow" Value="0" />
+        </Selector>
+      </Group>
+      <Group ID="TrcTriggerCondition[2]">
+        <Property ID="TrcTriggerDataPoint" />
+        <Selector ID="TrcTriggerConditionSelection" Value="coTRACE_IN_WINDOW_EVENT">
+          <Property ID="TrcThreshold" Value="0.0" />
+          <Property ID="TrcWindow" Value="0.0" />
+        </Selector>
+      </Group>
+    </Group>
+    <Group ID="TrcDataPointList">
+      <Property ID="TrcDataPoint[1]" Value="::MainContro:IPMonitoring[0].PathSpeed" />
+      <Property ID="TrcDataPoint[2]" Value="::MainContro:IPMonitoring[1].PathSpeed" />
+      <Property ID="TrcDataPoint[3]" Value="::MainContro:IPMonitoring[0].TCPInMCS.SetPosition[0]" />
+      <Property ID="TrcDataPoint[4]" Value="::MainContro:IPMonitoring[0].TCPInMCS.SetPosition[1]" />
+      <Property ID="TrcDataPoint[5]" Value="::MainContro:IPMonitoring[0].TCPInMCS.SetPosition[2]" />
+      <Property ID="TrcDataPoint[6]" Value="::MainContro:TrackingStatusFub[0].TrackingAdditionalInfo.ErrorStruct.ActualError" />
+      <Property ID="TrcDataPoint[7]" Value="::MainContro:TrackingStatusFub[1].TrackingAdditionalInfo.ErrorStruct.ActualError" />
+      <Property ID="TrcDataPoint[8]" Value="::MainContro:IPMonitoring[1].TCPInMCS.SetPosition[0]" />
+      <Property ID="TrcDataPoint[9]" Value="::MainContro:IPMonitoring[1].TCPInMCS.SetPosition[1]" />
+      <Property ID="TrcDataPoint[10]" Value="::MainContro:IPMonitoring[1].TCPInMCS.SetPosition[2]" />
+      <Property ID="TrcDataPoint[11]" Value="::MainContro:TrackingStatusFub[0].TrackingState" />
+      <Property ID="TrcDataPoint[12]" Value="::MainContro:TrackingStatusFub[0].TrackingState" />
+    </Group>
+  </Element>
+</Configuration>

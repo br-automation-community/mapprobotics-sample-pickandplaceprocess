@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package SubType="mMoPredefinedCfgPackage" PackageType="mMoPredefinedCfgPackage" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">AxGrp1.axesgroup</Object>
+    <Object Type="File">Axis1.axis</Object>
+    <Object Type="File" Description="Migrated from MechSys1.mechanicalsystem (mapp Motion Version 5)">MechSys1.mechanicalsystem</Object>
+    <Object Type="File" Description="Migrated from Feat1.axesgroupfeature (mapp Motion Version 5)">Feat1.axesgroupfeature</Object>
+	<Object Type="File" Description="Migrated from Feat1.axesgroupfeature (mapp Motion Version 5)">TrkFrmSel1.axesgroupfeature</Object>
+    <Object Type="File">Ws1.workspace</Object>
+  </Objects>
+</Package>

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File" Description="This reference is valid once the scene is generated after ArSim bootup" Reference="true">\Temp\Simulation\APC3100\5APC3100_KBU3_000\USER\ObjectHierarchy.scn</Object>
+  </Objects>
+</Package>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="gAxesGroup_D4r1100R_2" Type="axesgroup">
+    <Selector ID="Type" Value="PathGenAxesGroup">
+      <Property ID="ProcessingTaskClass" Value="1" />
+      <Group ID="PhysicalAxes">
+        <Group ID="JointAxes">
+          <Group ID="JointAxis[1]">
+            <Property ID="AxisRef" Value="delta2Q1" />
+          </Group>
+          <Group ID="JointAxis[2]">
+            <Property ID="AxisRef" Value="delta2Q2" />
+          </Group>
+          <Group ID="JointAxis[3]">
+            <Property ID="AxisRef" Value="delta2Q3" />
+          </Group>
+          <Group ID="JointAxis[4]">
+            <Property ID="Name" Value="QC" />
+            <Property ID="AxisRef" Value="delta2Qc" />
+          </Group>
+        </Group>
+      </Group>
+      <Group ID="MechanicalSystem">
+        <Property ID="MechSysRef" Value="delta2MechSys" />
+      </Group>
+      <Group ID="BasicSettings">
+        <Group ID="GeometryPlanning">
+          <Property ID="MaxCornerDeviation" Value="1" />
+          <Property ID="MaxTangentialTransitionDeviation" Value="0.1" />
+        </Group>
+        <Selector ID="TrajectoryPlanning">
+          <Selector ID="LimitCheckResolution">
+            <Property ID="Time" Value="0.005" />
+          </Selector>
+        </Selector>
+      </Group>
+      <Group ID="AxesGroupFeatures">
+        <Property ID="FeatureRef[1]" Value="delta2FrameHierarchy" />
+        <Property ID="FeatureRef[2]" Value="delta2Jogging" />
+        <Property ID="FeatureRef[3]" Value="delta2MFun" />
+        <Property ID="FeatureRef[4]" Value="delta2Programs" />
+        <Property ID="FeatureRef[5]" Value="delta2WsMon" />
+        <Property ID="FeatureRef[6]" Value="delta2Tool" />
+        <Property ID="FeatureRef[7]" Value="delta2Monitoring" />
+        <Property ID="FeatureRef[8]" Value="delta1Tracking" />
+        <Property ID="FeatureRef[9]" Value="delta1PathDef" />
+        <Property ID="FeatureRef[10]" Value="Feature_TrkFrmSel_Delta_R2" />
+      </Group>
+    </Selector>
+  </Element>
+</Configuration>

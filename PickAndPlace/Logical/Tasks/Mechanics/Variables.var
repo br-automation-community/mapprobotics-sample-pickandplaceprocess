@@ -1,0 +1,60 @@
+(*Command interface*)
+VAR
+	Cmd : CommandType;
+END_VAR
+(*Robot and conveyor FBs*)
+VAR
+	MpRobot_1 : MpDelta4Axis;
+	MpRobot_2 : MpDelta4Axis;
+	MpRobotPar_1 : MpDelta4AxisParType;
+	MpRobotPar_2 : MpDelta4AxisParType;
+	MpAxisConv1 : MpAxisBasic;
+	MpAxisConv2 : MpAxisBasic;
+	MpAxisParConv1 : MpAxisBasicParType;
+	MpAxisParConv2 : MpAxisBasicParType;
+END_VAR
+(*Update automatic TrackingFrame creation *)
+VAR
+	ProcessParam_AutCrtCond1TrkPath1 : MC_BR_ProcessParam;
+	ProcessParam_AutCrtCond1TrkPath2 : MC_BR_ProcessParam;
+	AutoCreateConditionParTrkPath1 : McCfgTrkPathAutCrtCondType;
+	AutoCreateConditionParTrkPath2 : McCfgTrkPathAutCrtCondType;
+END_VAR
+(*Insert your comment here.*)
+VAR
+	StatusTrackingPath1 : MC_BR_TrackingPathReadStatus;
+	StatusTrackingPath2 : MC_BR_TrackingPathReadStatus;
+END_VAR
+(*Motion Program data structures*)
+VAR
+	MotionProgramRob1 : RobotMotionProgramType := (0);
+	MotionProgramRob2 : RobotMotionProgramType := (0);
+END_VAR
+(*Initialized variables for TrackingFrame user data*)
+VAR
+	UserDataEmptyContainer : {REDUND_UNREPLICABLE} TrackingFrameUserDataType := (PositionType:=ContainerPosition,ContainerPositionData:=(PositionFilled:=TRUE,ContainedPositions:=[(PositionFilled:=FALSE,ObjectType:=Red,SyncPosUp:=(Pos:=(X:=0,Y:=0,Z:=10+OBJECT_HEIGHT_mm)),SyncPosDown:=(Pos:=(X:=0,Y:=0,Z:=0))),(PositionFilled:=FALSE,ObjectType:=Red,SyncPosUp:=(Pos:=(X:=0,Y:=50,Z:=10+OBJECT_HEIGHT_mm)),SyncPosDown:=(Pos:=(X:=0,Y:=50,Z:=0))),(PositionFilled:=FALSE,ObjectType:=Black,SyncPosUp:=(Pos:=(X:=50,Y:=0,Z:=10+OBJECT_HEIGHT_mm)),SyncPosDown:=(Pos:=(X:=50,Y:=0,Z:=0))),(PositionFilled:=FALSE,ObjectType:=Black,SyncPosUp:=(Pos:=(X:=50,Y:=50,Z:=10+OBJECT_HEIGHT_mm)),SyncPosDown:=(Pos:=(X:=50,Y:=50,Z:=0)))],SyncPosUp:=(Pos:=(Z:=10+OBJECT_HEIGHT_mm))));
+	UserDataFullContainer : {REDUND_UNREPLICABLE} TrackingFrameUserDataType := (PositionType:=ContainerPosition,ContainerPositionData:=(PositionFilled:=TRUE,ContainedPositions:=[(PositionFilled:=TRUE,ObjectType:=Red,SyncPosUp:=(Pos:=(X:=0,Y:=0,Z:=10+OBJECT_HEIGHT_mm)),SyncPosDown:=(Pos:=(X:=0,Y:=0,Z:=0))),(PositionFilled:=TRUE,ObjectType:=Red,SyncPosUp:=(Pos:=(X:=0,Y:=50,Z:=10+OBJECT_HEIGHT_mm)),SyncPosDown:=(Pos:=(X:=0,Y:=50,Z:=0))),(PositionFilled:=TRUE,ObjectType:=Black,SyncPosUp:=(Pos:=(X:=50,Y:=0,Z:=10+OBJECT_HEIGHT_mm)),SyncPosDown:=(Pos:=(X:=50,Y:=0,Z:=0))),(PositionFilled:=TRUE,ObjectType:=Black,SyncPosUp:=(Pos:=(X:=50,Y:=50,Z:=10+OBJECT_HEIGHT_mm)),SyncPosDown:=(Pos:=(X:=50,Y:=50,Z:=0)))],SyncPosUp:=(Pos:=(Z:=10+OBJECT_HEIGHT_mm))));
+	UserDataEmptyPosForContainer : {REDUND_UNREPLICABLE} TrackingFrameUserDataType := (PositionType:=ContainerPosition,ContainerPositionData:=(PositionFilled:=FALSE,ContainedPositions:=[(PositionFilled:=FALSE,ObjectType:=Red,SyncPosUp:=(Pos:=(X:=0,Y:=0,Z:=10+OBJECT_HEIGHT_mm)),SyncPosDown:=(Pos:=(X:=0,Y:=0,Z:=0))),(PositionFilled:=FALSE,ObjectType:=Red,SyncPosUp:=(Pos:=(X:=0,Y:=50,Z:=10+OBJECT_HEIGHT_mm)),SyncPosDown:=(Pos:=(X:=0,Y:=50,Z:=0))),(PositionFilled:=FALSE,ObjectType:=Black,SyncPosUp:=(Pos:=(X:=50,Y:=0,Z:=10+OBJECT_HEIGHT_mm)),SyncPosDown:=(Pos:=(X:=50,Y:=0,Z:=0))),(PositionFilled:=FALSE,ObjectType:=Black,SyncPosUp:=(Pos:=(X:=50,Y:=50,Z:=10+OBJECT_HEIGHT_mm)),SyncPosDown:=(Pos:=(X:=50,Y:=50,Z:=0)))],SyncPosUp:=(Pos:=(Z:=10+OBJECT_HEIGHT_mm))));
+END_VAR
+(*Variable for tracking pah link*)
+VAR
+	Dummy_position : LREAL := 0.0;
+END_VAR
+(*Direct homing for simulation mode*)
+VAR
+	MC_BR_GroupHome_0 : MC_BR_GroupHome_15;
+	MC_BR_GroupHome_1 : MC_BR_GroupHome_15;
+	axIdx : USINT;
+END_VAR
+VAR CONSTANT
+	MAX_AXIS_IDX : USINT := 4;
+END_VAR
+(*Changing robot override*)
+VAR
+	MC_BR_GroupSetOverride_0_R1 : MC_BR_GroupSetOverride := (0);
+	MC_BR_GroupSetOverride_1_R1 : MC_BR_GroupSetOverride := (0);
+	MC_BR_GroupSetOverride_2_R1 : MC_BR_GroupSetOverride := (0);
+	MC_BR_GroupSetOverride_0_R2 : MC_BR_GroupSetOverride := (0);
+	MC_BR_GroupSetOverride_1_R2 : MC_BR_GroupSetOverride := (0);
+	MC_BR_GroupSetOverride_2_R2 : MC_BR_GroupSetOverride := (0);
+END_VAR

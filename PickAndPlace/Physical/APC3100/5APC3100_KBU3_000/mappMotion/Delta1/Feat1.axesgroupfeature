@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="delta1Programs" Type="axesgroupfeature">
+    <Selector ID="Type">
+      <Selector ID="DefaultLanguage" Value="ST" />
+      <Selector ID="Location" Value="User">
+        <Group ID="UserLocation[1]">
+          <Property ID="FileDevice" Value="RobotMotionPrgDir" />
+        </Group>
+      </Selector>
+    </Selector>
+  </Element>
+  <Element ID="delta1Jogging" Type="axesgroupfeature">
+    <Selector ID="Type" Value="Jogging" />
+  </Element>
+  <Element ID="delta1WsMon" Type="axesgroupfeature">
+    <Selector ID="Type" Value="WorkspaceMonitoring">
+      <Property ID="WorkspaceRef" Value="delta1Ws" />
+    </Selector>
+  </Element>
+  <Element ID="delta1MFun" Type="axesgroupfeature">
+    <Selector ID="Type" Value="MFunctions" />
+  </Element>
+  <Element ID="delta1FrameHierarchy" Type="axesgroupfeature">
+    <Selector ID="Type" Value="FrameHierarchy" />
+  </Element>
+  <Element ID="delta1Tracking" Type="axesgroupfeature">
+    <Selector ID="Type" Value="Tracking">
+      <Selector ID="SynchronisationGeometry">
+        <Property ID="CartesianRadius" Value="70" />
+      </Selector>
+      <Group ID="MotionBehaviour">
+        <Selector ID="OutOfWorkspaceSynchronisation">
+          <Property ID="Clearance" Value="25" />
+        </Selector>
+      </Group>
+    </Selector>
+  </Element>
+  <Element ID="delta1PathDef" Type="axesgroupfeature">
+    <Selector ID="Type" Value="PathDefinitions">
+      <Group ID="PathDefinition[1]">
+        <Selector ID="Type">
+          <Selector ID="CalculatedIn" Value="PCS" />
+        </Selector>
+      </Group>
+    </Selector>
+  </Element>
+  <Element ID="delta1Monitoring" Type="axesgroupfeature">
+    <Selector ID="Type" Value="MonitoringElements" />
+  </Element>
+</Configuration>

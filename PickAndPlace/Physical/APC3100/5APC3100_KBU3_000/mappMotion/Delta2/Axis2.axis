@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="delta2Q1" Type="axis">
+    <Selector ID="BaseType" Value="RotaryBounded">
+      <Property ID="MeasurementResolution" Value="0.001" />
+      <Property ID="CountDirection" Value="Inverse" />
+    </Selector>
+    <Selector ID="MovementLimits" Value="InternalForPathControlledAxis">
+      <Group ID="Position">
+        <Property ID="LowerLimit" Value="-24" />
+        <Property ID="UpperLimit" Value="85" />
+      </Group>
+      <Selector ID="Velocity">
+        <Property ID="Velocity" Value="2500" />
+      </Selector>
+      <Selector ID="Acceleration">
+        <Property ID="Acceleration" Value="12000" />
+      </Selector>
+      <Selector ID="Deceleration">
+        <Property ID="Deceleration" Value="12000" />
+      </Selector>
+      <Selector ID="Jerk" Value="Basic">
+        <Property ID="Jerk" Value="120000" />
+      </Selector>
+    </Selector>
+  </Element>
+  <Element ID="delta2Q2" Type="axis">
+    <Selector ID="BaseType" Value="RotaryBounded">
+      <Property ID="MeasurementResolution" Value="0.001" />
+      <Property ID="CountDirection" Value="Inverse" />
+    </Selector>
+    <Selector ID="MovementLimits" Value="InternalForPathControlledAxis">
+      <Group ID="Position">
+        <Property ID="LowerLimit" Value="-24" />
+        <Property ID="UpperLimit" Value="85" />
+      </Group>
+      <Selector ID="Velocity">
+        <Property ID="Velocity" Value="2500" />
+      </Selector>
+      <Selector ID="Acceleration">
+        <Property ID="Acceleration" Value="12000" />
+      </Selector>
+      <Selector ID="Deceleration">
+        <Property ID="Deceleration" Value="12000" />
+      </Selector>
+      <Selector ID="Jerk" Value="Basic">
+        <Property ID="Jerk" Value="120000" />
+      </Selector>
+    </Selector>
+  </Element>
+  <Element ID="delta2Q3" Type="axis">
+    <Selector ID="BaseType" Value="RotaryBounded">
+      <Property ID="MeasurementResolution" Value="0.001" />
+      <Property ID="CountDirection" Value="Inverse" />
+    </Selector>
+    <Selector ID="MovementLimits" Value="InternalForPathControlledAxis">
+      <Group ID="Position">
+        <Property ID="LowerLimit" Value="-24" />
+        <Property ID="UpperLimit" Value="85" />
+      </Group>
+      <Selector ID="Velocity">
+        <Property ID="Velocity" Value="2500" />
+      </Selector>
+      <Selector ID="Acceleration">
+        <Property ID="Acceleration" Value="12000" />
+      </Selector>
+      <Selector ID="Deceleration">
+        <Property ID="Deceleration" Value="12000" />
+      </Selector>
+      <Selector ID="Jerk" Value="Basic">
+        <Property ID="Jerk" Value="120000" />
+      </Selector>
+    </Selector>
+  </Element>
+  <Element ID="delta2Qc" Type="axis">
+    <Selector ID="BaseType" Value="RotaryBounded">
+      <Property ID="MeasurementResolution" Value="0.001" />
+      <Property ID="CountDirection" Value="Inverse" />
+    </Selector>
+    <Selector ID="MovementLimits" Value="InternalForPathControlledAxis">
+      <Group ID="Position">
+        <Property ID="LowerLimit" Value="-180" />
+        <Property ID="UpperLimit" Value="180" />
+      </Group>
+      <Selector ID="Velocity">
+        <Property ID="Velocity" Value="720" />
+      </Selector>
+      <Selector ID="Acceleration">
+        <Property ID="Acceleration" Value="7200" />
+      </Selector>
+      <Selector ID="Deceleration">
+        <Property ID="Deceleration" Value="7200" />
+      </Selector>
+      <Selector ID="Jerk" Value="Basic">
+        <Property ID="Jerk" Value="172000" />
+      </Selector>
+    </Selector>
+  </Element>
+</Configuration>

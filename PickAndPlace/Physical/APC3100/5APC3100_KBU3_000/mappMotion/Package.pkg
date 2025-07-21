@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package SubType="mappMotion" PackageType="mappMotion" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">Hierarchy.objecthierarchy</Object>
+    <Object Type="Package">Delta1</Object>
+    <Object Type="Package">Delta2</Object>
+    <Object Type="Package">Conveyer</Object>
+    <Object Type="File">Config.mappmotioncfg</Object>
+  </Objects>
+</Package>

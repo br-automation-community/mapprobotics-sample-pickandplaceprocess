@@ -1,0 +1,3 @@
+VAR CONSTANT
+	MAX_CONTAINER_POS_INDEX : UINT := 3; (*'Number of single item positions in a container' minus 1*)
+END_VAR

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package Version="1.0.0" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">Globals.var</Object>
+    <Object Type="File">Globals.typ</Object>
+    <Object Type="Package" Description="Including Global libraries">Libraries</Object>
+    <Object Type="Package" Description="Including Source code and related objects" TransferedForTargetSourceCompare="true">Tasks</Object>
+    <Object Type="Package" Description="On transfer this folder will be copied to PLC's user partition" TransferedForTargetSourceCompare="true">UserPartitionData</Object>
+    <Object Type="Package" Description="3D visualization of pick-and-place process" TransferedForTargetSourceCompare="true">Scene</Object>
+  </Objects>
+</Package>

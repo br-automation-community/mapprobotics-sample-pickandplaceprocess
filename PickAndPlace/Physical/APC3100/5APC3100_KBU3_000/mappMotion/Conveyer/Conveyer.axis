@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="conveyer1Ax" Type="axis">
+    <Selector ID="BaseType" Value="LinearPeriodic">
+      <Property ID="MeasurementResolution" Value="0.001" />
+      <Group ID="PeriodSettings">
+        <Property ID="Period" Value="1870" />
+      </Group>
+    </Selector>
+    <Selector ID="MovementLimits" Value="InternalForPathControlledAxis">
+      <Selector ID="Velocity">
+        <Property ID="Velocity" Value="1000" />
+      </Selector>
+      <Selector ID="Acceleration">
+        <Property ID="Acceleration" Value="1000" />
+      </Selector>
+      <Selector ID="Deceleration">
+        <Property ID="Deceleration" Value="1000" />
+      </Selector>
+      <Selector ID="Jerk" Value="Basic" />
+    </Selector>
+  </Element>
+  <Element ID="conveyer2Ax" Type="axis">
+    <Selector ID="BaseType" Value="LinearPeriodic">
+      <Property ID="MeasurementResolution" Value="0.001" />
+      <Group ID="PeriodSettings">
+        <Property ID="Period" Value="1870" />
+      </Group>
+    </Selector>
+    <Selector ID="MovementLimits" Value="InternalForPathControlledAxis">
+      <Selector ID="Velocity">
+        <Property ID="Velocity" Value="1000" />
+      </Selector>
+      <Selector ID="Acceleration">
+        <Property ID="Acceleration" Value="1000" />
+      </Selector>
+      <Selector ID="Deceleration">
+        <Property ID="Deceleration" Value="1000" />
+      </Selector>
+      <Selector ID="Jerk" Value="Basic" />
+    </Selector>
+  </Element>
+  <Element ID="repositoryAx" Type="axis">
+    <Selector ID="BaseType" Value="LinearBounded">
+      <Property ID="MeasurementResolution" Value="0.001" />
+    </Selector>
+    <Selector ID="MovementLimits">
+      <Group ID="Position">
+        <Property ID="LowerLimit" Value="-5" />
+        <Property ID="UpperLimit" Value="505" />
+      </Group>
+      <Selector ID="Velocity">
+        <Property ID="Velocity" Value="600" />
+      </Selector>
+      <Selector ID="Acceleration">
+        <Property ID="Acceleration" Value="2500" />
+      </Selector>
+      <Selector ID="Deceleration">
+        <Property ID="Deceleration" Value="2500" />
+      </Selector>
+    </Selector>
+  </Element>
+</Configuration>

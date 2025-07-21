@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="Feature_TrkFrmSel_Delta_R2" Type="axesgroupfeature">
+    <Selector ID="Type" Value="TrackingFrameSelection">
+      <Group ID="Selectors">
+        <Selector ID="Selector[1]">
+          <Property ID="Name" Value="Rob2_Pick_Conveyor2" />
+          <Selector ID="Strategy" Value="MaximumXValueOnTrackingPath" />
+          <Group ID="Filters">
+            <Selector ID="Filter[1]">
+              <Property ID="TrackingPathRef[1]" Value="gTrackingPath_2" />
+            </Selector>
+            <Selector ID="Filter[2]" Value="SelectionArea">
+              <Selector ID="Area[1]">
+                <Group ID="Translation">
+                  <Property ID="X" Value="-800" />
+                  <Property ID="Y" Value="-400" />
+                  <Property ID="Z" Value="-950" />
+                </Group>
+                <Group ID="Dimensions">
+                  <Property ID="Length" Value="800" />
+                  <Property ID="Width" Value="300" />
+                  <Property ID="Height" Value="300" />
+                </Group>
+              </Selector>
+            </Selector>
+          </Group>
+          <Selector ID="LockingAfterSelection" Value="NoLocking" />
+        </Selector>
+        <Selector ID="Selector[2]">
+          <Property ID="Name" Value="Rob2_Place_Conveyor1" />
+          <Selector ID="Strategy" Value="MinimumXValueOnTrackingPath" />
+          <Group ID="Filters">
+            <Selector ID="Filter[1]">
+              <Property ID="TrackingPathRef[1]" Value="gTrackingPath_1" />
+            </Selector>
+            <Selector ID="Filter[2]" Value="SelectionArea">
+              <Selector ID="Area[1]">
+                <Selector ID="Origin" Value="MCS" />
+                <Group ID="Translation">
+                  <Property ID="X" Value="-150" />
+                  <Property ID="Y" Value="100" />
+                  <Property ID="Z" Value="-950" />
+                </Group>
+                <Group ID="Dimensions">
+                  <Property ID="Length" Value="700" />
+                  <Property ID="Width" Value="300" />
+                  <Property ID="Height" Value="300" />
+                </Group>
+              </Selector>
+            </Selector>
+          </Group>
+          <Selector ID="LockingAfterSelection" Value="NoLocking" />
+        </Selector>
+      </Group>
+    </Selector>
+  </Element>
+</Configuration>

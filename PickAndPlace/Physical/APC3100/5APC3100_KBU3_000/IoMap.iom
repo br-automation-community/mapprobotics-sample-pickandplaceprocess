@@ -1,0 +1,16 @@
+(********************************************************************
+ * COPYRIGHT -- Bernecker + Rainer
+ ********************************************************************
+ * File: IoMap.iom
+ * Author: rognerp
+ * Created: September 24, 2014
+ ********************************************************************
+ * IO mapping file
+ ********************************************************************)
+VAR_CONFIG
+	::Mechanics:MotionProgramRob1.CloseGripper AT %QX."X20DO9322".DigitalOutput01;
+	::Mechanics:MotionProgramRob2.CloseGripper AT %QX."X20DO9322".DigitalOutput02;
+	::Mechanics:MotionProgramRob2.CloseGripper AT %QX."X20DO9322".DigitalOutput03;
+	::Mechanics:MotionProgramRob2.CloseGripper AT %QX."X20DO9322".DigitalOutput04;
+	::Mechanics:MotionProgramRob2.CloseGripper AT %QX."X20DO9322".DigitalOutput05;
+END_VAR

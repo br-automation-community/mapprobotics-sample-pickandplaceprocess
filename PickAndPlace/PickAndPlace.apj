@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version="6.3.1.32" WorkingVersion="6.3"?>
+<Project Description="Default project" Version="1.0.0" Edition="Standard" EditionComment="Standard" xmlns="http://br-automation.co.at/AS/Project">
+  <Communication />
+  <ANSIC Declarations="false" DefaultIncludes="true" />
+  <IEC ExtendedConstants="true" IecBitOperations="true" IecExtendedComments="true" KeywordsAsStructureMembers="false" NamingConventions="true" Pointers="true" Preprocessor="true" />
+  <Motion RestartAcoposParameter="true" RestartInitParameter="true" />
+  <Project StoreRuntimeInProject="false" />
+  <Variables DefaultInitValue="0" DefaultRetain="false" DefaultVolatile="false" />
+  <TechnologyPackages>
+    <mappCockpit Version="6.3.1" />
+    <mappMotion McAcpDrv="6.4.1" McAcpSim="6.4.1" McAcpSys="6.4.1" McDriveLog="6.4.1" McMechSys="6.4.1" McProfGen="6.4.1" Version="6.4.1" />
+    <mappView Version="6.3.1" />
+    <OpcUaCs Version="6.0.0" />
+  </TechnologyPackages>
+</Project>

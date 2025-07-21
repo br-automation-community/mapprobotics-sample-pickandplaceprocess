@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="gTrackingPath_1" Type="trackingpath">
+    <Selector ID="Type">
+      <Selector ID="MotionSource" Value="Axis">
+        <Property ID="AxisRef" Value="conveyer1Ax" />
+      </Selector>
+      <Group ID="TrackingFrames">
+        <Group ID="AutomaticCreation">
+          <Selector ID="Condition[1]">
+            <Property ID="Distance" Value="350" />
+            <Selector ID="Activation" Value="ProcessVariable">
+              <Property ID="ProcessVariableName" Value="::Mechanics:Cmd.Settings.Conveyor1.AutoFrameCreation.Enable" />
+            </Selector>
+            <Group ID="Position">
+              <Group ID="Translation">
+                <Property ID="X" Value="175" />
+                <Property ID="Z" Value="28" />
+              </Group>
+              <Group ID="Orientation">
+                <Property ID="Angle3" Value="180" />
+              </Group>
+            </Group>
+            <Property ID="Attribute" Value="2#0001_0000" />
+            <Selector ID="UserData" Value="CopyFromProcessVariable">
+              <Property ID="ProcessVariableName" Value="::Mechanics:UserDataEmptyPosForContainer" />
+            </Selector>
+          </Selector>
+        </Group>
+        <Group ID="AutomaticDeletion">
+          <Selector ID="Condition[1]">
+            <Property ID="MinPosition" Value="-50" />
+            <Property ID="MaxPosition" Value="1870" />
+          </Selector>
+        </Group>
+        <Group ID="UserData">
+          <Selector ID="Size" Value="ProcessVariableReference">
+            <Property ID="ProcessVariableName" Value="::Mechanics:UserDataFullContainer" />
+          </Selector>
+        </Group>
+      </Group>
+    </Selector>
+    <Selector ID="SceneViewerObject">
+      <Selector ID="VisualRepresentation" Value="Conveyor belt">
+        <Group ID="Dimensions">
+          <Property ID="Length" Value="1870" />
+          <Property ID="Width" Value="200" />
+          <Property ID="Height" Value="50" />
+        </Group>
+        <Group ID="Translation">
+          <Property ID="Y" Value="-100" />
+        </Group>
+        <Property ID="Material" Value="CyanMatte" />
+      </Selector>
+    </Selector>
+  </Element>
+  <Element ID="gTrackingPath_2" Type="trackingpath">
+    <Selector ID="Type">
+      <Property ID="MaxPositionError" Value="3.0" />
+      <Selector ID="MotionSource" Value="Axis">
+        <Property ID="AxisRef" Value="conveyer2Ax" />
+      </Selector>
+      <Group ID="TrackingFrames">
+        <Group ID="AutomaticCreation">
+          <Selector ID="Condition[1]">
+            <Property ID="Distance" Value="350" />
+            <Selector ID="Activation" Value="ProcessVariable">
+              <Property ID="ProcessVariableName" Value="::Mechanics:Cmd.Settings.Conveyor2.AutoFrameCreation.Enable" />
+            </Selector>
+            <Group ID="Position">
+              <Group ID="Translation">
+                <Property ID="Z" Value="27" />
+              </Group>
+            </Group>
+            <Property ID="Attribute" Value="2#0000_0011" />
+            <Selector ID="UserData" Value="CopyFromProcessVariable">
+              <Property ID="ProcessVariableName" Value="::Mechanics:UserDataEmptyContainer" />
+            </Selector>
+          </Selector>
+        </Group>
+        <Group ID="AutomaticDeletion">
+          <Selector ID="Condition[1]">
+            <Property ID="MinPosition" Value="-50" />
+            <Property ID="MaxPosition" Value="1870" />
+          </Selector>
+        </Group>
+        <Group ID="UserData">
+          <Selector ID="Size" Value="ProcessVariableReference">
+            <Property ID="ProcessVariableName" Value="::Mechanics:UserDataFullContainer" />
+          </Selector>
+        </Group>
+      </Group>
+    </Selector>
+    <Selector ID="SceneViewerObject">
+      <Selector ID="VisualRepresentation" Value="Conveyor belt">
+        <Group ID="Dimensions">
+          <Property ID="Length" Value="1870" />
+          <Property ID="Width" Value="200" />
+          <Property ID="Height" Value="50" />
+        </Group>
+        <Group ID="Translation">
+          <Property ID="Y" Value="-100" />
+        </Group>
+        <Property ID="Material" Value="GreyMatte" />
+      </Selector>
+    </Selector>
+  </Element>
+  <Element ID="gTrackingPath_3" Type="trackingpath">
+    <Selector ID="Type">
+      <Selector ID="MotionSource">
+        <Property ID="ProcessVariableName" Value="::Mechanics:Dummy_position" />
+        <Property ID="NegativeOverflow" Value="-10" />
+        <Property ID="PositiveOverflow" Value="10" />
+      </Selector>
+      <Group ID="TrackingFrames">
+        <Group ID="UserData">
+          <Selector ID="Size" Value="ProcessVariableReference">
+            <Property ID="ProcessVariableName" Value="::Mechanics:UserDataFullContainer" />
+          </Selector>
+        </Group>
+      </Group>
+    </Selector>
+    <Selector ID="SceneViewerObject">
+      <Selector ID="VisualRepresentation" Value="Cuboid">
+        <Group ID="Dimensions">
+          <Property ID="Length" Value="750" />
+          <Property ID="Width" Value="200" />
+          <Property ID="Height" Value="10" />
+        </Group>
+        <Property ID="Material" Value="WhiteMatte" />
+      </Selector>
+    </Selector>
+  </Element>
+</Configuration>

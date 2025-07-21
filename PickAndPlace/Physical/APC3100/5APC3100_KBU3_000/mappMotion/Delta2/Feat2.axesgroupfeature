@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="delta2Programs" Type="axesgroupfeature">
+    <Selector ID="Type">
+      <Selector ID="DefaultLanguage" Value="ST" />
+      <Selector ID="Location" Value="User">
+        <Group ID="UserLocation[1]">
+          <Property ID="FileDevice" Value="RobotMotionPrgDir" />
+        </Group>
+      </Selector>
+    </Selector>
+  </Element>
+  <Element ID="delta2Jogging" Type="axesgroupfeature">
+    <Selector ID="Type" Value="Jogging" />
+  </Element>
+  <Element ID="delta2WsMon" Type="axesgroupfeature">
+    <Selector ID="Type" Value="WorkspaceMonitoring">
+      <Property ID="WorkspaceRef" Value="delta2Ws" />
+    </Selector>
+  </Element>
+  <Element ID="delta2MFun" Type="axesgroupfeature">
+    <Selector ID="Type" Value="MFunctions" />
+  </Element>
+  <Element ID="delta2FrameHierarchy" Type="axesgroupfeature">
+    <Selector ID="Type" Value="FrameHierarchy" />
+  </Element>
+  <Element ID="delta2Monitoring" Type="axesgroupfeature">
+    <Selector ID="Type" Value="MonitoringElements" />
+  </Element>
+  <Element ID="delta2Tool" Type="axesgroupfeature">
+    <Selector ID="Type" Value="Tools">
+      <Selector ID="Tools">
+        <Property ID="ToolTable" Value="ToolTable_1" />
+        <Property ID="Index" Value="3" />
+      </Selector>
+    </Selector>
+  </Element>
+</Configuration>
