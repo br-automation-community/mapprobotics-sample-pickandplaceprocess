@@ -2,10 +2,10 @@
 <?AutomationStudio FileVersion="4.9"?>
 <Package xmlns="http://br-automation.co.at/AS/Package">
   <Objects>
-    <Object Type="File">PnpRobot1.st</Object>
-    <Object Type="File">PnpRobot2.st</Object>
-    <Object Type="File" TransferedForTargetSourceCompare="true">HelperFunctions.st</Object>
-    <Object Type="File" Description="Shared constants that are used in motion program and plc application task">SharedConstants.var</Object>
-    <Object Type="File" Description="Shared data types that are used in motion program and plc application task" TransferedForTargetSourceCompare="true">SharedTypes.typ</Object>
+    <Object Type="File" Description="Robot 1 - Single object picker (MotionST program)">PnpRobot1.st</Object>
+    <Object Type="File" Description="Robot 2 - Container picker (MotionST program)">PnpRobot2.st</Object>
+    <Object Type="File" Description="Helper functions for objects selection shared by both robots (MotionST functions)" TransferedForTargetSourceCompare="true">HelperFunctions.st</Object>
+    <Object Type="File" Description="Shared constants that are used in motion program and PLC application task">SharedConstants.var</Object>
+    <Object Type="File" Description="Shared data types that are used in motion program and PLC application task" TransferedForTargetSourceCompare="true">SharedTypes.typ</Object>
   </Objects>
 </Package>

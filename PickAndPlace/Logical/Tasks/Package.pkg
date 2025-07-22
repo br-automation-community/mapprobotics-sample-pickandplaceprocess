@@ -2,7 +2,7 @@
 <?AutomationStudio FileVersion="4.9"?>
 <Package xmlns="http://br-automation.co.at/AS/Package">
   <Objects>
-    <Object Type="Program" Language="IEC" Description="Initialization,Homing and control of the conveyor and robots" TransferedForTargetSourceCompare="true">Mechanics</Object>
-    <Object Type="Program" Language="IEC" Description="Creation of initial objects on buffer register" TransferedForTargetSourceCompare="true">BufferInit</Object>
+    <Object Type="Program" Language="IEC" Description="Initialization,Homing and control of the conveyor and robots (PLC application task)" TransferedForTargetSourceCompare="true">Mechanics</Object>
+    <Object Type="Program" Language="IEC" Description="Creation of initial objects on buffer register (PLC application task)" TransferedForTargetSourceCompare="true">BufferInit</Object>
   </Objects>
 </Package>
