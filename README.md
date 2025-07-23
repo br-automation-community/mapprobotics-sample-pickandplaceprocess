@@ -15,6 +15,8 @@ https://github.com/user-attachments/assets/d4283c99-f4b8-4b0e-b12e-de0a676b7322
 - mapp Motion 6.4.1
 - mapp View 6.3.1  
 - mapp Cockpit 6.3.1
+- OPC UA C/S 6.3.1
+- Scene Viewer 6.1.2
 - Basic understanding of Structured Text and robot Motion Structured Text (MotionST) programming
 - Familiarity with mapp Robotics and Conveyor Tracking concepts
 
@@ -36,14 +38,25 @@ https://github.com/user-attachments/assets/d4283c99-f4b8-4b0e-b12e-de0a676b7322
     - Password: `gmctest`
 12. Click 'OK' to connect the 3D visualization to the simulated PLC
 
+## Main components used in this Automation Studio project
+
+- Component **AxesGroup**
+  - AxesGroup feature **Tracking**
+  - AxesGroup feature **TrackingFrame selection**
+    - With defined Selection Areas
+  - AxesGroup feature **Programs**
+- Component **TrackingPath**
+
 ## Notes
 
 - **Troubleshooting**: Check Logger for error entries if issues occur
 - **Error Recovery**: Restart the simulated PLC to recover from errors
 - **Runtime Changes**: Most settings under `Cmd.Settings` can be modified during operation
+- **Robot program state**: Add 'MotionProgramRob1' and 'MotionProgramRob2' to the Watch window to observe the current state of the robot programs
 - **Agility Changes**: When changing `AgilityReductionFactor`, ensure robot programs are stopped (`Cmd.MoveProgramRobotX = FALSE`)
 - **3D Visualization**: Object states in the visualization update during motion planning and object selection, not during actual physical operations. For example, objects disappear from pick positions when the robot selects them for a task, rather than when the robot physically picks them up. Container color coding indicates fill state:
   - Red: Empty container
   - Yellow: Partially filled container  
   - Green: Full container
+- **TrackingFrame user data and attribute-based selection**: This sample demonstrates how the TrackingFrame's user data and attribute can represent single items and containers, including their fill state and contained product IDs. This information enables automatic TrackingFrame selection based on object characteristics.
 
