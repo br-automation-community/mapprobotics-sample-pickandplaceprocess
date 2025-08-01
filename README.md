@@ -1,4 +1,4 @@
-# mappRobotics-Sample-PickAndPlaceProcess
+# mapprobotics-sample-pickandplaceprocess
 
 ## Scope
 
