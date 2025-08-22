@@ -2,7 +2,7 @@
 <?AutomationStudio FileVersion="4.9"?>
 <BR.AS.HardwareTopology>
   <TimeStamps>
-    <TimeStamp LogicalPath="APC3100.Hardware.hw" LastWriteTime="05/28/2025 10:10:04" />
+    <TimeStamp LogicalPath="APC3100.Hardware.hw" LastWriteTime="08/19/2025 10:26:28" />
   </TimeStamps>
   <Modules>
     <Module Name="5APC3100_KBU3_000" Type="5APC3100.KBU3-000" X="-8" Y="-63" />
@@ -21,15 +21,6 @@
     <Module Name="X20BM11b" Type="X20BM11" X="291" Y="-243" />
     <Module Name="X20DO9322" Type="X20DO9322" X="291" Y="-243" />
     <Module Name="X20TB12c" Type="X20TB12" X="291" Y="-216" />
-    <Module Name="X20BM33" Type="X20BM33" X="304" Y="-243" />
-    <Module Name="X20SI4100" Type="X20SI4100" X="304" Y="-243" />
-    <Module Name="X20TB52" Type="X20TB52" X="317" Y="-217" />
-    <Module Name="X20BM32" Type="X20BM32" X="330" Y="-243" />
-    <Module Name="X20DO4633" Type="X20DO4633" X="330" Y="-243" />
-    <Module Name="X20TB32" Type="X20TB32" X="343" Y="-216" />
-    <Module Name="X20BM32a" Type="X20BM32" X="356" Y="-243" />
-    <Module Name="X20DO4633a" Type="X20DO4633" X="356" Y="-243" />
-    <Module Name="X20TB32a" Type="X20TB32" X="369" Y="-216" />
     <Module Name="X20PS9400" Type="X20PS9400" X="252" Y="-243" />
     <Module Name="X20TB12" Type="X20TB12" X="252" Y="-216" />
     <Module Name="X20BC1083" Type="X20BC1083" X="227" Y="-243" />
@@ -46,19 +37,19 @@
     <Module Name="8BVI0055HWD0.000-1a" Type="8BVI0055HWD0.000-1" X="644" Y="-243" />
     <Module Name="8BAC0120.001-2c" Type="8BAC0120.001-2" X="663.6" Y="-68" />
     <Module Name="8BAC0120.001-2b" Type="8BAC0120.001-2" X="646.8" Y="-68" />
-    <Module Name="VSC122R21.051P-000" Type="VSC122R21.051P-000" X="158" Y="-56" />
+    <Module Name="VSC122R21.051P-000" Type="VSC122R21.051P-000" X="121" Y="-79" />
   </Modules>
   <Links>
     <Link From="5AC901.IPLK-00" To="VSC122R21.051P-000" FromPort="IF1" ToPort="PLK1" IsRoutedByUser="False">
-      <Point X="38.8" Y="-32.1000061" />
-      <Point X="38.8" Y="-32.1000061" />
-      <Point X="45.8" Y="-32.1000061" />
-      <Point X="55" Y="-32.1000061" />
-      <Point X="55" Y="75" />
-      <Point X="176" Y="75" />
-      <Point X="176" Y="67" />
-      <Point X="176" Y="62" />
-      <Point X="176" Y="62" />
+      <Point X="38.8" Y="-32" />
+      <Point X="38.8" Y="-32" />
+      <Point X="45.8" Y="-32" />
+      <Point X="55" Y="-32" />
+      <Point X="55" Y="55" />
+      <Point X="139" Y="55" />
+      <Point X="139" Y="44" />
+      <Point X="139" Y="39" />
+      <Point X="139" Y="39" />
     </Link>
     <Link From="8B0P0440HW00.001-1" To="X20BC1083" FromPort="PLK1" ToPort="PLK2" IsRoutedByUser="False">
       <Point X="443.9" Y="-236" />
@@ -138,13 +129,11 @@
       <Point X="1042.4" Y="56.1" />
     </Link>
     <Link From="VSC122R21.051P-000" To="X20BC1083" FromPort="PLK2" ToPort="PLK1" IsRoutedByUser="False">
-      <Point X="221" Y="62" />
-      <Point X="221" Y="62" />
-      <Point X="221" Y="67" />
-      <Point X="221" Y="75" />
-      <Point X="245" Y="75" />
-      <Point X="245" Y="-65" />
-      <Point X="232.75" Y="-65" />
+      <Point X="184" Y="39" />
+      <Point X="184" Y="39" />
+      <Point X="184" Y="44" />
+      <Point X="184" Y="55" />
+      <Point X="232.75" Y="55" />
       <Point X="232.75" Y="-143" />
       <Point X="232.75" Y="-168" />
       <Point X="241" Y="-168" />

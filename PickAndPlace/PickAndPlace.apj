@@ -11,6 +11,7 @@
     <mappCockpit Version="6.3.1" />
     <mappMotion McAcpDrv="6.4.1" McAcpSim="6.4.1" McAcpSys="6.4.1" McDriveLog="6.4.1" McMechSys="6.4.1" McProfGen="6.4.1" Version="6.4.1" />
     <mappView Version="6.3.1" />
+    <mappVision Version="6.0.0" />
     <OpcUaCs Version="6.3.1" />
   </TechnologyPackages>
 </Project>

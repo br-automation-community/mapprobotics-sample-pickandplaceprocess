@@ -1,0 +1,51 @@
+(*FB for creating a frame and reading the status of the TrackingPath*)
+VAR
+	MC_ReadActualPosition_Mot1 : MC_ReadActualPosition; (*FB to read the actual axis position. Used to latch the conveyor position into each created tracking frame*)
+END_VAR
+(*Taking Pictures*)
+VAR
+	CameraPV : Camera_Type := (0); (*Camera interface struct: parameters, status, input and raw detection output from the vision function*)
+	ViBaseAxisBasedAcquisition_Fb : ViBaseAxisBasedAcquisition := (0); (*FB for axis-based image acquisition. Triggers images along the axis at a fixed spatial period*)
+END_VAR
+(*StateMachine*)
+VAR CONSTANT
+	MaxObjectDetectable : USINT := 8; (*Max number of objects to manage per acquisition/filtering cycle and to size arrays accordingly*)
+END_VAR
+VAR
+	VisionState : VisionState_Enum; (*High-level vision state machine: handles readiness, acquisition, processing, frame creation, and reset*)
+	Pos_mm : ARRAY[0..MaxObjectDetectable] OF Coordinate_mm_Type := [9((0))]; (*Object positions in millimeters after pixel->mm affine transform; indexed like filtered detections*)
+	i : USINT := 0; (*Generic loop index for iterating detections and buffers*)
+END_VAR
+(**)
+VAR
+	UserDataSingleItemObjectRed : TrackingFrameUserDataType := (PositionType:=SingleItemPosition,SingleItemPositionData:=(PositionFilled:=TRUE,ObjectType:=Red,SyncPosUp:=(Pos:=(Z:=10+OBJECT_HEIGHT_mm)))); (*User data attached to frames for RED objects: single-item handling with Z sync offset.*)
+	UserDataSingleItemObjectBlack : TrackingFrameUserDataType := (PositionType:=SingleItemPosition,SingleItemPositionData:=(PositionFilled:=TRUE,ObjectType:=Black,SyncPosUp:=(Pos:=(Z:=10+OBJECT_HEIGHT_mm)))); (*User data attached to frames for BLACK objects: single-item handling with Z sync offset.*)
+	McTrkFramesDetectedObjArray : ARRAY[0..MaxObjectDetectable] OF McTrkFrmCreateParType := [9((0))]; (*Staging buffer of frames to create for all newly detected objects in the current cycle.*)
+	MC_BR_DetectedObjFramesCreat : MC_BR_TrackingFramesCreate := (0); (*FB to push the staged frames (position/orientation/attributes) to the tracking path*)
+END_VAR
+(**)
+VAR
+	LastAcquisitionCount : USINT := 0; (*Memo of the last completed acquisition index to detect new images/events from the camera*)
+END_VAR
+(*GetTrackingPathData*)
+VAR
+	TrackingPathGetFramesPos_Fb : MC_BR_TrackingPathGetFrames := (0); (*FB to read existing frames on the tracking path, used to avoid creating near-duplicate frames.*)
+	FramesInfo : ARRAY[0..15] OF McTrkFrmInfoType := [16((0))]; (*Buffer holding info about up to 16 existing frames fetched from the tracking path*)
+	TrackingPathGetFramesPar : McTrkPathGetFrmParType := (0); (*Parameter block for the TrackingPathGetFrames FB: modes, count, and data address*)
+	j : UINT := 0; (*Secondary loop index (e.g., for distance checks against existing frames or filtered objects)*)
+	RedObjectFound : BOOL := FALSE; (*Flag for the current RED candidate: TRUE if not near any stored BLACK detection (valid), FALSE if too close and discarded as duplicate.*)
+	CreateNewFrame : BOOL := FALSE; (*Flag deciding whether the current detection results in a new frame after distance and overlap checks*)
+	Distance_px : LREAL := 0.0; (*Euclidean distance in pixels between the current suspected RED candidate and each stored BLACK detection.*)
+	Distance : LREAL := 0.0; (*Computed Euclidean distance used for de-duplication/overlap checks (units: mm in frame creation step; pixels in filtering step)*)
+END_VAR
+VAR CONSTANT
+	OBJECT_MIN_DIST : USINT := 35; (*Minimum allowed distance (mm) between a new frame and existing frames to avoid duplicates on the tracking path.*)
+END_VAR
+VAR
+	NumbersNewFrame : USINT := 0; (*Number of frames prepared in the current cycle to be created on the tracking path. Results after the filtering*)
+	CameraOutputFiltered : VF_Output_Type := (0); (*Filtered detection list combining BLACK-first and then RED objects while avoiding overlaps/doubles*)
+END_VAR
+(**)
+VAR
+	NumBlackObj : USINT := 0; (*Number of black objects detected by the camera. This value is also used when filtering red objects, since the detection models may overlap (one detects all objects, the other only black). The variable is updated at each acquisition with the current count of detected black objects.*)
+END_VAR

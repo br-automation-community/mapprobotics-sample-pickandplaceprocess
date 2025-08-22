@@ -33,6 +33,9 @@
             <Property ID="MinPosition" Value="-50" />
             <Property ID="MaxPosition" Value="1870" />
           </Selector>
+          <Selector ID="Condition[2]" Value="AfterDesynchronization" Description="INSERTED FOR WORKING WITH VISION">
+            <Property ID="AxesGroupRef" Value="gAxesGroup_D4r1100R_2" />
+          </Selector>
         </Group>
         <Group ID="UserData">
           <Selector ID="Size" Value="ProcessVariableReference">

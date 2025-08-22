@@ -91,13 +91,19 @@ END_PROGRAM
  *)
 
 PROGRAM _CYCLIC
-
+	// Bridge for integrating the camera in the system
+	CameraIntegration;
+	
 	// Synchronize user interface commands with robot/conveyor controls
 	MotionProgramRob1.CleaningMachine := Cmd.CleanUpMode;
-	MpRobot_1.MoveProgram := Cmd.MoveProgramRobot1;
-	MpRobot_2.MoveProgram := Cmd.MoveProgramRobot2;
-	MpAxisConv1.MoveVelocity := Cmd.MoveConveyor1;
-	MpAxisConv2.MoveVelocity := Cmd.MoveConveyor2;
+	
+	IF gMechanics.Param.CameraReady THEN
+		MpRobot_1.MoveProgram := Cmd.MoveProgramRobot1;
+		MpRobot_2.MoveProgram := Cmd.MoveProgramRobot2;
+		MpAxisConv1.MoveVelocity := Cmd.MoveConveyor1;
+		MpAxisConv2.MoveVelocity := Cmd.MoveConveyor2;
+	END_IF
+	
 	MpRobot_1.Stop := Cmd.Stop;
 	MpRobot_2.Stop := Cmd.Stop;
 	MpAxisConv1.Stop := Cmd.Stop;
@@ -150,6 +156,7 @@ PROGRAM _CYCLIC
 				// Real hardware: Use absolute homing procedure
 				MpRobot_1.Home := TRUE;
 				MpRobot_2.Home := TRUE;
+				
 			END_IF
 			MpAxisConv1.Home := TRUE;  // Home conveyor 1
 			MpAxisConv2.Home := TRUE;  // Home conveyor 2
@@ -160,6 +167,8 @@ PROGRAM _CYCLIC
 				Cmd.Settings.Conveyor1.AutoFrameCreation.Enable := TRUE;
 				Cmd.Settings.Conveyor2.AutoFrameCreation.Enable := TRUE;
 				Cmd.Info.State := READ_CURRENT_PARAMETERS;	
+				
+				gMechanics.Status.Homed := TRUE;
 			END_IF
 
 

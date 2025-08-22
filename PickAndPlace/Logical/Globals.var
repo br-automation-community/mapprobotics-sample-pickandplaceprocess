@@ -1,3 +1,7 @@
+VAR
+	gVision : VisionCtrl_Type := (0);
+	gMechanics : MechanicsCtrl_Type := (0);
+END_VAR
 VAR CONSTANT
 	OBJECT_HEIGHT_mm : USINT := 27; (*mm*)
 END_VAR
