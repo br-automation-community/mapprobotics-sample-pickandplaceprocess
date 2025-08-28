@@ -96,3 +96,14 @@ ACTION SpeedLimitReduction:
 	MC_BR_GroupSetOverride_0_R2(AxesGroup := ADR(gAxesGroup_D4r1100R_2)); 
 		
 END_ACTION
+
+ACTION CameraIntegration :
+	 // When mechanics is homed, allow vision to start/configure
+	IF gMechanics.Status.Homed THEN
+		gVision.Param.MachineReadyAndHomed := TRUE;
+	END_IF
+	// When vision is configured, notify mechanics that the camera is ready	
+	IF gVision.Status.Configured THEN
+		gMechanics.Param.CameraReady := TRUE;
+	END_IF 
+END_ACTION
