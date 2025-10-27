@@ -49,4 +49,11 @@
   <Element ID="delta1Monitoring" Type="axesgroupfeature">
     <Selector ID="Type" Value="MonitoringElements" />
   </Element>
+  <Element ID="delta1Tool" Type="axesgroupfeature">
+    <Selector ID="Type" Value="Tools">
+      <Selector ID="Tools" Value="SingleTool">
+        <Property ID="ToolDataRef" Value="SingleGripper" />
+      </Selector>
+    </Selector>
+  </Element>
 </Configuration>

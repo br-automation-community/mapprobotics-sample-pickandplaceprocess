@@ -205,8 +205,8 @@ TYPE
 	MpCfgPickCoreType : STRUCT (*Main data type corresponding to McCfgTypeEnum mcCFG_PICK_CORE*)
 		AxesgroupReference : McCfgReferenceType; (*Name of the axesgroup reference*)
 		Gripper : MpPCGripType;
-		Job : McCfgUnboundedArrayType;
-		OperationMode : McCfgUnboundedArrayType;
+		Job : McCfgUnboundedArrayType; (*Connect array of type MpCfgPickJobType*)
+		OperationMode : McCfgUnboundedArrayType; (*Connect array of type MpCfgPickOpModType*)
 	END_STRUCT;
 	MpPRTypEnum :
 		( (*Type selector setting*)
@@ -662,10 +662,10 @@ TYPE
 		mcPRSVOBJS_PLH_IN_CNTR := 8 (*Placeholder in container - Representation of single item placeholder in a container*)
 		);
 	MpPRSVOBJSTType : STRUCT (*Select object state*)
-		State : McCfgUnboundedArrayType; (*Object state*)
+		State : McCfgUnboundedArrayType; (*Object state (Connect array of type MpPRSVOBJSTStatEnum)*)
 	END_STRUCT;
 	MpPRSVTmplFltrObjTypNameType : STRUCT (*Select object type*)
-		Name : McCfgUnboundedArrayType; (*Name of object type defined in the PickObjectList configuration*)
+		Name : McCfgUnboundedArrayType; (*Name of object type defined in the PickObjectList configuration (Connect array of type STRING)*)
 	END_STRUCT;
 	MpPRSVTmplFltrType : STRUCT (*Filter to select specific objects to be represented with the defined shape*)
 		ObjectState : MpPRSVOBJSTType; (*Select object state*)
@@ -676,7 +676,7 @@ TYPE
 		Filter : MpPRSVTmplFltrType; (*Filter to select specific objects to be represented with the defined shape*)
 	END_STRUCT;
 	MpPRSVUseContVisType : STRUCT (*Type mcPRSSVOUC_VIS settings*)
-		Template : McCfgUnboundedArrayType; (*Customized template to visualize PickRegister objects based on specific needs*)
+		Template : McCfgUnboundedArrayType; (*Customized template to visualize PickRegister objects based on specific needs (Connect array of type MpPRSVTmplType)*)
 	END_STRUCT;
 	MpPRSVUseContType : STRUCT (*Defines if and how the objects in the PickRegister are visualized*)
 		Type : MpPRSVUseContEnum; (*Content selector setting*)
@@ -737,12 +737,12 @@ TYPE
 		Orientation : McCfgOrientType; (*Orientation parameters*)
 	END_STRUCT;
 	MpPOLObjCntrLyrType : STRUCT (*Fill the container: Layer n+1 is only available if layer n was already filled. Empty the container: Layer n is only available when n+1 was emptied*)
-		Position : McCfgUnboundedArrayType;
+		Position : McCfgUnboundedArrayType; (*Connect array of type MpPOLObjCntrLyrPosType*)
 	END_STRUCT;
 	MpPOLObjCntrType : STRUCT (*Type mcPOLO_CNTR settings*)
 		Name : STRING[250]; (*Name of the pick-and-place object*)
 		Load : MpPOLObjCntrLdType; (*Selected object load definition for dynamics consideration*)
-		Layer : McCfgUnboundedArrayType; (*Fill the container: Layer n+1 is only available if layer n was already filled. Empty the container: Layer n is only available when n+1 was emptied*)
+		Layer : McCfgUnboundedArrayType; (*Fill the container: Layer n+1 is only available if layer n was already filled. Empty the container: Layer n is only available when n+1 was emptied (Connect array of type MpPOLObjCntrLyrType)*)
 	END_STRUCT;
 	MpPOLObjType : STRUCT
 		Type : MpPOLObjEnum; (*Object '{/}' selector setting*)
@@ -750,6 +750,6 @@ TYPE
 		Container : MpPOLObjCntrType; (*Type mcPOLO_CNTR settings*)
 	END_STRUCT;
 	MpCfgPickObjLstType : STRUCT (*Main data type corresponding to McCfgTypeEnum mcCFG_PICK_OBJ_LST*)
-		Object : McCfgUnboundedArrayType;
+		Object : McCfgUnboundedArrayType; (*Connect array of type MpPOLObjType*)
 	END_STRUCT;
 END_TYPE

@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Data>
+	<Object objecttypeid="1" name="Scene" visible="1" mask="" binding="" jointoparent="0">
+		<ParID parid="80" val="TRUE"/>
+		<ParID parid="81" val="60"/>
+		<ParID parid="82" val="1"/>
+		<ParID parid="90" val="0"/>
+		<ParID parid="100" val="-365.344"/>
+		<ParID parid="101" val="-64.7705"/>
+		<ParID parid="102" val="103.796"/>
+		<ParID parid="103" val="0.951986"/>
+		<ParID parid="104" val="0.117558"/>
+		<ParID parid="105" val="-0.282672"/>
+		<ParID parid="106" val="0.280953"/>
+		<ParID parid="107" val="0.031292"/>
+		<ParID parid="108" val="0.959211"/>
+		<ParID parid="110" val="0.5"/>
+		<ParID parid="120" val="1,1,1"/>
+		<ParID parid="140" val="0.75,0.75,0.75"/>
+		<ParID parid="145" val=""/>
+		<ParID parid="146" val="0"/>
+		<Object objecttypeid="2" name="Light 1" visible="1" mask="" binding="" jointoparent="0">
+			<ParID parid="100" val="1500"/>
+			<ParID parid="101" val="-3000"/>
+			<ParID parid="102" val="-3000"/>
+			<ParID parid="130" val="1"/>
+			<ParID parid="140" val="1,1,1"/>
+			<ParID parid="150" val="FALSE"/>
+		</Object>
+		<Object objecttypeid="2" name="Light 2" visible="1" mask="" binding="" jointoparent="0">
+			<ParID parid="100" val="0"/>
+			<ParID parid="101" val="0"/>
+			<ParID parid="102" val="6000"/>
+			<ParID parid="130" val="1"/>
+			<ParID parid="140" val="1,1,1"/>
+			<ParID parid="150" val="FALSE"/>
+		</Object>
+		<Object objecttypeid="630" name="Cuboid" visible="1" mask="" binding="" jointoparent="0">
+			<ParID parid="100" val="0"/>
+			<ParID parid="101" val="0"/>
+			<ParID parid="102" val="-10"/>
+			<ParID parid="103" val="0"/>
+			<ParID parid="104" val="0"/>
+			<ParID parid="105" val="0"/>
+			<ParID parid="106" val="1"/>
+			<ParID parid="107" val="1"/>
+			<ParID parid="108" val="1"/>
+			<ParID parid="120" val="3: Grey Matte"/>
+			<ParID parid="122" val="FALSE"/>
+			<ParID parid="123" val="0"/>
+			<ParID parid="140" val="80"/>
+			<ParID parid="141" val="80"/>
+			<ParID parid="142" val="10"/>
+			<Object objecttypeid="180" name="Cone" visible="1" mask="" binding="" jointoparent="0">
+				<ParID parid="100" val="25"/>
+				<ParID parid="101" val="25"/>
+				<ParID parid="102" val="-20"/>
+				<ParID parid="103" val="0"/>
+				<ParID parid="104" val="0"/>
+				<ParID parid="105" val="0"/>
+				<ParID parid="106" val="1"/>
+				<ParID parid="107" val="1"/>
+				<ParID parid="108" val="1"/>
+				<ParID parid="120" val="3: Grey Matte"/>
+				<ParID parid="121" val="32"/>
+				<ParID parid="122" val="FALSE"/>
+				<ParID parid="123" val="FALSE"/>
+				<ParID parid="140" val="10"/>
+				<ParID parid="141" val="15"/>
+				<ParID parid="142" val="20"/>
+				<ParID parid="143" val="360"/>
+			</Object>
+			<Object objecttypeid="180" name="Cone" visible="1" mask="" binding="" jointoparent="0">
+				<ParID parid="100" val="-25"/>
+				<ParID parid="101" val="25"/>
+				<ParID parid="102" val="-20"/>
+				<ParID parid="103" val="0"/>
+				<ParID parid="104" val="0"/>
+				<ParID parid="105" val="0"/>
+				<ParID parid="106" val="1"/>
+				<ParID parid="107" val="1"/>
+				<ParID parid="108" val="1"/>
+				<ParID parid="120" val="3: Grey Matte"/>
+				<ParID parid="121" val="32"/>
+				<ParID parid="122" val="FALSE"/>
+				<ParID parid="123" val="FALSE"/>
+				<ParID parid="140" val="10"/>
+				<ParID parid="141" val="15"/>
+				<ParID parid="142" val="20"/>
+				<ParID parid="143" val="360"/>
+			</Object>
+			<Object objecttypeid="180" name="Cone" visible="1" mask="" binding="" jointoparent="0">
+				<ParID parid="100" val="-25"/>
+				<ParID parid="101" val="-25"/>
+				<ParID parid="102" val="-20"/>
+				<ParID parid="103" val="0"/>
+				<ParID parid="104" val="0"/>
+				<ParID parid="105" val="0"/>
+				<ParID parid="106" val="1"/>
+				<ParID parid="107" val="1"/>
+				<ParID parid="108" val="1"/>
+				<ParID parid="120" val="3: Grey Matte"/>
+				<ParID parid="121" val="32"/>
+				<ParID parid="122" val="FALSE"/>
+				<ParID parid="123" val="FALSE"/>
+				<ParID parid="140" val="10"/>
+				<ParID parid="141" val="15"/>
+				<ParID parid="142" val="20"/>
+				<ParID parid="143" val="360"/>
+			</Object>
+			<Object objecttypeid="180" name="Cone" visible="1" mask="" binding="" jointoparent="0">
+				<ParID parid="100" val="25"/>
+				<ParID parid="101" val="-25"/>
+				<ParID parid="102" val="-20"/>
+				<ParID parid="103" val="0"/>
+				<ParID parid="104" val="0"/>
+				<ParID parid="105" val="0"/>
+				<ParID parid="106" val="1"/>
+				<ParID parid="107" val="1"/>
+				<ParID parid="108" val="1"/>
+				<ParID parid="120" val="3: Grey Matte"/>
+				<ParID parid="121" val="32"/>
+				<ParID parid="122" val="FALSE"/>
+				<ParID parid="123" val="FALSE"/>
+				<ParID parid="140" val="10"/>
+				<ParID parid="141" val="15"/>
+				<ParID parid="142" val="20"/>
+				<ParID parid="143" val="360"/>
+			</Object>
+		</Object>
+	</Object>
+	<Materials>
+		<Material ID="0" Name="Undefined" Ambient="0.100000 0.100000 0.100000 1.000000" Specular="0.000000 0.000000 0.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="32.000000"/>
+		<Material ID="1" Name="Red Matte" Ambient="0.700000 0.050000 0.050000 1.000000" Specular="0.000000 0.000000 0.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="64.000000"/>
+		<Material ID="2" Name="Blue Matte" Ambient="0.100000 0.100000 0.800000 1.000000" Specular="0.000000 0.000000 0.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="64.000000"/>
+		<Material ID="3" Name="Grey Matte" Ambient="0.400000 0.400000 0.400000 1.000000" Specular="0.000000 0.000000 0.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="64.000000"/>
+		<Material ID="4" Name="Yellow Matte" Ambient="0.800000 0.800000 0.000000 1.000000" Specular="0.000000 0.000000 0.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="64.000000"/>
+		<Material ID="5" Name="Green Matte" Ambient="0.100000 0.800000 0.100000 1.000000" Specular="0.000000 0.000000 0.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="64.000000"/>
+		<Material ID="6" Name="Orange Matte" Ambient="0.800000 0.400000 0.000000 1.000000" Specular="0.000000 0.000000 0.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="64.000000"/>
+		<Material ID="7" Name="White Matte" Ambient="0.900000 0.900000 0.900000 1.000000" Specular="0.000000 0.000000 0.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="64.000000"/>
+		<Material ID="8" Name="Black Matte" Ambient="0.100000 0.100000 0.100000 1.000000" Specular="0.000000 0.000000 0.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="64.000000"/>
+		<Material ID="9" Name="Violet Matte" Ambient="0.700000 0.000000 0.700000 1.000000" Specular="0.000000 0.000000 0.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="64.000000"/>
+		<Material ID="10" Name="Grey Metal" Ambient="0.200000 0.200000 0.200000 1.000000" Specular="0.800000 0.800000 1.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="25.000000"/>
+		<Material ID="11" Name="Red Metal" Ambient="0.600000 0.000000 0.000000 1.000000" Specular="1.000000 0.700000 0.700000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="10.000000"/>
+		<Material ID="12" Name="Yellow Metal" Ambient="0.500000 0.500000 0.000000 1.000000" Specular="0.600000 0.600000 0.850000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="25.000000"/>
+		<Material ID="13" Name="Black Metal" Ambient="0.200000 0.200000 0.200000 1.000000" Specular="0.500000 0.500000 0.500000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="12.500000"/>
+		<Material ID="14" Name="Cyan Matte" Ambient="0.000000 0.500000 0.500000 1.000000" Specular="0.000000 0.000000 0.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="64.000000"/>
+		<Material ID="15" Name="Magenta Matte" Ambient="0.500000 0.000000 0.500000 1.000000" Specular="0.000000 0.000000 0.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="64.000000"/>
+		<Material ID="16" Name="Light Grey Matte" Ambient="0.700000 0.700000 0.700000 1.000000" Specular="0.000000 0.000000 0.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="64.000000"/>
+		<Material ID="17" Name="Cerulean Blue Metal" Ambient="0.000000 0.540000 0.750000 1.000000" Specular="0.600000 0.600000 0.850000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="25.000000"/>
+		<Material ID="18" Name="Silver" Ambient="0.550000 0.600000 0.650000 1.000000" Specular="0.500000 0.550000 0.600000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="64.000000"/>
+		<Material ID="19" Name="Dark Grey Metal" Ambient="0.100000 0.100000 0.100000 1.000000" Specular="0.800000 0.800000 1.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="25.000000"/>
+		<Material ID="20" Name="Dark Blue Metal" Ambient="0.200000 0.200000 0.300000 1.000000" Specular="0.800000 0.800000 1.000000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="25.000000"/>
+		<Material ID="21" Name="Dark Yellow Metal" Ambient="0.200000 0.200000 0.000000 1.000000" Specular="0.900000 0.900000 0.800000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="25.000000"/>
+		<Material ID="22" Name="Dark Red Metal" Ambient="0.300000 0.100000 0.100000 1.000000" Specular="1.000000 0.800000 0.800000 1.000000" Emission="0.000000 0.000000 0.000000 1.000000" Shininess="25.000000"/>
+	</Materials>
+	<Views/>
+	<Connection>
+		<PVI>
+			<NameTask>
+				vis
+			</NameTask>
+			<NameTime>
+			</NameTime>
+			<NameVariable>
+				vis
+			</NameVariable>
+			<ExtraSettings>
+			</ExtraSettings>
+			<ConectionParameters>
+			</ConectionParameters>
+			<RF>
+			</RF>
+			<DAIP>
+				127.0.0.1
+			</DAIP>
+			<Size>
+				0
+			</Size>
+			<TimerModeOn>
+				0
+			</TimerModeOn>
+		</PVI>
+	</Connection>
+</Data>

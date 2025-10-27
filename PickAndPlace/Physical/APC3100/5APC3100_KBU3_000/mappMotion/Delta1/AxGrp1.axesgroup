@@ -44,7 +44,8 @@
         <Property ID="FeatureRef[6]" Value="delta1PathDef" />
         <Property ID="FeatureRef[7]" Value="delta1Monitoring" />
         <Property ID="FeatureRef[8]" Value="delta1WsMon" />
-        <Property ID="FeatureRef[9]" Value="Feature_TrkFrmSel_Delta_R1" />
+        <Property ID="FeatureRef[9]" Value="delta1Tool" />
+        <Property ID="FeatureRef[10]" Value="Feature_TrkFrmSel_Delta_R1" />
       </Group>
     </Selector>
   </Element>
