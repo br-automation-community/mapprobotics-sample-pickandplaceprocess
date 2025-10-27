@@ -5,15 +5,15 @@
 		<ParID parid="81" val="60"/>
 		<ParID parid="82" val="1"/>
 		<ParID parid="90" val="0"/>
-		<ParID parid="100" val="-365.344"/>
-		<ParID parid="101" val="-64.7705"/>
-		<ParID parid="102" val="103.796"/>
-		<ParID parid="103" val="0.951986"/>
-		<ParID parid="104" val="0.117558"/>
-		<ParID parid="105" val="-0.282672"/>
-		<ParID parid="106" val="0.280953"/>
-		<ParID parid="107" val="0.031292"/>
-		<ParID parid="108" val="0.959211"/>
+		<ParID parid="100" val="-127.57"/>
+		<ParID parid="101" val="72.7358"/>
+		<ParID parid="102" val="-27.4838"/>
+		<ParID parid="103" val="0.88598"/>
+		<ParID parid="104" val="-0.460689"/>
+		<ParID parid="105" val="0.052953"/>
+		<ParID parid="106" val="-0.0728808"/>
+		<ParID parid="107" val="-0.0255618"/>
+		<ParID parid="108" val="0.997013"/>
 		<ParID parid="110" val="0.5"/>
 		<ParID parid="120" val="1,1,1"/>
 		<ParID parid="140" val="0.75,0.75,0.75"/>
@@ -35,7 +35,7 @@
 			<ParID parid="140" val="1,1,1"/>
 			<ParID parid="150" val="FALSE"/>
 		</Object>
-		<Object objecttypeid="180" name="Cone" visible="1" mask="" binding="" jointoparent="0">
+		<Object objecttypeid="180" name="Gripper" visible="1" mask="" binding="" jointoparent="0">
 			<ParID parid="100" val="0"/>
 			<ParID parid="101" val="0"/>
 			<ParID parid="102" val="-30"/>
@@ -53,6 +53,44 @@
 			<ParID parid="141" val="15"/>
 			<ParID parid="142" val="30"/>
 			<ParID parid="143" val="360"/>
+			<Object objecttypeid="180" name="RedProduct" visible="0" mask="" binding="#14*::Mechanics:MotionProgramRob1.GripperContent.RedObjectInGripper{0}" jointoparent="0">
+				<ParID parid="100" val="0"/>
+				<ParID parid="101" val="0"/>
+				<ParID parid="102" val="-27"/>
+				<ParID parid="103" val="0"/>
+				<ParID parid="104" val="0"/>
+				<ParID parid="105" val="0"/>
+				<ParID parid="106" val="1"/>
+				<ParID parid="107" val="1"/>
+				<ParID parid="108" val="1"/>
+				<ParID parid="120" val="1: Red Matte"/>
+				<ParID parid="121" val="32"/>
+				<ParID parid="122" val="FALSE"/>
+				<ParID parid="123" val="FALSE"/>
+				<ParID parid="140" val="20"/>
+				<ParID parid="141" val="20"/>
+				<ParID parid="142" val="27"/>
+				<ParID parid="143" val="360"/>
+			</Object>
+			<Object objecttypeid="180" name="BlackProduct" visible="0" mask="" binding="#14*::Mechanics:MotionProgramRob1.GripperContent.BlackObjectInGripper{0}" jointoparent="0">
+				<ParID parid="100" val="0"/>
+				<ParID parid="101" val="0"/>
+				<ParID parid="102" val="-27"/>
+				<ParID parid="103" val="0"/>
+				<ParID parid="104" val="0"/>
+				<ParID parid="105" val="0"/>
+				<ParID parid="106" val="1"/>
+				<ParID parid="107" val="1"/>
+				<ParID parid="108" val="1"/>
+				<ParID parid="120" val="19: Dark Grey Metal"/>
+				<ParID parid="121" val="32"/>
+				<ParID parid="122" val="FALSE"/>
+				<ParID parid="123" val="FALSE"/>
+				<ParID parid="140" val="20"/>
+				<ParID parid="141" val="20"/>
+				<ParID parid="142" val="27"/>
+				<ParID parid="143" val="360"/>
+			</Object>
 		</Object>
 	</Object>
 	<Materials>

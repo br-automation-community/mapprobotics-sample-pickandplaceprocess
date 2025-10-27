@@ -49,6 +49,7 @@ TYPE
 		PickedObject : PickedObjectType;
 		State : RobotStateEnum;
 		CloseGripper : BOOL;
+		GripperContent : GripperContentType;
 		CleaningMachine : BOOL;
 	END_STRUCT;
 	RobotMotionPickPlaceType : 	STRUCT 
@@ -65,6 +66,10 @@ TYPE
 	PickedObjectType : 	STRUCT 
 		Type : ObjectTypeEnum;
 		ContainerIndex : UINT; (*Use for pick/place positions in a container only*)
+	END_STRUCT;
+	GripperContentType : 	STRUCT 
+		RedObjectInGripper : ARRAY[0..3]OF BOOL;
+		BlackObjectInGripper : ARRAY[0..3]OF BOOL;
 	END_STRUCT;
 END_TYPE
 

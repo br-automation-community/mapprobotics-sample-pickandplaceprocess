@@ -3,17 +3,17 @@
 	<Object objecttypeid="1" name="Object Hierarchy" visible="1" mask="" binding="" jointoparent="0">
 		<ParID parid="80" val="FALSE"/>
 		<ParID parid="81" val="60"/>
-		<ParID parid="82" val="0.677218"/>
+		<ParID parid="82" val="0.615652"/>
 		<ParID parid="90" val="0"/>
-		<ParID parid="100" val="146.306"/>
-		<ParID parid="101" val="-90.6859"/>
-		<ParID parid="102" val="337.494"/>
-		<ParID parid="103" val="0.423142"/>
-		<ParID parid="104" val="0.752752"/>
-		<ParID parid="105" val="-0.504297"/>
-		<ParID parid="106" val="0.290096"/>
-		<ParID parid="107" val="0.414727"/>
-		<ParID parid="108" val="0.862465"/>
+		<ParID parid="100" val="700.305"/>
+		<ParID parid="101" val="-354.988"/>
+		<ParID parid="102" val="745.072"/>
+		<ParID parid="103" val="0.429132"/>
+		<ParID parid="104" val="0.668824"/>
+		<ParID parid="105" val="-0.607059"/>
+		<ParID parid="106" val="0.32274"/>
+		<ParID parid="107" val="0.514183"/>
+		<ParID parid="108" val="0.794642"/>
 		<ParID parid="110" val="0.25"/>
 		<ParID parid="120" val="1,1,1"/>
 		<ParID parid="140" val="0.75,0.75,0.75"/>
@@ -407,13 +407,13 @@
 						<ParID parid="165" val="0"/>
 						<ParID parid="166" val="-35"/>
 						<ParID parid="180" val="FALSE"/>
-						<ParID parid="210" val="20.3829"/>
-						<ParID parid="211" val="17.4495"/>
-						<ParID parid="212" val="52.9091"/>
+						<ParID parid="210" val="37.7832"/>
+						<ParID parid="211" val="31.8638"/>
+						<ParID parid="212" val="-7.88099"/>
 						<ParID parid="213" val="-0.000561998"/>
-						<ParID parid="220" val="120.879"/>
-						<ParID parid="221" val="244.373"/>
-						<ParID parid="222" val="-864.809"/>
+						<ParID parid="220" val="-177.215"/>
+						<ParID parid="221" val="-228.594"/>
+						<ParID parid="222" val="-794.137"/>
 						<ParID parid="223" val="-0.000561998"/>
 						<Object objecttypeid="250" name="Flange" visible="1" mask="" binding="" jointoparent="0">
 							<ParID parid="100" val="0"/>
@@ -439,7 +439,7 @@
 								<ParID parid="108" val="1"/>
 								<ParID parid="124" val="100"/>
 								<ParID parid="125" val="TRUE"/>
-								<Object objecttypeid="180" name="Cone" visible="1" mask="" binding="" jointoparent="0">
+								<Object objecttypeid="180" name="Gripper" visible="1" mask="" binding="" jointoparent="0">
 									<ParID parid="100" val="0"/>
 									<ParID parid="101" val="0"/>
 									<ParID parid="102" val="-30"/>
@@ -457,6 +457,44 @@
 									<ParID parid="141" val="15"/>
 									<ParID parid="142" val="30"/>
 									<ParID parid="143" val="360"/>
+									<Object objecttypeid="180" name="RedProduct" visible="0" mask="" binding="#14*::Mechanics:MotionProgramRob1.GripperContent.RedObjectInGripper{0}" jointoparent="0">
+										<ParID parid="100" val="0"/>
+										<ParID parid="101" val="0"/>
+										<ParID parid="102" val="-27"/>
+										<ParID parid="103" val="0"/>
+										<ParID parid="104" val="0"/>
+										<ParID parid="105" val="0"/>
+										<ParID parid="106" val="1"/>
+										<ParID parid="107" val="1"/>
+										<ParID parid="108" val="1"/>
+										<ParID parid="120" val="1: Red Matte"/>
+										<ParID parid="121" val="32"/>
+										<ParID parid="122" val="FALSE"/>
+										<ParID parid="123" val="FALSE"/>
+										<ParID parid="140" val="20"/>
+										<ParID parid="141" val="20"/>
+										<ParID parid="142" val="27"/>
+										<ParID parid="143" val="360"/>
+									</Object>
+									<Object objecttypeid="180" name="BlackProduct" visible="1" mask="" binding="#14*::Mechanics:MotionProgramRob1.GripperContent.BlackObjectInGripper{0}" jointoparent="0">
+										<ParID parid="100" val="0"/>
+										<ParID parid="101" val="0"/>
+										<ParID parid="102" val="-27"/>
+										<ParID parid="103" val="0"/>
+										<ParID parid="104" val="0"/>
+										<ParID parid="105" val="0"/>
+										<ParID parid="106" val="1"/>
+										<ParID parid="107" val="1"/>
+										<ParID parid="108" val="1"/>
+										<ParID parid="120" val="19: Dark Grey Metal"/>
+										<ParID parid="121" val="32"/>
+										<ParID parid="122" val="FALSE"/>
+										<ParID parid="123" val="FALSE"/>
+										<ParID parid="140" val="20"/>
+										<ParID parid="141" val="20"/>
+										<ParID parid="142" val="27"/>
+										<ParID parid="143" val="360"/>
+									</Object>
 								</Object>
 							</Object>
 						</Object>
@@ -786,14 +824,14 @@
 						<ParID parid="165" val="0"/>
 						<ParID parid="166" val="-35"/>
 						<ParID parid="180" val="FALSE"/>
-						<ParID parid="210" val="6.91742"/>
-						<ParID parid="211" val="38.536"/>
-						<ParID parid="212" val="-1.70581"/>
-						<ParID parid="213" val="-0.00313386"/>
-						<ParID parid="220" val="-82.9568"/>
-						<ParID parid="221" val="238.44"/>
-						<ParID parid="222" val="-777.623"/>
-						<ParID parid="223" val="-0.00313386"/>
+						<ParID parid="210" val="-9.89692"/>
+						<ParID parid="211" val="24.3578"/>
+						<ParID parid="212" val="36.1253"/>
+						<ParID parid="213" val="-0.00313371"/>
+						<ParID parid="220" val="-264.335"/>
+						<ParID parid="221" val="-74.3437"/>
+						<ParID parid="222" val="-778.725"/>
+						<ParID parid="223" val="-0.00313371"/>
 						<Object objecttypeid="250" name="Flange" visible="1" mask="" binding="" jointoparent="0">
 							<ParID parid="100" val="0"/>
 							<ParID parid="101" val="0"/>
@@ -818,7 +856,7 @@
 								<ParID parid="108" val="1"/>
 								<ParID parid="124" val="100"/>
 								<ParID parid="125" val="TRUE"/>
-								<Object objecttypeid="630" name="Cuboid" visible="1" mask="" binding="" jointoparent="0">
+								<Object objecttypeid="630" name="Gripper" visible="1" mask="" binding="" jointoparent="0">
 									<ParID parid="100" val="0"/>
 									<ParID parid="101" val="0"/>
 									<ParID parid="102" val="-10"/>
@@ -834,45 +872,7 @@
 									<ParID parid="140" val="80"/>
 									<ParID parid="141" val="80"/>
 									<ParID parid="142" val="10"/>
-									<Object objecttypeid="180" name="Cone" visible="1" mask="" binding="" jointoparent="0">
-										<ParID parid="100" val="25"/>
-										<ParID parid="101" val="25"/>
-										<ParID parid="102" val="-20"/>
-										<ParID parid="103" val="0"/>
-										<ParID parid="104" val="0"/>
-										<ParID parid="105" val="0"/>
-										<ParID parid="106" val="1"/>
-										<ParID parid="107" val="1"/>
-										<ParID parid="108" val="1"/>
-										<ParID parid="120" val="3: Grey Matte"/>
-										<ParID parid="121" val="32"/>
-										<ParID parid="122" val="FALSE"/>
-										<ParID parid="123" val="FALSE"/>
-										<ParID parid="140" val="10"/>
-										<ParID parid="141" val="15"/>
-										<ParID parid="142" val="20"/>
-										<ParID parid="143" val="360"/>
-									</Object>
-									<Object objecttypeid="180" name="Cone" visible="1" mask="" binding="" jointoparent="0">
-										<ParID parid="100" val="-25"/>
-										<ParID parid="101" val="25"/>
-										<ParID parid="102" val="-20"/>
-										<ParID parid="103" val="0"/>
-										<ParID parid="104" val="0"/>
-										<ParID parid="105" val="0"/>
-										<ParID parid="106" val="1"/>
-										<ParID parid="107" val="1"/>
-										<ParID parid="108" val="1"/>
-										<ParID parid="120" val="3: Grey Matte"/>
-										<ParID parid="121" val="32"/>
-										<ParID parid="122" val="FALSE"/>
-										<ParID parid="123" val="FALSE"/>
-										<ParID parid="140" val="10"/>
-										<ParID parid="141" val="15"/>
-										<ParID parid="142" val="20"/>
-										<ParID parid="143" val="360"/>
-									</Object>
-									<Object objecttypeid="180" name="Cone" visible="1" mask="" binding="" jointoparent="0">
+									<Object objecttypeid="180" name="Unit0" visible="1" mask="" binding="" jointoparent="0">
 										<ParID parid="100" val="-25"/>
 										<ParID parid="101" val="-25"/>
 										<ParID parid="102" val="-20"/>
@@ -890,8 +890,103 @@
 										<ParID parid="141" val="15"/>
 										<ParID parid="142" val="20"/>
 										<ParID parid="143" val="360"/>
+										<Object objecttypeid="180" name="RedProduct" visible="0" mask="" binding="#14*::Mechanics:MotionProgramRob2.GripperContent.RedObjectInGripper{0}" jointoparent="0">
+											<ParID parid="100" val="0"/>
+											<ParID parid="101" val="0"/>
+											<ParID parid="102" val="-27"/>
+											<ParID parid="103" val="0"/>
+											<ParID parid="104" val="0"/>
+											<ParID parid="105" val="0"/>
+											<ParID parid="106" val="1"/>
+											<ParID parid="107" val="1"/>
+											<ParID parid="108" val="1"/>
+											<ParID parid="120" val="1: Red Matte"/>
+											<ParID parid="121" val="32"/>
+											<ParID parid="122" val="FALSE"/>
+											<ParID parid="123" val="FALSE"/>
+											<ParID parid="140" val="20"/>
+											<ParID parid="141" val="20"/>
+											<ParID parid="142" val="27"/>
+											<ParID parid="143" val="360"/>
+										</Object>
+										<Object objecttypeid="180" name="BlackProduct" visible="0" mask="" binding="#14*::Mechanics:MotionProgramRob2.GripperContent.BlackObjectInGripper{0}" jointoparent="0">
+											<ParID parid="100" val="0"/>
+											<ParID parid="101" val="0"/>
+											<ParID parid="102" val="-27"/>
+											<ParID parid="103" val="0"/>
+											<ParID parid="104" val="0"/>
+											<ParID parid="105" val="0"/>
+											<ParID parid="106" val="1"/>
+											<ParID parid="107" val="1"/>
+											<ParID parid="108" val="1"/>
+											<ParID parid="120" val="19: Dark Grey Metal"/>
+											<ParID parid="121" val="32"/>
+											<ParID parid="122" val="FALSE"/>
+											<ParID parid="123" val="FALSE"/>
+											<ParID parid="140" val="20"/>
+											<ParID parid="141" val="20"/>
+											<ParID parid="142" val="27"/>
+											<ParID parid="143" val="360"/>
+										</Object>
 									</Object>
-									<Object objecttypeid="180" name="Cone" visible="1" mask="" binding="" jointoparent="0">
+									<Object objecttypeid="180" name="Unit1" visible="1" mask="" binding="" jointoparent="0">
+										<ParID parid="100" val="-25"/>
+										<ParID parid="101" val="25"/>
+										<ParID parid="102" val="-20"/>
+										<ParID parid="103" val="0"/>
+										<ParID parid="104" val="0"/>
+										<ParID parid="105" val="0"/>
+										<ParID parid="106" val="1"/>
+										<ParID parid="107" val="1"/>
+										<ParID parid="108" val="1"/>
+										<ParID parid="120" val="3: Grey Matte"/>
+										<ParID parid="121" val="32"/>
+										<ParID parid="122" val="FALSE"/>
+										<ParID parid="123" val="FALSE"/>
+										<ParID parid="140" val="10"/>
+										<ParID parid="141" val="15"/>
+										<ParID parid="142" val="20"/>
+										<ParID parid="143" val="360"/>
+										<Object objecttypeid="180" name="RedProduct" visible="0" mask="" binding="#14*::Mechanics:MotionProgramRob2.GripperContent.RedObjectInGripper{1}" jointoparent="0">
+											<ParID parid="100" val="0"/>
+											<ParID parid="101" val="0"/>
+											<ParID parid="102" val="-27"/>
+											<ParID parid="103" val="0"/>
+											<ParID parid="104" val="0"/>
+											<ParID parid="105" val="0"/>
+											<ParID parid="106" val="1"/>
+											<ParID parid="107" val="1"/>
+											<ParID parid="108" val="1"/>
+											<ParID parid="120" val="1: Red Matte"/>
+											<ParID parid="121" val="32"/>
+											<ParID parid="122" val="FALSE"/>
+											<ParID parid="123" val="FALSE"/>
+											<ParID parid="140" val="20"/>
+											<ParID parid="141" val="20"/>
+											<ParID parid="142" val="27"/>
+											<ParID parid="143" val="360"/>
+										</Object>
+										<Object objecttypeid="180" name="BlackProduct" visible="0" mask="" binding="#14*::Mechanics:MotionProgramRob2.GripperContent.BlackObjectInGripper{1}" jointoparent="0">
+											<ParID parid="100" val="0"/>
+											<ParID parid="101" val="0"/>
+											<ParID parid="102" val="-27"/>
+											<ParID parid="103" val="0"/>
+											<ParID parid="104" val="0"/>
+											<ParID parid="105" val="0"/>
+											<ParID parid="106" val="1"/>
+											<ParID parid="107" val="1"/>
+											<ParID parid="108" val="1"/>
+											<ParID parid="120" val="19: Dark Grey Metal"/>
+											<ParID parid="121" val="32"/>
+											<ParID parid="122" val="FALSE"/>
+											<ParID parid="123" val="FALSE"/>
+											<ParID parid="140" val="20"/>
+											<ParID parid="141" val="20"/>
+											<ParID parid="142" val="27"/>
+											<ParID parid="143" val="360"/>
+										</Object>
+									</Object>
+									<Object objecttypeid="180" name="Unit2" visible="1" mask="" binding="" jointoparent="0">
 										<ParID parid="100" val="25"/>
 										<ParID parid="101" val="-25"/>
 										<ParID parid="102" val="-20"/>
@@ -909,6 +1004,101 @@
 										<ParID parid="141" val="15"/>
 										<ParID parid="142" val="20"/>
 										<ParID parid="143" val="360"/>
+										<Object objecttypeid="180" name="RedProduct" visible="0" mask="" binding="#14*::Mechanics:MotionProgramRob2.GripperContent.RedObjectInGripper{2}" jointoparent="0">
+											<ParID parid="100" val="0"/>
+											<ParID parid="101" val="0"/>
+											<ParID parid="102" val="-27"/>
+											<ParID parid="103" val="0"/>
+											<ParID parid="104" val="0"/>
+											<ParID parid="105" val="0"/>
+											<ParID parid="106" val="1"/>
+											<ParID parid="107" val="1"/>
+											<ParID parid="108" val="1"/>
+											<ParID parid="120" val="1: Red Matte"/>
+											<ParID parid="121" val="32"/>
+											<ParID parid="122" val="FALSE"/>
+											<ParID parid="123" val="FALSE"/>
+											<ParID parid="140" val="20"/>
+											<ParID parid="141" val="20"/>
+											<ParID parid="142" val="27"/>
+											<ParID parid="143" val="360"/>
+										</Object>
+										<Object objecttypeid="180" name="BlackProduct" visible="0" mask="" binding="#14*::Mechanics:MotionProgramRob2.GripperContent.BlackObjectInGripper{2}" jointoparent="0">
+											<ParID parid="100" val="0"/>
+											<ParID parid="101" val="0"/>
+											<ParID parid="102" val="-27"/>
+											<ParID parid="103" val="0"/>
+											<ParID parid="104" val="0"/>
+											<ParID parid="105" val="0"/>
+											<ParID parid="106" val="1"/>
+											<ParID parid="107" val="1"/>
+											<ParID parid="108" val="1"/>
+											<ParID parid="120" val="19: Dark Grey Metal"/>
+											<ParID parid="121" val="32"/>
+											<ParID parid="122" val="FALSE"/>
+											<ParID parid="123" val="FALSE"/>
+											<ParID parid="140" val="20"/>
+											<ParID parid="141" val="20"/>
+											<ParID parid="142" val="27"/>
+											<ParID parid="143" val="360"/>
+										</Object>
+									</Object>
+									<Object objecttypeid="180" name="Unit3" visible="1" mask="" binding="" jointoparent="0">
+										<ParID parid="100" val="25"/>
+										<ParID parid="101" val="25"/>
+										<ParID parid="102" val="-20"/>
+										<ParID parid="103" val="0"/>
+										<ParID parid="104" val="0"/>
+										<ParID parid="105" val="0"/>
+										<ParID parid="106" val="1"/>
+										<ParID parid="107" val="1"/>
+										<ParID parid="108" val="1"/>
+										<ParID parid="120" val="3: Grey Matte"/>
+										<ParID parid="121" val="32"/>
+										<ParID parid="122" val="FALSE"/>
+										<ParID parid="123" val="FALSE"/>
+										<ParID parid="140" val="10"/>
+										<ParID parid="141" val="15"/>
+										<ParID parid="142" val="20"/>
+										<ParID parid="143" val="360"/>
+										<Object objecttypeid="180" name="RedProduct" visible="0" mask="" binding="#14*::Mechanics:MotionProgramRob2.GripperContent.RedObjectInGripper{3}" jointoparent="0">
+											<ParID parid="100" val="0"/>
+											<ParID parid="101" val="0"/>
+											<ParID parid="102" val="-27"/>
+											<ParID parid="103" val="0"/>
+											<ParID parid="104" val="0"/>
+											<ParID parid="105" val="0"/>
+											<ParID parid="106" val="1"/>
+											<ParID parid="107" val="1"/>
+											<ParID parid="108" val="1"/>
+											<ParID parid="120" val="1: Red Matte"/>
+											<ParID parid="121" val="32"/>
+											<ParID parid="122" val="FALSE"/>
+											<ParID parid="123" val="FALSE"/>
+											<ParID parid="140" val="20"/>
+											<ParID parid="141" val="20"/>
+											<ParID parid="142" val="27"/>
+											<ParID parid="143" val="360"/>
+										</Object>
+										<Object objecttypeid="180" name="BlackProduct" visible="0" mask="" binding="#14*::Mechanics:MotionProgramRob2.GripperContent.BlackObjectInGripper{3}" jointoparent="0">
+											<ParID parid="100" val="0"/>
+											<ParID parid="101" val="0"/>
+											<ParID parid="102" val="-27"/>
+											<ParID parid="103" val="0"/>
+											<ParID parid="104" val="0"/>
+											<ParID parid="105" val="0"/>
+											<ParID parid="106" val="1"/>
+											<ParID parid="107" val="1"/>
+											<ParID parid="108" val="1"/>
+											<ParID parid="120" val="19: Dark Grey Metal"/>
+											<ParID parid="121" val="32"/>
+											<ParID parid="122" val="FALSE"/>
+											<ParID parid="123" val="FALSE"/>
+											<ParID parid="140" val="20"/>
+											<ParID parid="141" val="20"/>
+											<ParID parid="142" val="27"/>
+											<ParID parid="143" val="360"/>
+										</Object>
 									</Object>
 								</Object>
 							</Object>
@@ -1178,4 +1368,54 @@
 			</TimerModeOn>
 		</PVI>
 	</Connection>
+	<OpcUa>
+		<UserName>
+			gmctest
+		</UserName>
+		<Password>
+			2a08de933011e59681abfe166177b029
+		</Password>
+		<URL>
+			opc.tcp://127.0.0.1:4840
+		</URL>
+		<AuthenticationMethod>
+			1
+		</AuthenticationMethod>
+		<EndPointId>
+			0
+		</EndPointId>
+		<Reconnect>
+			0
+		</Reconnect>
+		<UseEfficiencyMode>
+			1
+		</UseEfficiencyMode>
+		<PerformanceModeSyncReadInterval>
+			15
+		</PerformanceModeSyncReadInterval>
+		<EfficiencyModeSyncReadInterval>
+			33
+		</EfficiencyModeSyncReadInterval>
+		<SystemPublishingInterval>
+			100
+		</SystemPublishingInterval>
+		<SystemSamplingInterval>
+			100
+		</SystemSamplingInterval>
+		<EfficiencyModePublishingInterval>
+			50
+		</EfficiencyModePublishingInterval>
+		<EfficiencyModeSamplingInterval>
+			50
+		</EfficiencyModeSamplingInterval>
+		<SaveToScene>
+			1
+		</SaveToScene>
+		<EndpointName>
+			Endpoint@opc.tcp://127.0.0.1:4840 (gmctest)
+		</EndpointName>
+		<SecurityMode>
+			3
+		</SecurityMode>
+	</OpcUa>
 </Data>
