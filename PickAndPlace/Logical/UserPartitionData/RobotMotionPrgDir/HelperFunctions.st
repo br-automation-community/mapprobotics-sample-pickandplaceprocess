@@ -104,11 +104,13 @@ FUNCTION SetPickPositionBasedOnUserData : BOOL
 		MotionProgram.PickedObject.Type := MotionProgram.Pick.TrackingFrame.UserData.SingleItemPositionData.ObjectType;
 		MotionProgram.PickedObject.ContainerIndex := 0; // No container index for single item position
 		MotionProgram.Pick.TrackingFrame.UserData.SingleItemPositionData.PositionFilled := FALSE;	
+		MotionProgram.Pick.TrackingFrame.UserData.SubFramesVisu[0].Attribute := MotionProgram.Pick.TrackingFrame.UserData.SubFramesVisu[0].Attribute OR TrackingFrameAttributeBits#ProductSelectedForOperation;
 	ELSE // MotionProgram.Pick.TrackingFrame.UserData.PositionType = TrackingFramePositionTypeEnum#ContainerPosition
 		IF objectTypeContainer THEN // Entire container will be picked
 			MotionProgram.Pick.SynchPosUp := MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.SyncPosUp;
 			MotionProgram.Pick.SynchPosDown := MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.SyncPosDown;
 			MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.PositionFilled := FALSE;
+			MotionProgram.Pick.TrackingFrame.UserData.SubFramesVisu[0].Attribute := MotionProgram.Pick.TrackingFrame.UserData.SubFramesVisu[0].Attribute OR TrackingFrameAttributeBits#ContainerSelectedForOperation;	
 		ELSE // Only a contained item will be picked
 			// Search through container positions to find the requested object type
 			FOR i := 0 TO MAX_CONTAINER_POS_INDEX DO
@@ -118,14 +120,16 @@ FUNCTION SetPickPositionBasedOnUserData : BOOL
 						MotionProgram.Pick.SynchPosDown := MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[i].SyncPosDown;
 						MotionProgram.PickedObject.Type := MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[i].ObjectType;
 						MotionProgram.PickedObject.ContainerIndex := i;
-						MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[i].PositionFilled := FALSE;
+						MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[i].PositionFilled := FALSE;	
+						MotionProgram.Pick.TrackingFrame.UserData.SubFramesVisu[i+1].Attribute := MotionProgram.Pick.TrackingFrame.UserData.SubFramesVisu[i+1].Attribute OR TrackingFrameAttributeBits#ProductSelectedForOperation;
 						EXIT; // exit for loop
 					ELSIF objectTypeBlack AND MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[i].ObjectType = ObjectTypeEnum#Black THEN
 						MotionProgram.Pick.SynchPosUp := MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[i].SyncPosUp;
 						MotionProgram.Pick.SynchPosDown := MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[i].SyncPosDown;
 						MotionProgram.PickedObject.Type := MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[i].ObjectType;
 						MotionProgram.PickedObject.ContainerIndex := i;
-						MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[i].PositionFilled := FALSE;
+						MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[i].PositionFilled := FALSE;	
+						MotionProgram.Pick.TrackingFrame.UserData.SubFramesVisu[i+1].Attribute := MotionProgram.Pick.TrackingFrame.UserData.SubFramesVisu[i+1].Attribute OR TrackingFrameAttributeBits#ProductSelectedForOperation;
 						EXIT; // exit for loop
 					END_IF		
 				END_IF
@@ -150,7 +154,7 @@ END_FUNCTION
  * @param objectTypeContainer: BOOL - TRUE to place entire container, FALSE to place individual item in container
  * @return BOOL - Success status of the operation
  *)
-	FUNCTION SetPlacePositionBasedOnUserData : BOOL
+FUNCTION SetPlacePositionBasedOnUserData : BOOL
 	VAR_IN_OUT
 		MotionProgram : RobotMotionProgramType;
 	END_VAR
@@ -168,12 +172,14 @@ END_FUNCTION
 		// Transfer product identification from pick to place position for traceability
 		MotionProgram.Place.TrackingFrame.UserData.SingleItemPositionData.ProductID := MotionProgram.Pick.TrackingFrame.UserData.SingleItemPositionData.ProductID;
 		MotionProgram.Place.TrackingFrame.UserData.SingleItemPositionData.PositionFilled := TRUE;
+		MotionProgram.Place.TrackingFrame.UserData.SubFramesVisu[0].Attribute := MotionProgram.Place.TrackingFrame.UserData.SubFramesVisu[0].Attribute OR TrackingFrameAttributeBits#ProductSelectedForOperation;		
 	ELSE // MotionProgram.Place.TrackingFrame.UserData.PositionType = TrackingFramePositionTypeEnum#ContainerPosition	
 		IF objectTypeContainer THEN // Entire container will be placed
 			MotionProgram.Place.SynchPosUp := MotionProgram.Place.TrackingFrame.UserData.ContainerPositionData.SyncPosUp;
 			MotionProgram.Place.SynchPosDown := MotionProgram.Place.TrackingFrame.UserData.ContainerPositionData.SyncPosDown;
 			MotionProgram.Place.TrackingFrame.UserData.ContainerPositionData := MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData; // Copy container data from pick to place position
-			MotionProgram.Place.TrackingFrame.UserData.ContainerPositionData.PositionFilled := TRUE;	
+			MotionProgram.Place.TrackingFrame.UserData.ContainerPositionData.PositionFilled := TRUE;
+			MotionProgram.Place.TrackingFrame.UserData.SubFramesVisu[0].Attribute := MotionProgram.Place.TrackingFrame.UserData.SubFramesVisu[0].Attribute OR TrackingFrameAttributeBits#ContainerSelectedForOperation;		
 		ELSE // Will be placed in a contained position only
 			// Search for position with object present
 			FOR i := 0 TO MAX_CONTAINER_POS_INDEX DO
@@ -184,6 +190,7 @@ END_FUNCTION
 						MotionProgram.Place.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[i].ProductID := 
 							MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[MotionProgram.PickedObject.ContainerIndex].ProductID;
 						MotionProgram.Place.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[i].PositionFilled := TRUE;
+						MotionProgram.Place.TrackingFrame.UserData.SubFramesVisu[i+1].Attribute := MotionProgram.Place.TrackingFrame.UserData.SubFramesVisu[i+1].Attribute OR TrackingFrameAttributeBits#ProductSelectedForOperation;	
 						EXIT; // exit for loop
 					ELSIF objectTypeBlack AND MotionProgram.Place.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[i].ObjectType = ObjectTypeEnum#Black THEN
 						MotionProgram.Place.SynchPosUp := MotionProgram.Place.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[i].SyncPosUp;
@@ -191,6 +198,7 @@ END_FUNCTION
 						MotionProgram.Place.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[i].ProductID := 
 							MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[MotionProgram.PickedObject.ContainerIndex].ProductID;
 						MotionProgram.Place.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[i].PositionFilled := TRUE;
+						MotionProgram.Place.TrackingFrame.UserData.SubFramesVisu[i+1].Attribute := MotionProgram.Place.TrackingFrame.UserData.SubFramesVisu[i+1].Attribute OR TrackingFrameAttributeBits#ProductSelectedForOperation;	
 						EXIT; // exit for loop
 					END_IF
 				END_IF
@@ -202,4 +210,67 @@ END_FUNCTION
 							SIZEOF(MotionProgram.Place.TrackingFrame.UserData), 
 							MotionProgram.Place.TrackingFrame.ID);			
 	MotionProgram.Place.TrackingFrame.Attribute := SetAttributeBasedOnUserData(MotionProgram.Place.TrackingFrame.ID, MotionProgram.Place.TrackingFrame.UserData);
+END_FUNCTION
+
+(**
+ * Updates the products on conveyor shown in Scene Viewer
+ *)
+FUNCTION UpdateConveyorContent : BOOL
+	VAR_IN_OUT
+		TrkFrmId : McTrkFrmIdentType;	
+		TrkFrmUserData : TrackingFrameUserDataType;
+	END_VAR
+	VAR
+		i : UINT;
+	END_VAR
+	
+	TrackingFrameGetUserData(ADR(TrkFrmUserData), SIZEOF(TrkFrmUserData), TrkFrmId);
+
+	IF TrkFrmUserData.PositionType = TrackingFramePositionTypeEnum#SingleItemPosition THEN
+
+		TrkFrmUserData.SubFramesVisu[0].Pos := TrkFrmUserData.SingleItemPositionData.SyncPosDown.Pos;
+		TrkFrmUserData.SubFramesVisu[0].Orient := TrkFrmUserData.SingleItemPositionData.SyncPosDown.Orient;
+		IF TrkFrmUserData.SingleItemPositionData.PositionFilled THEN		
+			IF TrkFrmUserData.SingleItemPositionData.ObjectType = ObjectTypeEnum#Red THEN	
+				TrkFrmUserData.SubFramesVisu[0].Attribute := TrackingFrameAttributeBits#RedObjectPhysicallyPresent;
+			ELSE
+				TrkFrmUserData.SubFramesVisu[0].Attribute := TrackingFrameAttributeBits#BlackObjectPhysicallyPresent;
+			END_IF
+		ELSE
+			TrkFrmUserData.SubFramesVisu[0].Attribute := 0;	
+		END_IF
+
+	ELSE // MotionProgram.Pick.TrackingFrame.UserData.PositionType = TrackingFramePositionTypeEnum#ContainerPosition
+	
+		TrkFrmUserData.SubFramesVisu[0].Pos := TrkFrmUserData.ContainerPositionData.SyncPosDown.Pos;
+		TrkFrmUserData.SubFramesVisu[0].Orient := TrkFrmUserData.ContainerPositionData.SyncPosDown.Orient;
+	
+		IF TrkFrmUserData.ContainerPositionData.PositionFilled THEN		
+			TrkFrmUserData.SubFramesVisu[0].Attribute := 0; // Overwrite object selection marker	
+			FOR i := 0 TO MAX_CONTAINER_POS_INDEX DO
+				//offset i+1: 1st sub frame is the container itself
+				TrkFrmUserData.SubFramesVisu[i+1].Pos := TrkFrmUserData.ContainerPositionData.ContainedPositions[i].SyncPosDown.Pos;
+				TrkFrmUserData.SubFramesVisu[i+1].Orient := TrkFrmUserData.ContainerPositionData.ContainedPositions[i].SyncPosDown.Orient;
+				IF TrkFrmUserData.ContainerPositionData.ContainedPositions[i].PositionFilled THEN			
+					IF TrkFrmUserData.ContainerPositionData.ContainedPositions[i].ObjectType = ObjectTypeEnum#Red THEN	
+						TrkFrmUserData.SubFramesVisu[i+1].Attribute := TrackingFrameAttributeBits#RedObjectPhysicallyPresent;
+					ELSE
+						TrkFrmUserData.SubFramesVisu[i+1].Attribute := TrackingFrameAttributeBits#BlackObjectPhysicallyPresent;
+					END_IF
+				ELSE
+					TrkFrmUserData.SubFramesVisu[i+1].Attribute := 0;	
+				END_IF
+			END_FOR;	
+		ELSE
+			TrkFrmUserData.SubFramesVisu[0].Attribute := 0;	
+			TrkFrmUserData.SubFramesVisu[1].Attribute := 0;
+			TrkFrmUserData.SubFramesVisu[2].Attribute := 0;
+			TrkFrmUserData.SubFramesVisu[3].Attribute := 0;
+			TrkFrmUserData.SubFramesVisu[4].Attribute := 0;
+		END_IF
+		
+	END_IF
+
+	TrackingFrameSetUserData(ADR(TrkFrmUserData), SIZEOF(TrkFrmUserData), TrkFrmId);	
+	
 END_FUNCTION

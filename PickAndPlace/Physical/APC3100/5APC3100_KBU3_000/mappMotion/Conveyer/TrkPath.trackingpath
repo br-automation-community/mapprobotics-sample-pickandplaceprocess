@@ -38,6 +38,9 @@
           <Selector ID="Size" Value="ProcessVariableReference">
             <Property ID="ProcessVariableName" Value="::Mechanics:UserDataFullContainer" />
           </Selector>
+          <Selector ID="Visualization" Value="AccessSubFrame">
+            <Property ID="NumberOfSubFrames" Value="5" />
+          </Selector>
         </Group>
       </Group>
     </Selector>
@@ -52,6 +55,86 @@
           <Property ID="Y" Value="-100" />
         </Group>
         <Property ID="Material" Value="CyanMatte" />
+      </Selector>
+      <Selector ID="Content">
+        <Group ID="Template[1]">
+          <Property ID="Name" Value="Frames" />
+        </Group>
+        <Group ID="Template[2]">
+          <Property ID="Name" Value="RedObjects" />
+          <Selector ID="VisualRepresentation" Value="3DShape">
+            <Selector ID="ShapeType" Value="Cylinder">
+              <Group ID="Dimensions">
+                <Property ID="Radius" Value="20" />
+                <Property ID="Height" Value="27" />
+              </Group>
+              <Property ID="Material" Value="RedMatte" />
+            </Selector>
+          </Selector>
+          <Selector ID="Filter[1]" Value="AttributeBased">
+            <Selector ID="Type" Value="MandatoryBits">
+              <Property ID="Mask" Value="2#00000000000000000000000000100000" />
+            </Selector>
+          </Selector>
+        </Group>
+        <Group ID="Template[3]">
+          <Property ID="Name" Value="BlackObjects" />
+          <Selector ID="VisualRepresentation" Value="3DShape">
+            <Selector ID="ShapeType" Value="Cylinder">
+              <Group ID="Dimensions">
+                <Property ID="Radius" Value="20" />
+                <Property ID="Height" Value="27" />
+              </Group>
+              <Property ID="Material" Value="BlackMatte" />
+            </Selector>
+          </Selector>
+          <Selector ID="Filter[1]" Value="AttributeBased">
+            <Selector ID="Type" Value="MandatoryBits">
+              <Property ID="Mask" Value="2#00000000000000000000000001000000" />
+            </Selector>
+          </Selector>
+        </Group>
+        <Group ID="Template[4]">
+          <Property ID="Name" Value="ObjectSelected" />
+          <Selector ID="VisualRepresentation" Value="2DShape">
+            <Selector ID="ShapeType">
+              <Group ID="Dimensions">
+                <Property ID="Radius" Value="30" />
+              </Group>
+              <Group ID="Translation">
+                <Property ID="Z" Value="-27" />
+              </Group>
+              <Property ID="Material" Value="YellowMatte" />
+            </Selector>
+          </Selector>
+          <Selector ID="Filter[1]" Value="AttributeBased">
+            <Selector ID="Type" Value="MandatoryBits">
+              <Property ID="Mask" Value="2#00000000000000000000000010000000" />
+            </Selector>
+          </Selector>
+        </Group>
+        <Group ID="Template[5]">
+          <Property ID="Name" Value="ContainerSelected" />
+          <Selector ID="VisualRepresentation" Value="2DShape">
+            <Selector ID="ShapeType" Value="Rectangle">
+              <Group ID="Dimensions">
+                <Property ID="Length" Value="140" />
+                <Property ID="Width" Value="140" />
+              </Group>
+              <Group ID="Translation">
+                <Property ID="X" Value="25" />
+                <Property ID="Y" Value="25" />
+                <Property ID="Z" Value="-27" />
+              </Group>
+              <Property ID="Material" Value="YellowMatte" />
+            </Selector>
+          </Selector>
+          <Selector ID="Filter[1]" Value="AttributeBased">
+            <Selector ID="Type" Value="MandatoryBits">
+              <Property ID="Mask" Value="2#00000000000000000000000100000000" />
+            </Selector>
+          </Selector>
+        </Group>
       </Selector>
     </Selector>
   </Element>
@@ -89,6 +172,9 @@
           <Selector ID="Size" Value="ProcessVariableReference">
             <Property ID="ProcessVariableName" Value="::Mechanics:UserDataFullContainer" />
           </Selector>
+          <Selector ID="Visualization" Value="AccessSubFrame">
+            <Property ID="NumberOfSubFrames" Value="5" />
+          </Selector>
         </Group>
       </Group>
     </Selector>
@@ -104,6 +190,86 @@
         </Group>
         <Property ID="Material" Value="GreyMatte" />
       </Selector>
+      <Selector ID="Content">
+        <Group ID="Template[1]">
+          <Property ID="Name" Value="Frames" />
+        </Group>
+        <Group ID="Template[2]">
+          <Property ID="Name" Value="RedObjects" />
+          <Selector ID="VisualRepresentation" Value="3DShape">
+            <Selector ID="ShapeType" Value="Cylinder">
+              <Group ID="Dimensions">
+                <Property ID="Radius" Value="20" />
+                <Property ID="Height" Value="27" />
+              </Group>
+              <Property ID="Material" Value="RedMatte" />
+            </Selector>
+          </Selector>
+          <Selector ID="Filter[1]" Value="AttributeBased">
+            <Selector ID="Type" Value="MandatoryBits">
+              <Property ID="Mask" Value="2#00000000000000000000000000100000" />
+            </Selector>
+          </Selector>
+        </Group>
+        <Group ID="Template[3]">
+          <Property ID="Name" Value="BlackObjects" />
+          <Selector ID="VisualRepresentation" Value="3DShape">
+            <Selector ID="ShapeType" Value="Cylinder">
+              <Group ID="Dimensions">
+                <Property ID="Radius" Value="20" />
+                <Property ID="Height" Value="27" />
+              </Group>
+              <Property ID="Material" Value="BlackMatte" />
+            </Selector>
+          </Selector>
+          <Selector ID="Filter[1]" Value="AttributeBased">
+            <Selector ID="Type" Value="MandatoryBits">
+              <Property ID="Mask" Value="2#00000000000000000000000001000000" />
+            </Selector>
+          </Selector>
+        </Group>
+        <Group ID="Template[4]">
+          <Property ID="Name" Value="ObjectSelected" />
+          <Selector ID="VisualRepresentation" Value="2DShape">
+            <Selector ID="ShapeType">
+              <Group ID="Dimensions">
+                <Property ID="Radius" Value="30" />
+              </Group>
+              <Group ID="Translation">
+                <Property ID="Z" Value="-27" />
+              </Group>
+              <Property ID="Material" Value="YellowMatte" />
+            </Selector>
+          </Selector>
+          <Selector ID="Filter[1]" Value="AttributeBased">
+            <Selector ID="Type" Value="MandatoryBits">
+              <Property ID="Mask" Value="2#00000000000000000000000010000000" />
+            </Selector>
+          </Selector>
+        </Group>
+        <Group ID="Template[5]">
+          <Property ID="Name" Value="ContainerSelected" />
+          <Selector ID="VisualRepresentation" Value="2DShape">
+            <Selector ID="ShapeType" Value="Rectangle">
+              <Group ID="Dimensions">
+                <Property ID="Length" Value="140" />
+                <Property ID="Width" Value="140" />
+              </Group>
+              <Group ID="Translation">
+                <Property ID="X" Value="25" />
+                <Property ID="Y" Value="25" />
+                <Property ID="Z" Value="-27" />
+              </Group>
+              <Property ID="Material" Value="YellowMatte" />
+            </Selector>
+          </Selector>
+          <Selector ID="Filter[1]" Value="AttributeBased">
+            <Selector ID="Type" Value="MandatoryBits">
+              <Property ID="Mask" Value="2#00000000000000000000000100000000" />
+            </Selector>
+          </Selector>
+        </Group>
+      </Selector>
     </Selector>
   </Element>
   <Element ID="gTrackingPath_3" Type="trackingpath">
@@ -118,6 +284,9 @@
           <Selector ID="Size" Value="ProcessVariableReference">
             <Property ID="ProcessVariableName" Value="::Mechanics:UserDataFullContainer" />
           </Selector>
+          <Selector ID="Visualization" Value="AccessSubFrame">
+            <Property ID="NumberOfSubFrames" Value="5" />
+          </Selector>
         </Group>
       </Group>
     </Selector>
@@ -129,6 +298,74 @@
           <Property ID="Height" Value="10" />
         </Group>
         <Property ID="Material" Value="WhiteMatte" />
+      </Selector>
+      <Selector ID="Content">
+        <Group ID="Template[1]">
+          <Property ID="Name" Value="Frames" />
+        </Group>
+        <Group ID="Template[2]">
+          <Property ID="Name" Value="RedObjects" />
+          <Selector ID="VisualRepresentation" Value="3DShape">
+            <Selector ID="ShapeType" Value="Cylinder">
+              <Group ID="Dimensions">
+                <Property ID="Radius" Value="20.0" />
+                <Property ID="Height" Value="27.0" />
+              </Group>
+              <Property ID="Material" Value="RedMatte" />
+            </Selector>
+          </Selector>
+          <Selector ID="Filter[1]" Value="AttributeBased">
+            <Selector ID="Type" Value="MandatoryBits">
+              <Property ID="Mask" Value="2#00000000000000000000000000100000" />
+            </Selector>
+          </Selector>
+          <Selector ID="Filter[2]" Value="AttributeBased">
+            <Selector ID="Type" Value="ForbiddenBits">
+              <Property ID="Mask" Value="2#0000_0000_0000_0000_0000_0000_0000_1100" />
+            </Selector>
+          </Selector>
+        </Group>
+        <Group ID="Template[3]">
+          <Property ID="Name" Value="BlackObject" />
+          <Selector ID="VisualRepresentation" Value="3DShape">
+            <Selector ID="ShapeType" Value="Cylinder">
+              <Group ID="Dimensions">
+                <Property ID="Radius" Value="20.0" />
+                <Property ID="Height" Value="27.0" />
+              </Group>
+              <Property ID="Material" Value="BlackMatte" />
+            </Selector>
+          </Selector>
+          <Selector ID="Filter[1]" Value="AttributeBased">
+            <Selector ID="Type" Value="MandatoryBits">
+              <Property ID="Mask" Value="2#00000000000000000000000001000000" />
+            </Selector>
+          </Selector>
+          <Selector ID="Filter[2]" Value="AttributeBased">
+            <Selector ID="Type" Value="ForbiddenBits">
+              <Property ID="Mask" Value="2#0000_0000_0000_0000_0000_0000_0000_1100" />
+            </Selector>
+          </Selector>
+        </Group>
+        <Group ID="Template[4]">
+          <Property ID="Name" Value="ObjectSelected" />
+          <Selector ID="VisualRepresentation" Value="2DShape">
+            <Selector ID="ShapeType">
+              <Group ID="Dimensions">
+                <Property ID="Radius" Value="30" />
+              </Group>
+              <Group ID="Translation">
+                <Property ID="Z" Value="-27" />
+              </Group>
+              <Property ID="Material" Value="YellowMatte" />
+            </Selector>
+          </Selector>
+          <Selector ID="Filter[1]" Value="AttributeBased">
+            <Selector ID="Type" Value="MandatoryBits">
+              <Property ID="Mask" Value="2#00000000000000000000000010000000" />
+            </Selector>
+          </Selector>
+        </Group>
       </Selector>
     </Selector>
   </Element>

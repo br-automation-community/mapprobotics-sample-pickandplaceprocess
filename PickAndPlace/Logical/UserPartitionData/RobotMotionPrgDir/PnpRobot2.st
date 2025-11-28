@@ -189,6 +189,7 @@ PROGRAM _MAIN
 				MoveLR(MotionProgramRob2.Pick.SynchPosDown);
 				DO_PATH_SYNCH
 					UpdateGripperContent(MotionProgramRob2, TRUE);
+					UpdateConveyorContent(MotionProgramRob2.Pick.TrackingFrame.ID, MotionProgramRob2.Pick.TrackingFrame.UserData);
 				END_PATH_SYNCH
 				WaitTime(0.1); // Allow time for container to settle in gripper
 				MoveLR(MotionProgramRob2.Pick.SynchPosUp);
@@ -203,6 +204,7 @@ PROGRAM _MAIN
 				DO_PATH_SYNCH
 					MotionProgramRob2.CloseGripper := FALSE;	 // To increase throughput (reduce required WaitTime), also signaling feature could be used for deactivating the vaccuum
 					UpdateGripperContent(MotionProgramRob2, FALSE);
+					UpdateConveyorContent(MotionProgramRob2.Place.TrackingFrame.ID, MotionProgramRob2.Place.TrackingFrame.UserData);
 				END_PATH_SYNCH
 				WaitTime(0.05); // Brief wait for container release
 				MoveLR(MotionProgramRob2.Place.SynchPosUp);	

@@ -11,6 +11,6 @@ VAR
 END_VAR
 (*Insert your comment here.*)
 VAR
-	UserDataSingleItemObjectRed : TrackingFrameUserDataType := (PositionType:=SingleItemPosition,SingleItemPositionData:=(PositionFilled:=TRUE,ObjectType:=Red,SyncPosUp:=(Pos:=(Z:=10+OBJECT_HEIGHT_mm))));
-	UserDataSingleItemObjectBlack : TrackingFrameUserDataType := (PositionType:=SingleItemPosition,SingleItemPositionData:=(PositionFilled:=TRUE,ObjectType:=Black,SyncPosUp:=(Pos:=(Z:=10+OBJECT_HEIGHT_mm))));
+	UserDataSingleItemObjectRed : TrackingFrameUserDataType := (SubFramesVisu:=[(Attribute:=RedObjectPhysicallyPresent),4(0)],PositionType:=SingleItemPosition,SingleItemPositionData:=(PositionFilled:=TRUE,ObjectType:=Red,SyncPosUp:=(Pos:=(Z:=10+OBJECT_HEIGHT_mm))));
+	UserDataSingleItemObjectBlack : TrackingFrameUserDataType := (SubFramesVisu:=[(Attribute:=BlackObjectPhysicallyPresent),4(0)],PositionType:=SingleItemPosition,SingleItemPositionData:=(PositionFilled:=TRUE,ObjectType:=Black,SyncPosUp:=(Pos:=(Z:=10+OBJECT_HEIGHT_mm))));
 END_VAR

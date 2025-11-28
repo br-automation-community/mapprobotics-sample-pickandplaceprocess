@@ -2,6 +2,7 @@
 
 TYPE
 	TrackingFrameUserDataType : 	STRUCT 
+		SubFramesVisu : ARRAY[0..4]OF McTrkFrmSubFrmType;
 		PositionType : TrackingFramePositionTypeEnum;
 		SingleItemPositionData : SingleItemPositionDataType;
 		ContainerPositionData : ContainerPositionDataType;
@@ -73,15 +74,19 @@ TYPE
 	END_STRUCT;
 END_TYPE
 
-(*TrackingFrame attribute: Bit code*)
+(*TrackingFrame and SubFrame attribute: Bit code*)
 
 TYPE
 	TrackingFrameAttributeBits : 
 		(
-		HasEmptyPosForRedObj := 2#00000000000000000000000000000001,
-		HasEmptyPosForBlackObj := 2#00000000000000000000000000000010,
-		HasRedObj := 2#00000000000000000000000000000100,
-		HasBlackObj := 2#00000000000000000000000000001000,
-		HasEmptyPosForContainer := 2#00000000000000000000000000010000
+		HasEmptyPosForRedObj := 2#00000000000000000000000000000001, (*Object selection synchronous state of a TrackingFrame (used for TrackingFrame selection)*)
+		HasEmptyPosForBlackObj := 2#00000000000000000000000000000010, (*Object selection synchronous state of a TrackingFrame (used for TrackingFrame selection)*)
+		HasRedObj := 2#00000000000000000000000000000100, (*Object selection synchronous state of a TrackingFrame (used for TrackingFrame selection)*)
+		HasBlackObj := 2#00000000000000000000000000001000, (*Object selection synchronous state of a TrackingFrame (used for TrackingFrame selection)*)
+		HasEmptyPosForContainer := 2#00000000000000000000000000010000, (*Object selection synchronous state of a TrackingFrame (used for TrackingFrame selection)*)
+		RedObjectPhysicallyPresent := 2#00000000000000000000000000100000, (*Movement synchronous state of a SubFrame (used for 3D visu)*)
+		BlackObjectPhysicallyPresent := 2#00000000000000000000000001000000, (*Movement synchronous state of a SubFrame  (used for 3D visu)*)
+		ProductSelectedForOperation := 2#00000000000000000000000010000000, (*Object selection synchronous state of a SubFrame  (used for 3D visu)*)
+		ContainerSelectedForOperation := 2#00000000000000000000000100000000 (*Object selection synchronous state of a SubFrame  (used for 3D visu)*)
 		);
 END_TYPE

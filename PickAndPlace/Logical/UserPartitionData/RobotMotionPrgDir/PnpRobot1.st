@@ -30,7 +30,7 @@ VAR CONSTANT
 END_VAR  
 	
 VAR {AT 'Mechanics'}
-	MotionProgramRob1 : RobotMotionProgramType;	
+	MotionProgramRob1 : RobotMotionProgramType;		
 END_VAR
 
 	
@@ -288,7 +288,7 @@ FUNCTION UpdateGripperContent : BOOL
 		MotionProgram.GripperContent.BlackObjectInGripper[0] := FALSE;
 	END_IF
 END_FUNCTION
-	
+		
 	
 // Robot 1 Main Motion Program - State Machine Implementation
 	
@@ -314,6 +314,7 @@ PROGRAM _MAIN
 				MoveLR(MotionProgramRob1.Pick.SynchPosDown);
 				DO_PATH_SYNCH
 					UpdateGripperContent(MotionProgramRob1, TRUE);
+					UpdateConveyorContent(MotionProgramRob1.Pick.TrackingFrame.ID, MotionProgramRob1.Pick.TrackingFrame.UserData);
 				END_PATH_SYNCH
 				WaitTime(0.2); 
 				MoveLR(MotionProgramRob1.Pick.SynchPosUp);
@@ -331,6 +332,7 @@ PROGRAM _MAIN
 				DO_PATH_SYNCH
 					MotionProgramRob1.CloseGripper := FALSE;	 // To increase throughput (reduce required WaitTime), also signaling feature could be used for deactivating the vaccuum
 					UpdateGripperContent(MotionProgramRob1, FALSE);
+					UpdateConveyorContent(MotionProgramRob1.Place.TrackingFrame.ID, MotionProgramRob1.Place.TrackingFrame.UserData);
 				END_PATH_SYNCH
 				WaitTime(0.1); 
 				MoveLR(MotionProgramRob1.Place.SynchPosUp);	
