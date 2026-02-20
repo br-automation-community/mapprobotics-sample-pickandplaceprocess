@@ -3,5 +3,7 @@
 <Package xmlns="http://br-automation.co.at/AS/Package">
   <Objects>
     <Object Type="Package" Description="Robot programs (Motion Structured Text)" TransferedForTargetSourceCompare="true">RobotMotionPrgDir</Object>
+    <Object Type="File">MultiGripper.scn</Object>
+    <Object Type="File">SingleGripper.scn</Object>
   </Objects>
 </Package>

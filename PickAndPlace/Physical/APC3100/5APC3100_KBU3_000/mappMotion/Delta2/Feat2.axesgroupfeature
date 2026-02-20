@@ -30,9 +30,8 @@
   </Element>
   <Element ID="delta2Tool" Type="axesgroupfeature">
     <Selector ID="Type" Value="Tools">
-      <Selector ID="Tools">
-        <Property ID="ToolTable" Value="ToolTable_1" />
-        <Property ID="Index" Value="3" />
+      <Selector ID="Tools" Value="SingleTool">
+        <Property ID="ToolDataRef" Value="MultiGripper" />
       </Selector>
     </Selector>
   </Element>

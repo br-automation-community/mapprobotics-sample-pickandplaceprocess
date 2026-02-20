@@ -6,9 +6,8 @@
     <Object Type="File">Axis2.axis</Object>
     <Object Type="File" Description="Migrated from MechSys2.mechanicalsystem (mapp Motion Version 5)">MechSys2.mechanicalsystem</Object>
     <Object Type="File" Description="Migrated from Feat2.axesgroupfeature (mapp Motion Version 5)">Feat2.axesgroupfeature</Object>
-	<Object Type="File" Description="Migrated from Feat2.axesgroupfeature (mapp Motion Version 5)">TrkFrmSel2.axesgroupfeature</Object>
+    <Object Type="File" Description="Migrated from Feat2.axesgroupfeature (mapp Motion Version 5)">TrkFrmSel2.axesgroupfeature</Object>
     <Object Type="File">Ws2.workspace</Object>
-    <Object Type="File">Config_1.tool</Object>
-    <Object Type="File">Config_2.tooltable</Object>
+    <Object Type="File">Gripper2.tool</Object>
   </Objects>
 </Package>

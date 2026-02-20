@@ -270,6 +270,25 @@ FUNCTION SelectPlacePosition : BOOL
 	
 END_FUNCTION	
 
+(**
+ * Updates the products in the gripper to be shown in Scene Viewer
+ *)
+FUNCTION UpdateGripperContent : BOOL
+	VAR_IN_OUT
+		MotionProgram : RobotMotionProgramType;
+	END_VAR
+	VAR_INPUT
+		Pick : BOOL; // TRUE: Pick operation, FALSE: Place operation
+	END_VAR
+	IF Pick THEN
+		MotionProgram.GripperContent.RedObjectInGripper[0] := MotionProgram.PickedObject.Type = ObjectTypeEnum#Red;
+		MotionProgram.GripperContent.BlackObjectInGripper[0] := MotionProgram.PickedObject.Type = ObjectTypeEnum#Black;
+	ELSE 
+		MotionProgram.GripperContent.RedObjectInGripper[0] := FALSE;
+		MotionProgram.GripperContent.BlackObjectInGripper[0] := FALSE;
+	END_IF
+END_FUNCTION
+	
 	
 // Robot 1 Main Motion Program - State Machine Implementation
 	
@@ -293,6 +312,9 @@ PROGRAM _MAIN
 					MotionProgramRob1.CloseGripper := TRUE;	 // To increase throughput (reduce required WaitTime), also signaling feature could be used for activating the vaccuum
 				END_PATH_SYNCH
 				MoveLR(MotionProgramRob1.Pick.SynchPosDown);
+				DO_PATH_SYNCH
+					UpdateGripperContent(MotionProgramRob1, TRUE);
+				END_PATH_SYNCH
 				WaitTime(0.2); 
 				MoveLR(MotionProgramRob1.Pick.SynchPosUp);
 				IF MotionProgramRob1.Place.PositionSelected THEN
@@ -308,6 +330,7 @@ PROGRAM _MAIN
 				MoveLR(MotionProgramRob1.Place.SynchPosDown);
 				DO_PATH_SYNCH
 					MotionProgramRob1.CloseGripper := FALSE;	 // To increase throughput (reduce required WaitTime), also signaling feature could be used for deactivating the vaccuum
+					UpdateGripperContent(MotionProgramRob1, FALSE);
 				END_PATH_SYNCH
 				WaitTime(0.1); 
 				MoveLR(MotionProgramRob1.Place.SynchPosUp);	

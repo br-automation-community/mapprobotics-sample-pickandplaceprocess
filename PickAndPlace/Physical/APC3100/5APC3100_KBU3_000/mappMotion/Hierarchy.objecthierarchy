@@ -58,6 +58,13 @@
             <Property ID="Angle1" Value="-0.28" />
             <Property ID="Angle2" Value="-0.23" />
           </Group>
+          <Selector ID="SceneViewerObject">
+            <Group ID="IncludedScenes">
+              <Group ID="ComponentFrames">
+                <Property ID="FlangeSceneFile" Value="SingleGripper.scn" />
+              </Group>
+            </Group>
+          </Selector>
         </Selector>
       </Group>
       <Group ID="Object[6]">
@@ -72,6 +79,13 @@
             <Property ID="Angle1" Value="-0.57" />
             <Property ID="Angle2" Value="-0.63" />
           </Group>
+          <Selector ID="SceneViewerObject">
+            <Group ID="IncludedScenes">
+              <Group ID="ComponentFrames">
+                <Property ID="FlangeSceneFile" Value="MultiGripper.scn" />
+              </Group>
+            </Group>
+          </Selector>
         </Selector>
       </Group>
     </Group>

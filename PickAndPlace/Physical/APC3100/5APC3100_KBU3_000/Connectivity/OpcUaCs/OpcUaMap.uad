@@ -7,5 +7,20 @@
     <EURangesAliases />
     <EngineeringUnitAliases />
   </Aliases>
-  <Module Name="&lt;Default&gt;" />
+  <Module Name="&lt;Default&gt;">
+    <Task Name="Mechanics">
+      <Variable Name="MotionProgramRob1">
+        <Variable Name="GripperContent">
+          <Variable Name="RedObjectInGripper" />
+          <Variable Name="BlackObjectInGripper" />
+        </Variable>
+      </Variable>
+      <Variable Name="MotionProgramRob2">
+        <Variable Name="GripperContent">
+          <Variable Name="RedObjectInGripper" />
+          <Variable Name="BlackObjectInGripper" />
+        </Variable>
+      </Variable>
+    </Task>
+  </Module>
 </OpcUaSource>

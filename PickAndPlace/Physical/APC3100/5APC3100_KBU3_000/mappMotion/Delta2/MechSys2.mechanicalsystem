@@ -2,40 +2,28 @@
 <?AutomationStudio FileVersion="4.9"?>
 <Configuration>
   <Element ID="delta2MechSys" Type="mechanicalsystem">
-    <Property ID="TypeIsReadOnly" Value="0" />
     <Selector ID="Type" Value="Delta">
-      <Property ID="SubtypeIsReadOnly" Value="0" />
       <Selector ID="Subtype" Value="4AxesDeltaA">
-        <Selector ID="SceneViewerObject" Value="Generic" />
-        <Property ID="DescriptionIsReadOnly" Value="0" />
-        <Selector ID="Description" Value="Standard">
+        <Selector ID="Description">
           <Group ID="Dimensions">
             <Group ID="BasePlatform">
-              <Property ID="CenterIsReadOnly" Value="0" />
               <Group ID="Center">
-                <Property ID="X" Value="0.0" />
-                <Property ID="Y" Value="0.0" />
                 <Property ID="Z" Value="-104" />
               </Group>
-              <Property ID="ArmLinkPointIsReadOnly" Value="0" />
               <Group ID="Arm1LinkPoint">
                 <Property ID="Angle" Value="180.0" />
                 <Property ID="Radius" Value="100" />
-                <Property ID="Z" Value="0.0" />
               </Group>
               <Group ID="Arm2LinkPoint">
                 <Property ID="Angle" Value="300.0" />
                 <Property ID="Radius" Value="100" />
-                <Property ID="Z" Value="0.0" />
               </Group>
               <Group ID="Arm3LinkPoint">
                 <Property ID="Angle" Value="420.0" />
                 <Property ID="Radius" Value="100" />
-                <Property ID="Z" Value="0.0" />
               </Group>
             </Group>
             <Group ID="Arms">
-              <Property ID="ArmIsReadOnly" Value="0" />
               <Group ID="Arm1">
                 <Property ID="UpperArmLength" Value="300" />
                 <Property ID="LowerArmLength" Value="700" />
@@ -48,127 +36,49 @@
                 <Property ID="UpperArmLength" Value="300" />
                 <Property ID="LowerArmLength" Value="700" />
               </Group>
-              <Property ID="LowerArmPairDistance" Value="0.0" />
             </Group>
             <Group ID="EndEffectorPlatform">
-              <Property ID="ArmLinkPointIsReadOnly" Value="0" />
               <Group ID="Arm1LinkPoint">
                 <Property ID="Radius" Value="50" />
-                <Property ID="Z" Value="0.0" />
               </Group>
               <Group ID="Arm2LinkPoint">
                 <Property ID="Radius" Value="50" />
-                <Property ID="Z" Value="0.0" />
               </Group>
               <Group ID="Arm3LinkPoint">
                 <Property ID="Radius" Value="50" />
-                <Property ID="Z" Value="0.0" />
               </Group>
-              <Property ID="TranslationToFlangeIsReadOnly" Value="0" />
               <Group ID="TranslationToFlange">
-                <Property ID="X" Value="0.0" />
-                <Property ID="Y" Value="0.0" />
-                <Property ID="Z" Value="-65" />
+                <Property ID="Z" Value="-35" />
               </Group>
             </Group>
           </Group>
           <Group ID="Offsets">
-            <Property ID="JointAxisIsReadOnly" Value="0" />
-            <Property ID="JointAxis[1]" Value="0.0" />
-            <Property ID="JointAxis[2]" Value="0.0" />
-            <Property ID="JointAxis[3]" Value="0.0" />
-            <Property ID="JointAxis[4]" Value="0.0" />
+            <Property ID="JointAxis[1]" />
+            <Property ID="JointAxis[2]" />
+            <Property ID="JointAxis[3]" />
+            <Property ID="JointAxis[4]" />
           </Group>
           <Group ID="CountDirections">
-            <Property ID="JointAxisIsReadOnly" Value="0" />
-            <Property ID="JointAxis[1]" Value="Standard" />
-            <Property ID="JointAxis[2]" Value="Standard" />
-            <Property ID="JointAxis[3]" Value="Standard" />
-            <Property ID="JointAxis[4]" Value="Standard" />
+            <Property ID="JointAxis[1]" />
+            <Property ID="JointAxis[2]" />
+            <Property ID="JointAxis[3]" />
+            <Property ID="JointAxis[4]" />
           </Group>
-        </Selector>
-        <Selector ID="CoordinatesNames" Value="Default">
-          <Property ID="XCoordinateName" Value="X" />
-          <Property ID="YCoordinateName" Value="Y" />
-          <Property ID="ZCoordinateName" Value="Z" />
-          <Property ID="CCoordinateName" Value="C" />
         </Selector>
         <Group ID="TcpOrientation">
           <Selector ID="Frames" Value="Used" />
         </Group>
-        <Property ID="WireFrameModelIsReadOnly" Value="0" />
-        <Selector ID="WireFrameModel" Value="Standard">
-          <Property ID="UpperArm1IsReadOnly" Value="0" />
-          <Selector ID="UpperArm1" Value="ConnectionLine">
-            <Property ID="DistanceMin" Value="-1.79769313486231E308" />
-            <Property ID="DistanceMax" Value="1.79769313486231E308" />
-            <Property ID="Distance" Value="0.0" />
-          </Selector>
-          <Property ID="LowerArm1IsReadOnly" Value="0" />
-          <Selector ID="LowerArm1" Value="ConnectionLine">
-            <Property ID="DistanceMin" Value="-1.79769313486231E308" />
-            <Property ID="DistanceMax" Value="1.79769313486231E308" />
-            <Property ID="Distance" Value="0.0" />
-          </Selector>
-          <Property ID="UpperArm2IsReadOnly" Value="0" />
-          <Selector ID="UpperArm2" Value="ConnectionLine">
-            <Property ID="DistanceMin" Value="-1.79769313486231E308" />
-            <Property ID="DistanceMax" Value="1.79769313486231E308" />
-            <Property ID="Distance" Value="0.0" />
-          </Selector>
-          <Property ID="LowerArm2IsReadOnly" Value="0" />
-          <Selector ID="LowerArm2" Value="ConnectionLine">
-            <Property ID="DistanceMin" Value="-1.79769313486231E308" />
-            <Property ID="DistanceMax" Value="1.79769313486231E308" />
-            <Property ID="Distance" Value="0.0" />
-          </Selector>
-          <Property ID="UpperArm3IsReadOnly" Value="0" />
-          <Selector ID="UpperArm3" Value="ConnectionLine">
-            <Property ID="DistanceMin" Value="-1.79769313486231E308" />
-            <Property ID="DistanceMax" Value="1.79769313486231E308" />
-            <Property ID="Distance" Value="0.0" />
-          </Selector>
-          <Property ID="LowerArm3IsReadOnly" Value="0" />
-          <Selector ID="LowerArm3" Value="ConnectionLine">
-            <Property ID="DistanceMin" Value="-1.79769313486231E308" />
-            <Property ID="DistanceMax" Value="1.79769313486231E308" />
-            <Property ID="Distance" Value="0.0" />
-          </Selector>
-          <Property ID="EndEffectorPlatformToFlangeIsReadOnly" Value="0" />
-          <Selector ID="EndEffectorPlatformToFlange" Value="ConnectionLine">
-            <Property ID="DistanceMin" Value="-1.79769313486231E308" />
-            <Property ID="DistanceMax" Value="1.79769313486231E308" />
+        <Selector ID="WireFrameModel">
+          <Selector ID="EndEffectorPlatformToFlange">
             <Property ID="Distance" Value="20" />
           </Selector>
-          <Selector ID="FlangeToTcp" Value="ConnectionLine">
-            <Property ID="DistanceMin" Value="-1.79769313486231E308" />
-            <Property ID="DistanceMax" Value="1.79769313486231E308" />
-            <Property ID="Distance" Value="0.0" />
-          </Selector>
         </Selector>
-        <Property ID="DynamicModelIsReadOnly" Value="0" />
-        <Selector ID="DynamicModel" Value="DynParTable">
-          <Property ID="TableRef" />
-        </Selector>
-        <Property ID="InternalDynamicModelIsReadOnly" Value="0" />
-        <Selector ID="InternalDynamicModel" Value="NotUsed" />
-        <Selector ID="DynamicLimits" Value="DynParTables">
-          <Property ID="GearboxLimitsTableRef" />
-          <Property ID="CrossSectionLimitsTableRef" />
-        </Selector>
-        <Selector ID="InternalDynamicLimits" Value="NotUsed" />
-        <Property ID="LoadDependentJerkLimitsIsReadOnly" Value="0" />
-        <Selector ID="LoadDependentJerkLimits" Value="NotUsed" />
-        <Property ID="CouplingsIsInvisible" Value="0" />
         <Group ID="JointAxesPositionLimits">
-          <Property ID="JointAxisIsReadOnly" Value="0" />
-          <Selector ID="JointAxis[1]" Value="UseAxisLimits" />
-          <Selector ID="JointAxis[2]" Value="UseAxisLimits" />
-          <Selector ID="JointAxis[3]" Value="UseAxisLimits" />
-          <Selector ID="JointAxis[4]" Value="UseAxisLimits" />
+          <Selector ID="JointAxis[1]" />
+          <Selector ID="JointAxis[2]" />
+          <Selector ID="JointAxis[3]" />
+          <Selector ID="JointAxis[4]" />
         </Group>
-        <Property ID="WorkingRangeIsReadOnly" Value="0" />
-        <Selector ID="WorkingRange" Value="NotUsed" />
       </Selector>
     </Selector>
   </Element>

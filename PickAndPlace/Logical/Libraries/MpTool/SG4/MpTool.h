@@ -1,6 +1,6 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
-/* MpTool 6.4.1 */
+/* MpTool 6.6.1 */
 
 #ifndef _MPTOOL_
 #define _MPTOOL_
@@ -9,7 +9,7 @@ extern "C"
 {
 #endif
 #ifndef _MpTool_VERSION
-#define _MpTool_VERSION 6.4.1
+#define _MpTool_VERSION 6.6.1
 #endif
 
 #include <bur/plctypes.h>
@@ -19,20 +19,20 @@ extern "C"
 #endif
 
 #ifdef _SG4
-#include <MpBase.h> 
-#include <McAxGroup.h> 
+#include <MpBase.h>
+#include <McAxGroup.h>
 #include <SYS_LIB.h>
 #endif
- 
+
 #ifdef _SG3
-#include <MpBase.h> 
-#include <McAxGroup.h> 
+#include <MpBase.h>
+#include <McAxGroup.h>
 #include <SYS_LIB.h>
 #endif
- 
+
 #ifdef _SGC
-#include <MpBase.h> 
-#include <McAxGroup.h> 
+#include <MpBase.h>
+#include <McAxGroup.h>
 #include <SYS_LIB.h>
 #endif
 

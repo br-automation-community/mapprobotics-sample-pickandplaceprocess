@@ -131,6 +131,40 @@ FUNCTION SelectPlacePosition : BOOL
 	END_IF
 END_FUNCTION	
 
+(**
+ *  * Updates the products in the gripper to be shown in Scene Viewer
+ *)
+FUNCTION UpdateGripperContent : BOOL
+	VAR_IN_OUT
+		MotionProgram : RobotMotionProgramType;
+	END_VAR
+	VAR_INPUT
+		Pick : BOOL; // TRUE: Pick operation, FALSE: Place operation
+	END_VAR
+	IF Pick THEN
+		MotionProgram.GripperContent.RedObjectInGripper[0] := MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[0].PositionFilled AND MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[0].ObjectType = ObjectTypeEnum#Red;
+		MotionProgram.GripperContent.RedObjectInGripper[1] := MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[1].PositionFilled AND MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[1].ObjectType = ObjectTypeEnum#Red;
+		MotionProgram.GripperContent.RedObjectInGripper[2] := MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[2].PositionFilled AND MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[2].ObjectType = ObjectTypeEnum#Red;
+		MotionProgram.GripperContent.RedObjectInGripper[3] := MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[3].PositionFilled AND MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[3].ObjectType = ObjectTypeEnum#Red;
+		
+		MotionProgram.GripperContent.BlackObjectInGripper[0] := MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[0].PositionFilled AND MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[0].ObjectType = ObjectTypeEnum#Black;
+		MotionProgram.GripperContent.BlackObjectInGripper[1] := MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[1].PositionFilled AND MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[1].ObjectType = ObjectTypeEnum#Black;
+		MotionProgram.GripperContent.BlackObjectInGripper[2] := MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[2].PositionFilled AND MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[2].ObjectType = ObjectTypeEnum#Black;
+		MotionProgram.GripperContent.BlackObjectInGripper[3] := MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[3].PositionFilled AND MotionProgram.Pick.TrackingFrame.UserData.ContainerPositionData.ContainedPositions[3].ObjectType = ObjectTypeEnum#Black;
+	ELSE 
+		MotionProgram.GripperContent.RedObjectInGripper[0] := FALSE;
+		MotionProgram.GripperContent.RedObjectInGripper[1] := FALSE;
+		MotionProgram.GripperContent.RedObjectInGripper[2] := FALSE;
+		MotionProgram.GripperContent.RedObjectInGripper[3] := FALSE;
+		
+		MotionProgram.GripperContent.BlackObjectInGripper[0] := FALSE;
+		MotionProgram.GripperContent.BlackObjectInGripper[1] := FALSE;
+		MotionProgram.GripperContent.BlackObjectInGripper[2] := FALSE;
+		MotionProgram.GripperContent.BlackObjectInGripper[3] := FALSE;
+	END_IF
+END_FUNCTION
+	
+		
 // Robot 2 Main Motion Program - Container Transfer State Machine
 
 PROGRAM _MAIN
@@ -153,6 +187,9 @@ PROGRAM _MAIN
 					MotionProgramRob2.CloseGripper := TRUE;	 // To increase throughput (reduce required WaitTime), also signaling feature could be used for deactivating the vaccuum
 				END_PATH_SYNCH
 				MoveLR(MotionProgramRob2.Pick.SynchPosDown);
+				DO_PATH_SYNCH
+					UpdateGripperContent(MotionProgramRob2, TRUE);
+				END_PATH_SYNCH
 				WaitTime(0.1); // Allow time for container to settle in gripper
 				MoveLR(MotionProgramRob2.Pick.SynchPosUp);
 				WaitALAP();
@@ -165,6 +202,7 @@ PROGRAM _MAIN
 				MoveLR(MotionProgramRob2.Place.SynchPosDown);
 				DO_PATH_SYNCH
 					MotionProgramRob2.CloseGripper := FALSE;	 // To increase throughput (reduce required WaitTime), also signaling feature could be used for deactivating the vaccuum
+					UpdateGripperContent(MotionProgramRob2, FALSE);
 				END_PATH_SYNCH
 				WaitTime(0.05); // Brief wait for container release
 				MoveLR(MotionProgramRob2.Place.SynchPosUp);	
