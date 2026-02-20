@@ -1,6 +1,6 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
-/* McAcpAx 6.6.0 */
+/* McAcpAx 6.6.1 */
 
 #ifndef _MCACPAX_
 #define _MCACPAX_
@@ -9,7 +9,7 @@ extern "C"
 {
 #endif
 #ifndef _McAcpAx_VERSION
-#define _McAcpAx_VERSION 6.6.0
+#define _McAcpAx_VERSION 6.6.1
 #endif
 
 #include <bur/plctypes.h>
@@ -450,7 +450,8 @@ typedef enum McMBLDCBrkEnum
 } McMBLDCBrkEnum;
 
 typedef enum McMSTEPMotEnum
-{	mcMSTEPM_DEF = 0
+{	mcMSTEPM_DEF = 0,
+	mcMSTEPM_SIMPLE = 1
 } McMSTEPMotEnum;
 
 typedef enum McMSTEPBrkEnum
@@ -3422,7 +3423,6 @@ typedef struct McMBLDCMotDefType
 {	unsigned char NumberOfPolePairs;
 	float NominalSpeed;
 	float MaximumSpeed;
-	float NominalVoltage;
 	float NominalCurrent;
 	float StallCurrent;
 	float PeakCurrent;
@@ -3469,7 +3469,6 @@ typedef struct McMSTEPMotDefType
 {	float StepAngle;
 	float NominalSpeed;
 	float MaximumSpeed;
-	float NominalVoltage;
 	float NominalCurrent;
 	float ContinuousStallCurrent;
 	float PeakCurrent;
@@ -3485,9 +3484,27 @@ typedef struct McMSTEPMotDefType
 	struct McMMSBTmpMdlType TemperatureModel;
 } McMSTEPMotDefType;
 
+typedef struct McMSTEPMotSimpleEncMntType
+{	struct McMSBEMAngType Angle;
+} McMSTEPMotSimpleEncMntType;
+
+typedef struct McMSTEPMotSimpleType
+{	float StepAngle;
+	float MaximumSpeed;
+	float ContinuousCurrent;
+	float PeakCurrent;
+	float HoldingTorque;
+	float StatorResistance;
+	float StatorInductance;
+	float MomentOfInertia;
+	struct McMSTEPMotSimpleEncMntType EncoderMounting;
+	struct McMMSBTmpMdlType TemperatureModel;
+} McMSTEPMotSimpleType;
+
 typedef struct McMSTEPMotType
 {	enum McMSTEPMotEnum Type;
 	struct McMSTEPMotDefType Default;
+	struct McMSTEPMotSimpleType Simple;
 } McMSTEPMotType;
 
 typedef struct McMSTEPBrkUseType

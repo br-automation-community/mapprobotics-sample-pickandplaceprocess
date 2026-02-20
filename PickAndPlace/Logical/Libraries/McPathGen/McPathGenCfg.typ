@@ -59,7 +59,7 @@ TYPE
 		AngleResolution : LREAL; (*Resolution of rotary TCP coordinates [measurement units]*)
 	END_STRUCT;
 	McAGPGGeoPlanBlendingType : STRUCT (*Blending between two movement commands*)
-		MaxBlendingRadius : LREAL; (*Defines the maximum path length of the first path that can be used for blending [measurement units]*)
+		MaxRadius : LREAL; (*Defines the maximum path length of the first path that can be used for blending [measurement units]*)
 	END_STRUCT;
 	McAGPGGeoPlanRndSymRndEnum :
 		( (*Rounding distance on both adjacent path sections is the same*)

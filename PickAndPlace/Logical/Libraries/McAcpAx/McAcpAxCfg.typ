@@ -707,7 +707,6 @@ TYPE
 		NumberOfPolePairs : USINT; (*Number of pole pairs*)
 		NominalSpeed : REAL; (*Nominal speed [rpm]*)
 		MaximumSpeed : REAL; (*Maximum permissible speed [rpm]*)
-		NominalVoltage : REAL; (*Nominal voltage (RMS value, phase-phase) [V]*)
 		NominalCurrent : REAL; (*Phase current for generating the nominal torque at nominal speed (RMS value) [A]*)
 		StallCurrent : REAL; (*Phase current for generating the stall torque (RMS value) [A]*)
 		PeakCurrent : REAL; (*Phase current for generating the peak torque (RMS value) [A]*)
@@ -748,7 +747,8 @@ TYPE
 	END_STRUCT;
 	McMSTEPMotEnum :
 		( (*Motor selector setting*)
-		mcMSTEPM_DEF := 0 (*Default -*)
+		mcMSTEPM_DEF := 0, (*Default -*)
+		mcMSTEPM_SIMPLE := 1 (*Simple - Only Encoderless current control possible*)
 		);
 	McMSTEPMotDefEncMntType : STRUCT (*Encoder mounting*)
 		Angle : McMSBEMAngType; (*Angle between motor encoder zero point and flux space vector*)
@@ -757,14 +757,13 @@ TYPE
 		StepAngle : REAL; (*Step angle [°]*)
 		NominalSpeed : REAL; (*Nominal speed [rpm]*)
 		MaximumSpeed : REAL; (*Maximum permissible speed [rpm]*)
-		NominalVoltage : REAL; (*Nominal voltage (DC) [V]*)
 		NominalCurrent : REAL; (*Phase current for generating the nominal torque at nominal speed (RMS value) [A]*)
 		ContinuousStallCurrent : REAL; (*Phase current for generating the holding torque (RMS value) [A]*)
 		PeakCurrent : REAL; (*Phase current for generating the peak torque (RMS value) [A]*)
 		NominalTorque : REAL; (*Motor torque at nominal current [Nm]*)
 		HoldingTorque : REAL; (*Motor torque at continuous stall current [Nm]*)
 		PeakTorque : REAL; (*Motor torque at peak current [Nm]*)
-		VoltageConstant : REAL; (*Induced voltage amplitude (at 1000 steps/s) [V/k steps/s]*)
+		VoltageConstant : REAL; (*Induced voltage per speed (RMS value of voltage at 1000 rpm, phase-phase) [mV/rpm]*)
 		TorqueConstant : REAL; (*Torque constant [Nm/A]*)
 		StatorResistance : REAL; (*Stator resistance (phase-phase) [Ω]*)
 		StatorInductance : REAL; (*Stator inductance (phase-phase) [mH]*)
@@ -772,9 +771,25 @@ TYPE
 		EncoderMounting : McMSTEPMotDefEncMntType; (*Encoder mounting*)
 		TemperatureModel : McMMSBTmpMdlType; (*Model for winding temperature monitoring*)
 	END_STRUCT;
+	McMSTEPMotSimpleEncMntType : STRUCT (*Encoder mounting*)
+		Angle : McMSBEMAngType; (*Angle between motor encoder zero point and flux space vector*)
+	END_STRUCT;
+	McMSTEPMotSimpleType : STRUCT (*Type mcMSTEPM_SIMPLE settings*)
+		StepAngle : REAL; (*Step angle [°]*)
+		MaximumSpeed : REAL; (*Maximum permissible speed [rpm]*)
+		ContinuousCurrent : REAL; (*Phase current (RMS value) that does not overheat the motor, required for temperature model [A]*)
+		PeakCurrent : REAL; (*Maximum phase current (RMS value) [A]*)
+		HoldingTorque : REAL; (*Motor torque at continuous stall current [Nm]*)
+		StatorResistance : REAL; (*Stator resistance (phase-phase) [Ω]*)
+		StatorInductance : REAL; (*Stator inductance (phase-phase) [mH]*)
+		MomentOfInertia : REAL; (*Mass moment of inertia [kgcm²]*)
+		EncoderMounting : McMSTEPMotSimpleEncMntType; (*Encoder mounting*)
+		TemperatureModel : McMMSBTmpMdlType; (*Model for winding temperature monitoring*)
+	END_STRUCT;
 	McMSTEPMotType : STRUCT
 		Type : McMSTEPMotEnum; (*Motor selector setting*)
 		Default : McMSTEPMotDefType; (*Type mcMSTEPM_DEF settings*)
+		Simple : McMSTEPMotSimpleType; (*Type mcMSTEPM_SIMPLE settings*)
 	END_STRUCT;
 	McMSTEPBrkEnum :
 		( (*Brake selector setting*)

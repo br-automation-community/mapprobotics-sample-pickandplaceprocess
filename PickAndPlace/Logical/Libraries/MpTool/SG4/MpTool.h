@@ -1,6 +1,6 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
-/* MpTool 6.6.0 */
+/* MpTool 6.6.1 */
 
 #ifndef _MPTOOL_
 #define _MPTOOL_
@@ -9,7 +9,7 @@ extern "C"
 {
 #endif
 #ifndef _MpTool_VERSION
-#define _MpTool_VERSION 6.6.0
+#define _MpTool_VERSION 6.6.1
 #endif
 
 #include <bur/plctypes.h>

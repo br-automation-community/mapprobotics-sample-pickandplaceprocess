@@ -1,6 +1,6 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
-/* MpPick 6.6.0 */
+/* MpPick 6.6.1 */
 
 #ifndef _MPPICK_
 #define _MPPICK_
@@ -9,7 +9,7 @@ extern "C"
 {
 #endif
 #ifndef _MpPick_VERSION
-#define _MpPick_VERSION 6.6.0
+#define _MpPick_VERSION 6.6.1
 #endif
 
 #include <bur/plctypes.h>

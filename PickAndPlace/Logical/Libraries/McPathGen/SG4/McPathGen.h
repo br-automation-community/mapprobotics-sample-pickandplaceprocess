@@ -1,6 +1,6 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
-/* McPathGen 6.6.0 */
+/* McPathGen 6.6.1 */
 
 #ifndef _MCPATHGEN_
 #define _MCPATHGEN_
@@ -9,7 +9,7 @@ extern "C"
 {
 #endif
 #ifndef _McPathGen_VERSION
-#define _McPathGen_VERSION 6.6.0
+#define _McPathGen_VERSION 6.6.1
 #endif
 
 #include <bur/plctypes.h>
@@ -1965,7 +1965,7 @@ typedef struct McAGPGGeoPlanTCPResType
 } McAGPGGeoPlanTCPResType;
 
 typedef struct McAGPGGeoPlanBlendingType
-{	double MaxBlendingRadius;
+{	double MaxRadius;
 } McAGPGGeoPlanBlendingType;
 
 typedef struct McAGPGGPRSymRndPathCusPathType
