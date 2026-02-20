@@ -68,6 +68,7 @@
                 <Property ID="Radius" Value="20" />
                 <Property ID="Height" Value="27" />
               </Group>
+              <Selector ID="ShapeStyle" Value="BorderAndFill" />
               <Property ID="Material" Value="RedMatte" />
             </Selector>
           </Selector>
@@ -85,6 +86,7 @@
                 <Property ID="Radius" Value="20" />
                 <Property ID="Height" Value="27" />
               </Group>
+              <Selector ID="ShapeStyle" Value="BorderAndFill" />
               <Property ID="Material" Value="BlackMatte" />
             </Selector>
           </Selector>
@@ -104,6 +106,7 @@
               <Group ID="Translation">
                 <Property ID="Z" Value="-27" />
               </Group>
+              <Selector ID="ShapeStyle" Value="BorderAndFill" />
               <Property ID="Material" Value="YellowMatte" />
             </Selector>
           </Selector>
@@ -126,6 +129,7 @@
                 <Property ID="Y" Value="25" />
                 <Property ID="Z" Value="-27" />
               </Group>
+              <Selector ID="ShapeStyle" Value="BorderAndFill" />
               <Property ID="Material" Value="YellowMatte" />
             </Selector>
           </Selector>
@@ -202,6 +206,7 @@
                 <Property ID="Radius" Value="20" />
                 <Property ID="Height" Value="27" />
               </Group>
+              <Selector ID="ShapeStyle" Value="BorderAndFill" />
               <Property ID="Material" Value="RedMatte" />
             </Selector>
           </Selector>
@@ -219,6 +224,7 @@
                 <Property ID="Radius" Value="20" />
                 <Property ID="Height" Value="27" />
               </Group>
+              <Selector ID="ShapeStyle" Value="BorderAndFill" />
               <Property ID="Material" Value="BlackMatte" />
             </Selector>
           </Selector>
@@ -238,6 +244,7 @@
               <Group ID="Translation">
                 <Property ID="Z" Value="-27" />
               </Group>
+              <Selector ID="ShapeStyle" Value="BorderAndFill" />
               <Property ID="Material" Value="YellowMatte" />
             </Selector>
           </Selector>
@@ -260,6 +267,7 @@
                 <Property ID="Y" Value="25" />
                 <Property ID="Z" Value="-27" />
               </Group>
+              <Selector ID="ShapeStyle" Value="BorderAndFill" />
               <Property ID="Material" Value="YellowMatte" />
             </Selector>
           </Selector>
@@ -311,6 +319,7 @@
                 <Property ID="Radius" Value="20.0" />
                 <Property ID="Height" Value="27.0" />
               </Group>
+              <Selector ID="ShapeStyle" Value="BorderAndFill" />
               <Property ID="Material" Value="RedMatte" />
             </Selector>
           </Selector>
@@ -333,6 +342,7 @@
                 <Property ID="Radius" Value="20.0" />
                 <Property ID="Height" Value="27.0" />
               </Group>
+              <Selector ID="ShapeStyle" Value="BorderAndFill" />
               <Property ID="Material" Value="BlackMatte" />
             </Selector>
           </Selector>
@@ -357,6 +367,7 @@
               <Group ID="Translation">
                 <Property ID="Z" Value="-27" />
               </Group>
+              <Selector ID="ShapeStyle" Value="BorderAndFill" />
               <Property ID="Material" Value="YellowMatte" />
             </Selector>
           </Selector>
