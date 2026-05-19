@@ -189,11 +189,14 @@ TYPE
 
 	McProcessConfigModeEnum:
 	(
-		mcPCM_LOAD 	:= 0,	 	(*Load from Config*)
-		mcPCM_SAVE	:= 1,	 	(*Save to Config*)
-		mcPCM_CREATE:= 2,	 	(*Create Config*)
-		mcPCM_DELETE:= 3,		(*Delete Config*)
-		mcPCM_DEFAULT_VALUES:= 4(*Default Config Values*)
+		mcPCM_LOAD 	:= 0,	 		(*Load from Config*)
+		mcPCM_SAVE	:= 1,	 		(*Save to Config*)
+		mcPCM_CREATE:= 2,	 		(*Create Config*)
+		mcPCM_DELETE:= 3,			(*Delete Config*)
+		mcPCM_DEFAULT_VALUES:= 4,	(*Default Config Values*)
+		
+		mcPCM_LIST_ALL := 5,		(*Lists all Config*)
+		mcPCM_DELETE_ALL := 6		(*Deletes all Configs*)
 	);
 
 	McCommunicationStateEnum :

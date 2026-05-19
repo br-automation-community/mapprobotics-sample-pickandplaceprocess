@@ -22,15 +22,15 @@
     <Object Type="Library" Language="binary" Description="This library integrates mathematical functions such as angle functions, rounding off, etc. into the program.">AsBrMath</Object>
     <Object Type="Library" Language="binary" Description="[mapp Motion] Base library">McBase</Object>
     <Object Type="Library" Language="Binary" Description="Core library for mapp components">MpBase</Object>
-    <Object Type="Library" Language="binary" Description="[mapp Motion] PLCopen axes group library">McAxGroup</Object>
-    <Object Type="Library" Language="binary" Description="[mapp Motion] ACOPOS axis library">McAcpAx</Object>
-    <Object Type="Library" Language="binary" Description="[mapp Motion] PLCopen axis library">McAxis</Object>
-    <Object Type="Library" Language="binary" Description="[mapp Motion] Robotics and CNC path generator library">McPathGen</Object>
-    <Object Type="Library" Language="binary" Description="[mapp Motion] Tracking Path library">McTrkPath</Object>
     <Object Type="Library" Language="binary" Description="[mapp Motion] Axis library">MpAxis</Object>
-    <Object Type="Library" Language="binary" Description="[mapp Motion] Program interpreter library">McProgInt</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] ACOPOS axis library">McAcpAx</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] Robotics and CNC path generator library">McPathGen</Object>
     <Object Type="Library" Language="binary" Description="[mapp Motion] Pick library">MpPick</Object>
     <Object Type="Library" Language="binary" Description="[mapp Motion] Purely virtual axis library">McPureVAx</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] PLCopen axes group library">McAxGroup</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] PLCopen axis library">McAxis</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] Program interpreter library">McProgInt</Object>
+    <Object Type="Library" Language="binary" Description="[mapp Motion] Tracking Path library">McTrkPath</Object>
     <Object Type="Library" Language="binary" Description="[mapp Motion] Robotics library">MpRobotics</Object>
     <Object Type="Library" Language="binary" Description="[mapp Motion] Tool library">MpTool</Object>
     <Object Type="Library" Language="binary" Description="This library contains functionality to execute traces (to sample numeric values periodically for a defined time-span)">CoTrace</Object>

@@ -18,7 +18,7 @@
     <Connection Connector="SL" TargetModule="5APC3100_KBU3_000" TargetConnector="SL3" />
     <Parameter ID="Supervision" Value="off" />
   </Module>
-  <Module Name="5APC3100_KBU3_000" Type="5APC3100.KBU3-000" Version="2.2.7.0">
+  <Module Name="5APC3100_KBU3_000" Type="5APC3100.KBU3-000" Version="2.3.1.0">
     <Connector Name="IF3">
       <Parameter ID="AssignedOperatingSystem" Value="ARemb" />
       <Parameter ID="ActivateDevice" Value="1" />
@@ -620,7 +620,7 @@
       <Parameter ID="CycleTime" Value="1600" />
     </Connector>
   </Module>
-  <Module Name="X20BC1083" Type="X20BC1083" Version="2.16.1.0" NodeNumber="2">
+  <Module Name="X20BC1083" Type="X20BC1083" Version="2.17.0.0" NodeNumber="2">
     <Connection Connector="PLK1" TargetModule="5AC901.IPLK-00" TargetConnector="IF1">
       <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
     </Connection>
@@ -654,7 +654,7 @@
     <Connection Connector="SL" TargetModule="X20BM11b" TargetConnector="SL1" />
     <Parameter ID="Supervision" Value="off" />
   </Module>
-  <Module Name="X20PS9400" Type="X20PS9400" Version="1.8.1.0">
+  <Module Name="X20PS9400" Type="X20PS9400" Version="1.9.0.0">
     <Connection Connector="SS1" TargetModule="X20TB12" TargetConnector="SS" />
     <Connection Connector="PS" TargetModule="X20BB82" TargetConnector="PS1" />
     <Parameter ID="Supervision" Value="off" />

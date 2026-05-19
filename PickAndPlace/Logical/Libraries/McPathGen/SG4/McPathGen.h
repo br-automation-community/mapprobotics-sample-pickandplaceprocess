@@ -1,6 +1,6 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
-/* McPathGen 6.6.0 */
+/* McPathGen 6.7.2 */
 
 #ifndef _MCPATHGEN_
 #define _MCPATHGEN_
@@ -9,7 +9,7 @@ extern "C"
 {
 #endif
 #ifndef _McPathGen_VERSION
-#define _McPathGen_VERSION 6.6.0
+#define _McPathGen_VERSION 6.7.2
 #endif
 
 #include <bur/plctypes.h>
@@ -1122,6 +1122,14 @@ typedef enum McMS5ACXYZCAWFrmMdlEnum
 {	mcMS5ACXYZCAWFM_STD = 0
 } McMS5ACXYZCAWFrmMdlEnum;
 
+typedef enum McMS5ACXYZCBDescEnum
+{	mcMS5ACXYZCBD_STD = 0
+} McMS5ACXYZCBDescEnum;
+
+typedef enum McMS5ACXYZCBWFrmMdlEnum
+{	mcMS5ACXYZCBWFM_STD = 0
+} McMS5ACXYZCBWFrmMdlEnum;
+
 typedef enum McMS6ACZXYBCADescEnum
 {	mcMS6ACZXYBCAD_STD = 0
 } McMS6ACZXYBCADescEnum;
@@ -1965,7 +1973,7 @@ typedef struct McAGPGGeoPlanTCPResType
 } McAGPGGeoPlanTCPResType;
 
 typedef struct McAGPGGeoPlanBlendingType
-{	double MaxBlendingRadius;
+{	double MaxRadius;
 } McAGPGGeoPlanBlendingType;
 
 typedef struct McAGPGGPRSymRndPathCusPathType
@@ -4588,6 +4596,63 @@ typedef struct McCfgMS5AxCncXYZCAType
 	struct McMSJnt5AxPosLimType JointAxesPositionLimits;
 } McCfgMS5AxCncXYZCAType;
 
+typedef struct McMS5ACXYZCBDSDimType
+{	struct McCfgTransXType TranslationFromBaseToQX;
+	struct McCfgTransYType TranslationFromQXToQY;
+	struct McCfgTransZType TranslationFromQYToQZ;
+	struct McCfgTransXYZType TranslationFromQZToQC;
+	struct McCfgTransXYZType TranslationFromQCToQB;
+	struct McCfgTransXYZType TranslationFromQBToFlange;
+} McMS5ACXYZCBDSDimType;
+
+typedef struct McMS5ACXYZCBDSType
+{	struct McMS5ACXYZCBDSDimType Dimensions;
+	struct McMSMdl5ZeroPosOffType ModelZeroPositionOffsets;
+	struct McMSMdl5CntDirType ModelCountDirections;
+} McMS5ACXYZCBDSType;
+
+typedef struct McMS5ACXYZCBDescType
+{	enum McMS5ACXYZCBDescEnum Type;
+	struct McMS5ACXYZCBDSType Standard;
+} McMS5ACXYZCBDescType;
+
+typedef struct McMS5ACXYZCBCoorNameCmnType
+{	plcstring XCoordinateName[251];
+	plcstring YCoordinateName[251];
+	plcstring ZCoordinateName[251];
+	plcstring CCoordinateName[251];
+	plcstring BCoordinateName[251];
+} McMS5ACXYZCBCoorNameCmnType;
+
+typedef struct McMS5ACXYZCBCoorNameType
+{	enum McMSCNEnum Type;
+	struct McMS5ACXYZCBCoorNameCmnType Common;
+} McMS5ACXYZCBCoorNameType;
+
+typedef struct McMS5ACXYZCBWFrmMdlStdType
+{	struct McMSFrmMdlStdEdgeType QZToQC;
+	struct McMSFrmMdlStdEdgeType QCToQB;
+	struct McMSFrmMdlStdEdgeType QBToFlange;
+	struct McMSFrmMdlStdEdgeType FlangeToTCP;
+} McMS5ACXYZCBWFrmMdlStdType;
+
+typedef struct McMS5ACXYZCBWFrmMdlType
+{	enum McMS5ACXYZCBWFrmMdlEnum Type;
+	struct McMS5ACXYZCBWFrmMdlStdType Standard;
+} McMS5ACXYZCBWFrmMdlType;
+
+typedef struct McMS5ACXYZCBCplgType
+{	struct McCfgUnboundedArrayType LinearCoupling;
+} McMS5ACXYZCBCplgType;
+
+typedef struct McCfgMS5AxCncXYZCBType
+{	struct McMS5ACXYZCBDescType Description;
+	struct McMS5ACXYZCBCoorNameType CoordinatesNames;
+	struct McMS5ACXYZCBWFrmMdlType WireFrameModel;
+	struct McMS5ACXYZCBCplgType Couplings;
+	struct McMSJnt5AxPosLimType JointAxesPositionLimits;
+} McCfgMS5AxCncXYZCBType;
+
 typedef struct McMS6ACZXYBCADSDimType
 {	struct McCfgTransZType TranslationFromBaseToQZ;
 	struct McCfgTransXType TranslationFromQZToQX;
@@ -6312,7 +6377,8 @@ typedef struct McMS5ARBMonPtType
 } McMS5ARBMonPtType;
 
 typedef struct McCfgMS5AxRobBType
-{	struct McMS5ARBDescType Description;
+{	struct McMSSVOType SceneViewerObject;
+	struct McMS5ARBDescType Description;
 	struct McMS5ARBCoorNameType CoordinatesNames;
 	struct McMS5ARBWFrmMdlType WireFrameModel;
 	struct McMSDynMdlType DynamicModel;

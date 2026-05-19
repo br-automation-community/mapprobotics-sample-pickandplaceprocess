@@ -672,6 +672,7 @@ TYPE
 		ObjectTypeName : MpPRSVTmplFltrObjTypNameType; (*Select object type*)
 	END_STRUCT;
 	MpPRSVTmplType : STRUCT (*Customized template to visualize PickRegister objects based on specific needs*)
+		Name : STRING[250]; (*Name of the visualization template*)
 		VisualRepresentation : MpPRSVTmplVRType; (*Visual representation of PickRegister item*)
 		Filter : MpPRSVTmplFltrType; (*Filter to select specific objects to be represented with the defined shape*)
 	END_STRUCT;

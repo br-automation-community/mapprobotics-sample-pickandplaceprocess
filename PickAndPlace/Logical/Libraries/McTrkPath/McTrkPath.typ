@@ -86,4 +86,9 @@ TYPE
 		mcTRKFRM_USERDATA_MOD_GET := 0, (*Reads user data*)
 		mcTRKFRM_USERDATA_MOD_SET := 1 (*Writes user data*)
 		);
+	McTrkFrmSubFrmType : STRUCT 
+		Pos : McPosType;
+		Orient : McOrientType;
+		Attribute : UDINT;
+	END_STRUCT;	
 END_TYPE

@@ -1,6 +1,6 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
-/* MpPick 6.6.0 */
+/* MpPick 6.7.2 */
 
 #ifndef _MPPICK_
 #define _MPPICK_
@@ -9,7 +9,7 @@ extern "C"
 {
 #endif
 #ifndef _MpPick_VERSION
-#define _MpPick_VERSION 6.6.0
+#define _MpPick_VERSION 6.7.2
 #endif
 
 #include <bur/plctypes.h>
@@ -1033,7 +1033,8 @@ typedef struct MpPRSVTmplFltrType
 } MpPRSVTmplFltrType;
 
 typedef struct MpPRSVTmplType
-{	struct MpPRSVTmplVRType VisualRepresentation;
+{	plcstring Name[251];
+	struct MpPRSVTmplVRType VisualRepresentation;
 	struct MpPRSVTmplFltrType Filter;
 } MpPRSVTmplType;
 

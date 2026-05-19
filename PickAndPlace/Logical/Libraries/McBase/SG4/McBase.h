@@ -1,6 +1,6 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
-/* McBase 6.6.0 */
+/* McBase 6.7.2 */
 
 #ifndef _MCBASE_
 #define _MCBASE_
@@ -9,7 +9,7 @@ extern "C"
 {
 #endif
 #ifndef _McBase_VERSION
-#define _McBase_VERSION 6.6.0
+#define _McBase_VERSION 6.7.2
 #endif
 
 #include <bur/plctypes.h>
@@ -192,7 +192,9 @@ typedef enum McProcessConfigModeEnum
 	mcPCM_SAVE = 1,
 	mcPCM_CREATE = 2,
 	mcPCM_DELETE = 3,
-	mcPCM_DEFAULT_VALUES = 4
+	mcPCM_DEFAULT_VALUES = 4,
+	mcPCM_LIST_ALL = 5,
+	mcPCM_DELETE_ALL = 6
 } McProcessConfigModeEnum;
 
 typedef enum McCommunicationStateEnum
@@ -222,6 +224,7 @@ typedef enum McEncodingEnum
 typedef enum McCfgTypeEnum
 {	mcCFG_NONE = 0,
 	mcCFG_HW_MODULE = 5,
+	mcCFG_CFG_ELEMENTS = 6,
 	mcCFG_MMCFG = 10,
 	mcCFG_OBJ_HIER_GCS = 210,
 	mcCFG_OBJ_HIER = 200,
@@ -260,6 +263,8 @@ typedef enum McCfgTypeEnum
 	mcCFG_AX_FEAT_MECH_DEV_COMP = 10106,
 	mcCFG_AX_FEAT_ACP_NETW_ERR_REAC = 10108,
 	mcCFG_AX_FEAT_ACP_CYC_DAT_PROC = 10112,
+	mcCFG_AX_FEAT_SDO_PAR_TAB = 10113,
+	mcCFG_SDO_PAR_TAB = 1800,
 	mcCFG_MOT_SYN = 10500,
 	mcCFG_MOT_INDUCT = 10501,
 	mcCFG_MOT_SYN_AMC = 10502,
@@ -314,6 +319,7 @@ typedef enum McCfgTypeEnum
 	mcCFG_PURE_V_AX_FEAT = 12014,
 	mcCFG_PURE_V_AX_MECH_ELM = 12015,
 	mcCFG_PURE_V_AX_ENC_LINK = 12016,
+	mcCFG_PURE_V_AX_ENC_LINK_POS_FLT = 12027,
 	mcCFG_PURE_V_AX_DIG_IN = 12020,
 	mcCFG_PURE_V_AX_CTRL = 12017,
 	mcCFG_PURE_V_AX_STOP_REAC = 12018,
@@ -334,6 +340,7 @@ typedef enum McCfgTypeEnum
 	mcCFG_STP_AX_MECH_ELM = 13012,
 	mcCFG_STP_AX_MOT = 13013,
 	mcCFG_STP_AX_ENC_LINK = 13014,
+	mcCFG_STP_AX_ENC_LINK_POS_FLTR = 13025,
 	mcCFG_STP_AX_CTRL = 13015,
 	mcCFG_STP_AX_HOME = 13016,
 	mcCFG_STP_AX_STOP_REAC = 13017,
@@ -357,9 +364,22 @@ typedef enum McCfgTypeEnum
 	mcCFG_ACP_INV_AX = 13600,
 	mcCFG_ACP_INV_AX_REF = 13611,
 	mcCFG_ACP_INV_AX_MECH_ELM = 13612,
+	mcCFG_ACP_INV2_AX = 14600,
+	mcCFG_ACP_INV2_MOD = 14700,
+	mcCFG_ACP_INV2_ENC_AND_IO = 14710,
 	mcCFG_ACP_INV2_AX_REF = 14611,
 	mcCFG_ACP_INV2_AX_MECH_ELM = 14612,
+	mcCFG_ACP_INV2_ENC_LINK = 14014,
+	mcCFG_ACP_INV2_ENC_LINK_POS_FLT = 14025,
+	mcCFG_ACP_INV2_CTRL = 14015,
 	mcCFG_ACP_INV2_HOME = 14016,
+	mcCFG_ACP_INV2_STOP_REAC = 14017,
+	mcCFG_ACP_INV2_MOVE_ERR_LIM = 14018,
+	mcCFG_ACP_INV2_JERK_FLTR = 14019,
+	mcCFG_ACP_INV2_ZERO_VIB_FLTR = 14024,
+	mcCFG_ACP_INV2_DIG_IN = 14020,
+	mcCFG_ACP_INV2_AX_EXCEP_STOP_BEH = 14720,
+	mcCFG_ACP_INV2_AX_FEAT = 14022,
 	mcCFG_AXGRP_ADMIN = 20000,
 	mcCFG_AXGRP_FEAT_HOME_ORD = 20101,
 	mcCFG_AXGRP_FEAT_PWR_ON_ORD = 20102,
@@ -412,6 +432,7 @@ typedef enum McCfgTypeEnum
 	mcCFG_ASM_ADJUSTMENT_MODE = 31013,
 	mcCFG_ASM_DIST_RESERVES = 31014,
 	mcCFG_ASM_VIRT_SH_SCOPE = 31015,
+	mcCFG_ASM_BR_SH_DATA = 31016,
 	mcCFG_ASM_FEAT_CPLG = 31101,
 	mcCFG_ASM_FEAT_SIM_SH_DEF = 31102,
 	mcCFG_ASM_FEAT_SEC_TRACE = 31103,
@@ -444,6 +465,7 @@ typedef enum McCfgTypeEnum
 	mcCFG_MS_5AX_CNC_XYZBA = 51502,
 	mcCFG_MS_5AX_CNC_XYZBC = 51503,
 	mcCFG_MS_5AX_CNC_XYZCA = 51504,
+	mcCFG_MS_5AX_CNC_XYZCB = 51505,
 	mcCFG_MS_6AX_CNC_ZXYBCA = 51603,
 	mcCFG_MS_3AX_SCARA_A = 52042,
 	mcCFG_MS_4AX_SCARA_A = 52041,
@@ -464,7 +486,8 @@ typedef enum McCfgTypeEnum
 	mcCFG_MS_5AX_ROB_B = 52502,
 	mcCFG_MS_6AX_ROB_A = 52601,
 	mcCFG_MS_6AX_ROB_B = 52602,
-	mcCFG_MS_6AX_ROB_C = 52603
+	mcCFG_MS_6AX_ROB_C = 52603,
+	mcCFG_ACP_INV2_MOT = 14500
 } McCfgTypeEnum;
 
 typedef enum McMMCProcProcTskCEnum
@@ -729,7 +752,27 @@ typedef enum McCLRowCamIDEnum
 	mcCLRCI_CAM_ID_17 = 16,
 	mcCLRCI_CAM_ID_18 = 17,
 	mcCLRCI_CAM_ID_19 = 18,
-	mcCLRCI_CAM_ID_20 = 19
+	mcCLRCI_CAM_ID_20 = 19,
+	mcCLRCI_CAM_ID_21 = 20,
+	mcCLRCI_CAM_ID_22 = 21,
+	mcCLRCI_CAM_ID_23 = 22,
+	mcCLRCI_CAM_ID_24 = 23,
+	mcCLRCI_CAM_ID_25 = 24,
+	mcCLRCI_CAM_ID_26 = 25,
+	mcCLRCI_CAM_ID_27 = 26,
+	mcCLRCI_CAM_ID_28 = 27,
+	mcCLRCI_CAM_ID_29 = 28,
+	mcCLRCI_CAM_ID_30 = 29,
+	mcCLRCI_CAM_ID_31 = 30,
+	mcCLRCI_CAM_ID_32 = 31,
+	mcCLRCI_CAM_ID_33 = 32,
+	mcCLRCI_CAM_ID_34 = 33,
+	mcCLRCI_CAM_ID_35 = 34,
+	mcCLRCI_CAM_ID_36 = 35,
+	mcCLRCI_CAM_ID_37 = 36,
+	mcCLRCI_CAM_ID_38 = 37,
+	mcCLRCI_CAM_ID_39 = 38,
+	mcCLRCI_CAM_ID_40 = 39
 } McCLRowCamIDEnum;
 
 typedef enum McPPTypEnum
@@ -933,6 +976,10 @@ typedef struct McCfgReferenceType
 typedef struct McCfgHwModuleSpecificsType
 {	plcstring Name[251];
 } McCfgHwModuleSpecificsType;
+
+typedef struct McCfgElementsType
+{	struct McCfgUnboundedArrayType ConfigSystemElement;
+} McCfgElementsType;
 
 typedef struct McMMCPECOAUseAxCompB4AllOthType
 {	struct McCfgUnboundedArrayType AxisReference;

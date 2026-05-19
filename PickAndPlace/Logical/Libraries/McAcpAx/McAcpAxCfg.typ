@@ -707,7 +707,6 @@ TYPE
 		NumberOfPolePairs : USINT; (*Number of pole pairs*)
 		NominalSpeed : REAL; (*Nominal speed [rpm]*)
 		MaximumSpeed : REAL; (*Maximum permissible speed [rpm]*)
-		NominalVoltage : REAL; (*Nominal voltage (RMS value, phase-phase) [V]*)
 		NominalCurrent : REAL; (*Phase current for generating the nominal torque at nominal speed (RMS value) [A]*)
 		StallCurrent : REAL; (*Phase current for generating the stall torque (RMS value) [A]*)
 		PeakCurrent : REAL; (*Phase current for generating the peak torque (RMS value) [A]*)
@@ -748,7 +747,8 @@ TYPE
 	END_STRUCT;
 	McMSTEPMotEnum :
 		( (*Motor selector setting*)
-		mcMSTEPM_DEF := 0 (*Default -*)
+		mcMSTEPM_DEF := 0, (*Default -*)
+		mcMSTEPM_SIMPLE := 1 (*Simple - Only Encoderless current control possible*)
 		);
 	McMSTEPMotDefEncMntType : STRUCT (*Encoder mounting*)
 		Angle : McMSBEMAngType; (*Angle between motor encoder zero point and flux space vector*)
@@ -757,14 +757,13 @@ TYPE
 		StepAngle : REAL; (*Step angle [°]*)
 		NominalSpeed : REAL; (*Nominal speed [rpm]*)
 		MaximumSpeed : REAL; (*Maximum permissible speed [rpm]*)
-		NominalVoltage : REAL; (*Nominal voltage (DC) [V]*)
 		NominalCurrent : REAL; (*Phase current for generating the nominal torque at nominal speed (RMS value) [A]*)
 		ContinuousStallCurrent : REAL; (*Phase current for generating the holding torque (RMS value) [A]*)
 		PeakCurrent : REAL; (*Phase current for generating the peak torque (RMS value) [A]*)
 		NominalTorque : REAL; (*Motor torque at nominal current [Nm]*)
 		HoldingTorque : REAL; (*Motor torque at continuous stall current [Nm]*)
 		PeakTorque : REAL; (*Motor torque at peak current [Nm]*)
-		VoltageConstant : REAL; (*Induced voltage amplitude (at 1000 steps/s) [V/k steps/s]*)
+		VoltageConstant : REAL; (*Induced voltage per speed (RMS value of voltage at 1000 rpm, phase-phase) [mV/rpm]*)
 		TorqueConstant : REAL; (*Torque constant [Nm/A]*)
 		StatorResistance : REAL; (*Stator resistance (phase-phase) [Ω]*)
 		StatorInductance : REAL; (*Stator inductance (phase-phase) [mH]*)
@@ -772,9 +771,25 @@ TYPE
 		EncoderMounting : McMSTEPMotDefEncMntType; (*Encoder mounting*)
 		TemperatureModel : McMMSBTmpMdlType; (*Model for winding temperature monitoring*)
 	END_STRUCT;
+	McMSTEPMotSimpleEncMntType : STRUCT (*Encoder mounting*)
+		Angle : McMSBEMAngType; (*Angle between motor encoder zero point and flux space vector*)
+	END_STRUCT;
+	McMSTEPMotSimpleType : STRUCT (*Type mcMSTEPM_SIMPLE settings*)
+		StepAngle : REAL; (*Step angle [°]*)
+		MaximumSpeed : REAL; (*Maximum permissible speed [rpm]*)
+		ContinuousCurrent : REAL; (*Phase current (RMS value) that does not overheat the motor, required for temperature model [A]*)
+		PeakCurrent : REAL; (*Maximum phase current (RMS value) [A]*)
+		HoldingTorque : REAL; (*Motor torque at continuous stall current [Nm]*)
+		StatorResistance : REAL; (*Stator resistance (phase-phase) [Ω]*)
+		StatorInductance : REAL; (*Stator inductance (phase-phase) [mH]*)
+		MomentOfInertia : REAL; (*Mass moment of inertia [kgcm²]*)
+		EncoderMounting : McMSTEPMotSimpleEncMntType; (*Encoder mounting*)
+		TemperatureModel : McMMSBTmpMdlType; (*Model for winding temperature monitoring*)
+	END_STRUCT;
 	McMSTEPMotType : STRUCT
 		Type : McMSTEPMotEnum; (*Motor selector setting*)
 		Default : McMSTEPMotDefType; (*Type mcMSTEPM_DEF settings*)
+		Simple : McMSTEPMotSimpleType; (*Type mcMSTEPM_SIMPLE settings*)
 	END_STRUCT;
 	McMSTEPBrkEnum :
 		( (*Brake selector setting*)
@@ -1920,12 +1935,31 @@ TYPE
 		Type : McACELCPosTzEnum; (*Transition zone selector setting*)
 		TzUser : McACELCPosTzTzUserType; (*Type mcACELCPT_TZUSER settings*)
 	END_STRUCT;
+	McACELCStalDetEnum :
+		( (*Stall detection selector setting*)
+		mcACELCSD_NOT_USE := 0, (*Not used - Stall detection is inactive*)
+		mcACELCSD_USE := 1 (*Used - Stall detection is active after given stall detection time*)
+		);
+	McACELCStalDetUseType : STRUCT (*Type mcACELCSD_USE settings*)
+		StallDetectionTime : REAL; (*Encoderless control: Stall detection time [s]*)
+	END_STRUCT;
+	McACELCStalDetType : STRUCT (*Encoderless control: Stall detection*)
+		Type : McACELCStalDetEnum; (*Stall detection selector setting*)
+		Used : McACELCStalDetUseType; (*Type mcACELCSD_USE settings*)
+	END_STRUCT;
+	McACELCInvAdjType : STRUCT (*Encoderless control: Inverter parameters of characteristic current-voltage curve*)
+		GainFactor : REAL; (*Encoderless control: Inverter Amplification factor*)
+		Exponent : REAL; (*Encoderless control: Inverter Exponent [1/A]*)
+	END_STRUCT;
 	McACELCPosType : STRUCT (*Type mcAELNEECM_EL_POS_CTRL settings*)
 		SetCurrent : McACELCSetCurType; (*Encoderless control: Set current direct component*)
 		Tl : McACELCPosTlType; (*Encoderless control: Transition level*)
 		Tz : McACELCPosTzType; (*Encoderless control: Transition zone*)
 		KeepHoming : McACELCKeepHomeType; (*Keep homing status when controller is switched off*)
 		KeepPhasing : McACELCKeepPhaseType; (*Keep phasing status when controller is switched off*)
+		TransferTime : REAL; (*Encoderless control: Transfer time [s]*)
+		StallDetection : McACELCStalDetType; (*Encoderless control: Stall detection*)
+		InverterAdjustment : McACELCInvAdjType; (*Encoderless control: Inverter parameters of characteristic current-voltage curve*)
 	END_STRUCT;
 	McAELNoEncELCtrlModType : STRUCT (*Encoderless control mode*)
 		Type : McAELNoEncELCtrlModEnum; (*Encoderless control mode selector setting*)
@@ -2356,12 +2390,18 @@ TYPE
 		mcAHMKD_NO := 0, (*No - mcSWITCH_OFF*)
 		mcAHMKD_YES := 1 (*Yes - mcSWITCH_ON*)
 		);
+	McAHRPUBDUEnum :
+		( (*Unit of reference pulse blocking distance*)
+		mcAHRPUBDU_MEAS_UNIT := 0, (*Measurement units - Reference pulse blocking distance in measurement units*)
+		mcAHRPUBDU_ENC_REV := 1 (*Encoder revolutions - Reference pulse blocking distance in encoder revolutions*)
+		);
 	McAHModDirRefPUseType : STRUCT (*Type mcAHMDRP_USE settings*)
 		HomingVelocity : REAL; (*Speed which is used while searching for the homing event (e.g. after reference switch has been reached) [measurement units/s]*)
 		Acceleration : REAL; (*Acceleration for homing movement [measurement units/s²]*)
 		HomingDirection : McAHModHomeDirEnum; (*Movement direction in which the homing event is evaluated*)
 		KeepDirection : McAHModKeepDirEnum; (*Keep direction (move only in one direction)*)
-		ReferencePulseBlockingDistance : LREAL; (*Distance for blocking the activation of triggering reference pulse [measurement units]*)
+		ReferencePulseBlockingDistance : LREAL; (*Distance for blocking the activation of triggering reference pulse*)
+		BlockingDistanceUnit : McAHRPUBDUEnum; (*Unit of reference pulse blocking distance*)
 	END_STRUCT;
 	McAHModDirRefPType : STRUCT (*Use reference pulse of encoder*)
 		Type : McAHModDirRefPEnum; (*Reference pulse selector setting*)
@@ -2382,7 +2422,8 @@ TYPE
 		mcAHMRP_USE := 1 (*Used - Reference pulse is used*)
 		);
 	McAHModRefPUseType : STRUCT (*Type mcAHMRP_USE settings*)
-		ReferencePulseBlockingDistance : LREAL; (*Distance for blocking the activation of triggering reference pulse [measurement units]*)
+		ReferencePulseBlockingDistance : LREAL; (*Distance for blocking the activation of triggering reference pulse*)
+		BlockingDistanceUnit : McAHRPUBDUEnum; (*Unit of reference pulse blocking distance*)
 	END_STRUCT;
 	McAHModRefPType : STRUCT (*Use reference pulse of encoder*)
 		Type : McAHModRefPEnum; (*Reference pulse selector setting*)
@@ -2448,7 +2489,8 @@ TYPE
 		MinimumReturnDistance : LREAL; (*Minimum return distance after the blockade is reached [measurement units]*)
 	END_STRUCT;
 	McAHModBlkRefPUseType : STRUCT (*Type mcAHMRP_USE settings*)
-		ReferencePulseBlockingDistance : LREAL; (*Distance for blocking the activation of triggering reference pulse [measurement units]*)
+		ReferencePulseBlockingDistance : LREAL; (*Distance for blocking the activation of triggering reference pulse*)
+		BlockingDistanceUnit : McAHRPUBDUEnum; (*Unit of reference pulse blocking distance*)
 	END_STRUCT;
 	McAHModBlkRefPType : STRUCT (*Use reference pulse of encoder*)
 		Type : McAHModRefPEnum; (*Reference pulse selector setting*)

@@ -13,7 +13,7 @@
     <Object Type="Package">mappView</Object>
   </Objects>
   <Configuration HasNcOperatingSystem="true" LocalVariablesMemory="MemoryPool" ModuleId="5APC3100.KBU3-000">
-    <AutomationRuntime Version="6.4.2" />
+    <AutomationRuntime Version="6.5.1" />
     <Build GccVersion="11.3.0" GeneratePPCode="false" />
     <DefaultTargetMemory DataObjects="UserROM" Libraries="UserROM" Tasks="UserROM" />
     <Io ArConfigDataModule="false" ArConfigDataModulePath="$(AS_CPU_PATH)\AS\CfgData.br" DisabledHardware="false" IoMapDataModule="false" IoMapDataModulePath="$(AS_CPU_PATH)\AS\IomData.br" ManualIoOffsets="false" Supervision="true" />
@@ -21,7 +21,7 @@
     <Safety SafetyRelease="0.0" />
     <Simulation StartAR000="true" TerminateAR000="true" />
     <TaskClasses DefaultIoTaskClass="Automatic" DefaultTaskClass="Cyclic4" />
-    <Transfer AddToUserPart="True" AdditionalUserDir="\Logical\UserPartitionData" AllowDowngrade="False" AllowInitialTransfer="False" AllowPartitioning="False" AllowWarmRestart="true" DownloadMode="Overload" ExecuteInitExitProgram="False" ForceInitialTransfer="False" GeneratePviTransferList="true" IdentificationTypeValue="" IgnoreBrDependencies="false" IgnoreTargetOnlyObjects="false" IgnoreVersion="True" KeepNonVolatileMemory="False" ModuleSystemForPip="" PackedArConfig="false" PackedIoMap="false" PreserveVariableValues="True" ProjectConsistent="True" PromptBeforeProject="false" PromptBeforeTask="false" RebootDuringTransfer="False" SavedOfflineInstallationFolder="" SavedPipDestinationFolder="" SavedRuntimeUtilityCenterPackagePath="" TargetIdentificationType="Always" TransferInServiceMode="false" TransferOnlyRelevantChanges="false" TryToBootInRunMode="False" UserFilesIgnoreDifference="False" />
+    <Transfer AddToUserPart="True" AdditionalUserDir="\Logical\UserPartitionData" AllowDowngrade="False" AllowInitialTransfer="False" AllowPartitioning="False" AllowWarmRestart="true" DownloadMode="Overload" ExecuteInitExitProgram="False" ForceInitialTransfer="False" GeneratePviTransferList="true" IgnoreBrDependencies="false" IgnoreTargetOnlyObjects="false" IgnoreVersion="True" KeepNonVolatileMemory="False" PackedArConfig="false" PackedIoMap="false" PreserveVariableValues="True" ProjectConsistent="True" PromptBeforeProject="false" PromptBeforeTask="false" RebootDuringTransfer="False" TargetIdentificationType="Always" TransferInServiceMode="false" TransferOnlyRelevantChanges="false" TryToBootInRunMode="False" UserFilesIgnoreDifference="False" WaitForReconnectAfterReboot="True" />
     <OnlineConfiguration Name="APC3109Local" DeviceType="TCPIP" DeviceParameters="/IF=tcpip /LOPO=11159 /SA=1" ConnectionParameters="/COMT=2500 /COMT=1000 /AM=* /SDT=5 /IP=192.168.20.254 /PT=11159 /ANSL=1 /PT=11169" Description="" />
   </Configuration>
 </Cpu>

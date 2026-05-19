@@ -59,7 +59,7 @@ TYPE
 		AngleResolution : LREAL; (*Resolution of rotary TCP coordinates [measurement units]*)
 	END_STRUCT;
 	McAGPGGeoPlanBlendingType : STRUCT (*Blending between two movement commands*)
-		MaxBlendingRadius : LREAL; (*Defines the maximum path length of the first path that can be used for blending [measurement units]*)
+		MaxRadius : LREAL; (*Defines the maximum path length of the first path that can be used for blending [measurement units]*)
 	END_STRUCT;
 	McAGPGGeoPlanRndSymRndEnum :
 		( (*Rounding distance on both adjacent path sections is the same*)
@@ -1854,7 +1854,7 @@ TYPE
 		mcAGFTRKOOW_ADJ_VEL := 2 (*Adjusted velocity - The system adapts the velocities defined in the motion program, if the target is out-of-workspace.*)
 		);
 	McAGFTrkOoWAdjVelType : STRUCT (*Type mcAGFTRKOOW_ADJ_VEL settings*)
-		Clearance : LREAL; (*Position shift of the target in direction of the tracking path [measurement units]*)
+		Clearance : LREAL; (*Position shift of the target in direction of the TrackingPath [measurement units]*)
 	END_STRUCT;
 	McAGFTrkOoWType : STRUCT (*Defines how to react while track on objects out of workspace*)
 		Type : McAGFTrkOoWEnum; (*Out-of-workspace synchronisation selector setting*)
@@ -1867,7 +1867,7 @@ TYPE
 		mcAGFTRKOOWS_ADJ_VEL := 2 (*Adjusted velocity - The system adapts the velocities defined in the motion program, if the target is out-of-workspace.*)
 		);
 	McAGFTrkOoWSAdjVelType : STRUCT (*Type mcAGFTRKOOWS_ADJ_VEL settings*)
-		Clearance : LREAL; (*Position shift of the target in direction of the tracking path [measurement units]*)
+		Clearance : LREAL; (*Position shift of the target in direction of the TrackingPath [measurement units]*)
 	END_STRUCT;
 	McAGFTrkOoWSType : STRUCT (*Defines how to react in synchronous phase if a command would move out of workspace*)
 		Type : McAGFTrkOoWSEnum; (*Out-of-workspace synchronized selector setting*)
@@ -3160,6 +3160,62 @@ TYPE
 		CoordinatesNames : McMS5ACXYZCACoorNameType; (*Coordinates names*)
 		WireFrameModel : McMS5ACXYZCAWFrmMdlType; (*Wire frame model of mechanical system*)
 		Couplings : McMS5ACXYZCACplgType; (*Couplings between selected axes and the joint axis*)
+		JointAxesPositionLimits : McMSJnt5AxPosLimType; (*Position limits for joint axis*)
+	END_STRUCT;
+	McMS5ACXYZCBDescEnum :
+		( (*Description selector setting*)
+		mcMS5ACXYZCBD_STD := 0 (*Standard - Standard description*)
+		);
+	McMS5ACXYZCBDSDimType : STRUCT (*Dimensions of the mechanical system*)
+		TranslationFromBaseToQX : McCfgTransXType; (*Translation from base of the mechanical system to QX*)
+		TranslationFromQXToQY : McCfgTransYType; (*Translation from QX to QY*)
+		TranslationFromQYToQZ : McCfgTransZType; (*Translation from QY to QZ*)
+		TranslationFromQZToQC : McCfgTransXYZType; (*Translation from QZ to QC*)
+		TranslationFromQCToQB : McCfgTransXYZType; (*Translation from QC to QB*)
+		TranslationFromQBToFlange : McCfgTransXYZType; (*Translation from QB to flange*)
+	END_STRUCT;
+	McMS5ACXYZCBDSType : STRUCT (*Type mcMS5ACXYZCBD_STD settings*)
+		Dimensions : McMS5ACXYZCBDSDimType; (*Dimensions of the mechanical system*)
+		ModelZeroPositionOffsets : McMSMdl5ZeroPosOffType; (*Offsets between desired and internal zero position*)
+		ModelCountDirections : McMSMdl5CntDirType; (*Count direction for joint axes relative to the internal model*)
+	END_STRUCT;
+	McMS5ACXYZCBDescType : STRUCT (*Description of the mechanical system*)
+		Type : McMS5ACXYZCBDescEnum; (*Description selector setting*)
+		Standard : McMS5ACXYZCBDSType; (*Type mcMS5ACXYZCBD_STD settings*)
+	END_STRUCT;
+	McMS5ACXYZCBCoorNameCmnType : STRUCT (*Common settings for all Type values*)
+		XCoordinateName : STRING[250]; (*X coordinate name*)
+		YCoordinateName : STRING[250]; (*Y coordinate name*)
+		ZCoordinateName : STRING[250]; (*Z coordinate name*)
+		CCoordinateName : STRING[250]; (*C coordinate name*)
+		BCoordinateName : STRING[250]; (*B coordinate name*)
+	END_STRUCT;
+	McMS5ACXYZCBCoorNameType : STRUCT (*Coordinates names*)
+		Type : McMSCNEnum; (*Coordinates names selector setting*)
+		Common : McMS5ACXYZCBCoorNameCmnType; (*Common settings for all Type values*)
+	END_STRUCT;
+	McMS5ACXYZCBWFrmMdlEnum :
+		( (*Wire frame model selector setting*)
+		mcMS5ACXYZCBWFM_STD := 0 (*Standard - Standard wire-frame model*)
+		);
+	McMS5ACXYZCBWFrmMdlStdType : STRUCT (*Type mcMS5ACXYZCBWFM_STD settings*)
+		QZToQC : McMSFrmMdlStdEdgeType; (*Wire frame model edge*)
+		QCToQB : McMSFrmMdlStdEdgeType; (*Wire frame model edge*)
+		QBToFlange : McMSFrmMdlStdEdgeType; (*Wire frame model edge*)
+		FlangeToTCP : McMSFrmMdlStdEdgeType; (*Wire frame model edge*)
+	END_STRUCT;
+	McMS5ACXYZCBWFrmMdlType : STRUCT (*Wire frame model of mechanical system*)
+		Type : McMS5ACXYZCBWFrmMdlEnum; (*Wire frame model selector setting*)
+		Standard : McMS5ACXYZCBWFrmMdlStdType; (*Type mcMS5ACXYZCBWFM_STD settings*)
+	END_STRUCT;
+	McMS5ACXYZCBCplgType : STRUCT (*Couplings between selected axes and the joint axis*)
+		LinearCoupling : McCfgUnboundedArrayType; (*Linear coupling (Connect array of type McMSCplg5LinCplgType)*)
+	END_STRUCT;
+	McCfgMS5AxCncXYZCBType : STRUCT (*Main data type corresponding to McCfgTypeEnum mcCFG_MS_5AX_CNC_XYZCB*)
+		Description : McMS5ACXYZCBDescType; (*Description of the mechanical system*)
+		CoordinatesNames : McMS5ACXYZCBCoorNameType; (*Coordinates names*)
+		WireFrameModel : McMS5ACXYZCBWFrmMdlType; (*Wire frame model of mechanical system*)
+		Couplings : McMS5ACXYZCBCplgType; (*Couplings between selected axes and the joint axis*)
 		JointAxesPositionLimits : McMSJnt5AxPosLimType; (*Position limits for joint axis*)
 	END_STRUCT;
 	McMS6ACZXYBCADescEnum :
@@ -4987,6 +5043,7 @@ TYPE
 		Type : McMS5ARBMonPtEnum; (*Monitoring points selector setting*)
 	END_STRUCT;
 	McCfgMS5AxRobBType : STRUCT (*Main data type corresponding to McCfgTypeEnum mcCFG_MS_5AX_ROB_B*)
+		SceneViewerObject : McMSSVOType; (*Defines if and which Scene Viewer Object should be used*)
 		Description : McMS5ARBDescType; (*Description of the mechanical system*)
 		CoordinatesNames : McMS5ARBCoorNameType; (*Coordinates names*)
 		WireFrameModel : McMS5ARBWFrmMdlType; (*Wire frame model of mechanical system*)
